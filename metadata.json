@@ -1,0 +1,6 @@
+{
+  "name": "Phanteress Library",
+  "description": "The ultimate Marvel franchise tracker, custom watch order builder, and personalized viewing schedule with IMDb integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
