@@ -8,15 +8,18 @@ import { DiscoverTab } from './components/DiscoverTab';
 import { ProfileTab } from './components/ProfileTab';
 import { WizardSetup } from './components/WizardSetup';
 import { SettingsModal } from './components/SettingsModal';
+import { FeedbackInboxModal } from './components/FeedbackInboxModal';
+import { AuthModal } from './components/AuthModal';
 
 function MainAppContent() {
   const [activeTab, setActiveTab] = useState<MainTab>('home');
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
+  const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
   const { showWizard, setShowWizard, hasCompletedWizard } = useWatchlist();
 
   const handleTabChange = (tab: MainTab) => {
     setActiveTab(tab);
-    // If the user clicks the Order tab and hasn't yet completed the setup wizard, show the wizard!
     if (tab === 'order' && !hasCompletedWizard) {
       setShowWizard(true);
     }
@@ -28,6 +31,8 @@ function MainAppContent() {
       <TopHeader
         onOpenWizard={() => setShowWizard(true)}
         onOpenSettings={() => setIsSettingsOpen(true)}
+        onOpenFeedback={() => setIsFeedbackOpen(true)}
+        onOpenAuth={() => setIsAuthOpen(true)}
         onNavigate={(tab) => handleTabChange(tab)}
       />
 
@@ -53,7 +58,19 @@ function MainAppContent() {
         onClose={() => setIsSettingsOpen(false)}
       />
 
-      {/* Wizard Setup Flow (Shows when Order tab is clicked or via [Adjust Order]) */}
+      {/* Community Feedback & Suggestions Inbox Modal */}
+      <FeedbackInboxModal
+        isOpen={isFeedbackOpen}
+        onClose={() => setIsFeedbackOpen(false)}
+      />
+
+      {/* Multi-Device Account & Cloud Sync Modal */}
+      <AuthModal
+        isOpen={isAuthOpen}
+        onClose={() => setIsAuthOpen(false)}
+      />
+
+      {/* Wizard Setup Flow */}
       {showWizard && (
         <WizardSetup
           onClose={() => setShowWizard(false)}

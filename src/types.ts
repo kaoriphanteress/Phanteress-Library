@@ -13,13 +13,18 @@ export type MarvelPhase =
 
 export type PropertyGroup = 'doomsday' | 'mcu' | 'all-marvel';
 
-export type WatchOrderType = 'release' | 'chronological' | 'phanteress';
+export type WatchOrderType = 'release' | 'story' | 'phanteress' | 'chronological';
 
 export type WatchStatus = 'unwatched' | 'watching' | 'watched' | 'on-hold' | 'skipped';
 
 export interface MarvelTitle {
   id: string;
   title: string;
+  parentTitle?: string;
+  seriesId?: string;
+  seasonNumber?: number;
+  totalSeasons?: number;
+  allTitleInfos?: string;
   year: number;
   type: MediaType;
   episodesCount?: number;
@@ -30,7 +35,8 @@ export interface MarvelTitle {
   synopsis: string;
   directorOrCreator: string;
   releaseDate: string; // YYYY-MM-DD
-  chronologicalRank: number;
+  storyRank: number;
+  chronologicalRank?: number;
   releaseRank: number;
   phanteressRank: number;
   isUpcoming?: boolean;
@@ -67,8 +73,11 @@ export interface UserProfile {
   displayName: string;
   avatarId: string;
   avatarUrl?: string;
-  paceDaysPerItem: number; // e.g. 1 item per day, 1 per 2 days
-  startDate: string; // YYYY-MM-DD
+  bio?: string;
+  favoriteCharacter?: string;
+  paceDaysPerItem: number;
+  startDate: string;
+  targetGoalDate?: string;
 }
 
 export interface UserStats {
@@ -79,4 +88,26 @@ export interface UserStats {
   completedTitlesCount: number;
   totalTitlesInOrder: number;
   completionPercentage: number;
+}
+
+export interface UserAccount {
+  id: string;
+  email: string;
+  displayName: string;
+  username: string;
+  quote?: string;
+  favoriteHero?: string;
+  avatarId: string;
+  lastSyncedAt: string;
+  syncKey: string;
+  isLoggedIn: boolean;
+}
+
+export interface MarvelCollection {
+  id: string;
+  title: string;
+  description: string;
+  badge: string;
+  coverImage?: string;
+  itemIds: string[];
 }

@@ -4,242 +4,498 @@ import {
   Tv,
   Clock,
   Sparkles,
-  Flame,
   Award,
   RotateCcw,
-  Sliders,
   Check,
+  Edit3,
+  Heart,
+  Calendar,
+  LogOut,
+  User,
+  Mail,
+  Lock,
+  Quote,
+  Star,
+  Info,
 } from 'lucide-react';
 import { useWatchlist } from '../context/WatchlistContext';
-import { HERO_AVATARS, HeroAvatarItem } from '../data/avatars';
-import { HeroAvatar } from './HeroAvatar';
+import { HERO_AVATARS } from '../data/avatars';
+import { EditProfileModal } from './EditProfileModal';
+import { TitleDetailModal } from './TitleDetailModal';
+import { MarvelTitle } from '../types';
+import { getPosterInfo } from '../data/marvelPosters';
 
 export const ProfileTab: React.FC = () => {
-  const { profile, updateProfile, stats, resetAllData, orderConfig } = useWatchlist();
+  const {
+    profile,
+    stats,
+    resetAllData,
+    orderConfig,
+    account,
+    signIn,
+    createAccount,
+    signOut,
+    favoriteTitles,
+    toggleFavorite,
+    isFavorite,
+    getWatchlistItem,
+  } = useWatchlist();
 
-  const [username, setUsername] = useState(profile.username);
-  const [displayName, setDisplayName] = useState(profile.displayName);
-  const [isSavedToast, setIsSavedToast] = useState(false);
-  const [paceDays, setPaceDays] = useState(profile.paceDaysPerItem);
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedFavoriteTitle, setSelectedFavoriteTitle] = useState<MarvelTitle | null>(null);
 
-  const activeAvatar =
-    HERO_AVATARS.find((a) => a.id === profile.avatarId) || HERO_AVATARS[0];
+  // Gated Auth Form State (shown when user is not logged in)
+  const [authMode, setAuthMode] = useState<'signup' | 'signin'>('signup');
+  const [emailInput, setEmailInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
+  const [displayNameInput, setDisplayNameInput] = useState('');
+  const [usernameInput, setUsernameInput] = useState('');
+  const [quoteInput, setQuoteInput] = useState('');
+  const [favoriteHeroInput, setFavoriteHeroInput] = useState('');
+  const [selectedAvatarId, setSelectedAvatarId] = useState('avatar-1');
+  const [authError, setAuthError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
 
-  const handleSaveProfile = () => {
-    updateProfile({
-      username,
-      displayName,
-      paceDaysPerItem: paceDays,
-    });
-    setIsSavedToast(true);
-    setTimeout(() => setIsSavedToast(false), 2200);
-  };
+  // If user is NOT logged in: Show the Account Creation / Login Gate ONLY
+  // Nothing else will show to them until they create an account or log in!
+  if (!account || !account.isLoggedIn) {
+    const handleAuthSubmit = async (e: React.FormEvent) => {
+      e.preventDefault();
+      setAuthError('');
+      setAuthLoading(true);
 
-  const handleSelectAvatar = (option: HeroAvatarItem) => {
-    updateProfile({
-      avatarId: option.id,
-    });
-  };
+      try {
+        if (authMode === 'signup') {
+          if (!displayNameInput.trim()) {
+            setAuthError('Please enter your Display Name.');
+            setAuthLoading(false);
+            return;
+          }
+          if (!usernameInput.trim()) {
+            setAuthError('Please enter a Username.');
+            setAuthLoading(false);
+            return;
+          }
+          if (!favoriteHeroInput.trim()) {
+            setAuthError('Please spell your favorite hero (e.g. Spider-Man, Moon Knight, Wolverine).');
+            setAuthLoading(false);
+            return;
+          }
 
-  // Convert minutes into hours & minutes
+          const res = await createAccount({
+            email: emailInput.trim(),
+            pass: passwordInput,
+            displayName: displayNameInput.trim(),
+            username: usernameInput.trim().toLowerCase().replace(/[^a-z0-9_]/g, ''),
+            quote: quoteInput.trim(),
+            favoriteHero: favoriteHeroInput.trim(),
+            avatarId: selectedAvatarId,
+          });
+
+          if (!res.success) {
+            setAuthError(res.error || 'Failed to create account.');
+          }
+        } else {
+          const res = await signIn(emailInput.trim(), passwordInput);
+          if (!res.success) {
+            setAuthError(res.error || 'Failed to log in.');
+          }
+        }
+      } catch (err: any) {
+        setAuthError(err.message || 'An error occurred.');
+      } finally {
+        setAuthLoading(false);
+      }
+    };
+
+    return (
+      <div className="max-w-xl mx-auto space-y-6 pb-24 pt-2">
+        <div className="p-6 sm:p-8 rounded-3xl bg-zinc-950/90 border border-pink-900/40 shadow-2xl space-y-6">
+          {/* Header */}
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-white shadow-xl shadow-pink-950/60">
+              <Sparkles className="w-7 h-7" />
+            </div>
+            <h2 className="text-2xl font-extrabold text-white tracking-tight">
+              {authMode === 'signup' ? 'Create Your Superhero Account' : 'Welcome Back, Hero'}
+            </h2>
+            <p className="text-xs text-zinc-400 max-w-sm mx-auto">
+              {authMode === 'signup'
+                ? 'Set up your hero identity, spelled favorites, and cloud-synced Marvel watchlist.'
+                : 'Log in to access your saved watchlist, history, and stats across devices.'}
+            </p>
+          </div>
+
+          {/* Mode Switcher */}
+          <div className="flex items-center bg-zinc-900/90 p-1 rounded-2xl border border-zinc-800">
+            <button
+              type="button"
+              onClick={() => {
+                setAuthMode('signup');
+                setAuthError('');
+              }}
+              className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+                authMode === 'signup'
+                  ? 'bg-pink-600 text-white shadow-md shadow-pink-950/50'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Create Account
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setAuthMode('signin');
+                setAuthError('');
+              }}
+              className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+                authMode === 'signin'
+                  ? 'bg-pink-600 text-white shadow-md shadow-pink-950/50'
+                  : 'text-zinc-400 hover:text-white'
+              }`}
+            >
+              Sign In
+            </button>
+          </div>
+
+          {/* Error Message */}
+          {authError && (
+            <div className="p-3 rounded-xl bg-rose-950/60 border border-rose-800/60 text-rose-300 text-xs">
+              {authError}
+            </div>
+          )}
+
+          {/* Form */}
+          <form onSubmit={handleAuthSubmit} className="space-y-4">
+            {authMode === 'signup' && (
+              <>
+                {/* Avatar Icon Selector */}
+                <div className="space-y-2">
+                  <label className="block text-[11px] font-semibold text-zinc-300">
+                    Choose Your Hero Insignia
+                  </label>
+                  <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+                    {HERO_AVATARS.map((av) => (
+                      <button
+                        key={av.id}
+                        type="button"
+                        onClick={() => setSelectedAvatarId(av.id)}
+                        className={`w-11 h-11 rounded-full p-1 bg-white border-2 transition-transform cursor-pointer shrink-0 ${
+                          selectedAvatarId === av.id
+                            ? 'border-pink-500 scale-110 shadow-lg shadow-pink-950 ring-2 ring-pink-400/50'
+                            : 'border-zinc-700 opacity-60 hover:opacity-100'
+                        }`}
+                        title={av.name}
+                      >
+                        <img src={av.src} alt={av.name} className="w-full h-full object-contain" />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Display Name */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    Display Name <span className="text-pink-400">*</span>
+                  </label>
+                  <div className="relative">
+                    <User className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <input
+                      type="text"
+                      required
+                      value={displayNameInput}
+                      onChange={(e) => setDisplayNameInput(e.target.value)}
+                      placeholder="e.g. Peter Parker, Tony Stark, Carol Danvers..."
+                      className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-pink-500"
+                    />
+                  </div>
+                </div>
+
+                {/* Username */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                    Username <span className="text-pink-400">*</span>
+                  </label>
+                  <div className="relative">
+                    <span className="text-zinc-500 text-xs font-mono absolute left-3 top-1/2 -translate-y-1/2">@</span>
+                    <input
+                      type="text"
+                      required
+                      value={usernameInput}
+                      onChange={(e) => setUsernameInput(e.target.value.toLowerCase().replace(/[^a-z0-9_]/g, ''))}
+                      placeholder="username"
+                      className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-8 pr-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-pink-500 font-mono"
+                    />
+                  </div>
+                </div>
+
+                {/* Favorite Hero - Typed Text Input (User spells it themselves!) */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1 flex items-center gap-1">
+                    <Heart className="w-3.5 h-3.5 text-pink-400" />
+                    Favorite Character / Hero <span className="text-pink-400">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={favoriteHeroInput}
+                    onChange={(e) => setFavoriteHeroInput(e.target.value)}
+                    placeholder="Type your favorite hero (e.g. Spider-Man, Moon Knight, Wolverine, Doctor Doom...)"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-pink-500"
+                  />
+                  <p className="text-[10px] text-zinc-500 mt-1">Spell any superhero, mutant, or villain you like</p>
+                </div>
+
+                {/* Quote / Motto */}
+                <div>
+                  <label className="block text-[11px] font-semibold text-zinc-300 mb-1 flex items-center gap-1">
+                    <Quote className="w-3.5 h-3.5 text-pink-400" />
+                    Quote / Motto
+                  </label>
+                  <input
+                    type="text"
+                    value={quoteInput}
+                    onChange={(e) => setQuoteInput(e.target.value)}
+                    placeholder="e.g. With great power comes great responsibility · Wakanda Forever"
+                    className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-pink-500"
+                  />
+                </div>
+              </>
+            )}
+
+            {/* Email Address */}
+            <div>
+              <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                Email Address <span className="text-pink-400">*</span>
+              </label>
+              <div className="relative">
+                <Mail className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type="email"
+                  required
+                  value={emailInput}
+                  onChange={(e) => setEmailInput(e.target.value)}
+                  placeholder="hero@avengers.org"
+                  className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-pink-500"
+                />
+              </div>
+            </div>
+
+            {/* Password */}
+            <div>
+              <label className="block text-[11px] font-semibold text-zinc-300 mb-1">
+                Password <span className="text-pink-400">*</span>
+              </label>
+              <div className="relative">
+                <Lock className="w-4 h-4 text-zinc-500 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <input
+                  type="password"
+                  required
+                  value={passwordInput}
+                  onChange={(e) => setPasswordInput(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full bg-zinc-900 border border-zinc-800 rounded-xl pl-9 pr-3 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-pink-500"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={authLoading}
+              className="w-full py-2.5 px-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs shadow-lg shadow-pink-950/50 transition-all cursor-pointer active:scale-95 disabled:opacity-50 mt-2"
+            >
+              {authLoading
+                ? 'Saving...'
+                : authMode === 'signup'
+                ? 'Create Superhero Account'
+                : 'Sign In to My Account'}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // --- LOGGED IN VIEW ---
+  const activeAvatar = HERO_AVATARS.find((a) => a.id === profile.avatarId) || HERO_AVATARS[0];
+  const avatarImageSrc = profile.avatarUrl || activeAvatar.src;
+
   const hours = Math.floor(stats.totalScreenTimeMinutes / 60);
   const minutes = stats.totalScreenTimeMinutes % 60;
   const formattedScreenTime = `${hours}h ${minutes}m`;
 
+  const targetDate = new Date(profile.targetGoalDate || '2026-12-18');
+  const today = new Date();
+  const diffTime = targetDate.getTime() - today.getTime();
+  const daysRemaining = Math.max(0, Math.ceil(diffTime / (1000 * 60 * 60 * 24)));
+
   return (
-    <div className="space-y-6 pb-24">
-      {/* Profile Header Card */}
+    <div className="space-y-6 pb-24 max-w-4xl mx-auto">
+      {/* --- HERO IDENTITY CARD --- */}
       <div className="p-6 rounded-3xl bg-zinc-950/80 border border-pink-900/40 shadow-2xl space-y-6">
-        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 text-center sm:text-left">
-          {/* Active Avatar Display */}
-          <div className="relative group shrink-0">
-            <div className="w-24 h-24 rounded-full overflow-hidden border-2 border-pink-500 shadow-2xl flex items-center justify-center p-1 bg-white/95 transition-transform hover:scale-105">
-              <img
-                src={activeAvatar.src}
-                alt={activeAvatar.name}
-                className="w-full h-full object-contain rounded-full"
-              />
+        <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-5 text-center sm:text-left">
+          {/* Avatar & Badges */}
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <div className="relative group shrink-0">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-pink-500 shadow-2xl flex items-center justify-center p-1 bg-white/95 transition-transform hover:scale-105">
+                <img
+                  src={avatarImageSrc}
+                  alt={profile.displayName}
+                  className="w-full h-full object-contain rounded-full"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = activeAvatar.src;
+                  }}
+                />
+              </div>
+              <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-pink-500 text-black flex items-center justify-center font-bold text-xs shadow-md">
+                ✓
+              </div>
             </div>
-            <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-pink-500 text-black flex items-center justify-center font-bold text-xs shadow-md">
-              ✓
+
+            <div className="space-y-1.5 min-w-0">
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                  {profile.displayName || 'Hero'}
+                </h2>
+                {profile.username && (
+                  <span className="text-[11px] font-mono text-pink-400 bg-pink-950/60 border border-pink-900/60 px-2.5 py-0.5 rounded-md">
+                    @{profile.username}
+                  </span>
+                )}
+              </div>
+
+              {profile.bio && (
+                <p className="text-xs text-zinc-300 italic max-w-md">
+                  "{profile.bio}"
+                </p>
+              )}
+
+              {profile.favoriteCharacter && (
+                <div className="pt-1 flex flex-wrap items-center justify-center sm:justify-start gap-2 text-xs text-zinc-400">
+                  <span className="flex items-center gap-1 text-pink-400">
+                    <Heart className="w-3.5 h-3.5 fill-pink-500/20" />
+                    <span>Favorite: <strong className="text-white">{profile.favoriteCharacter}</strong></span>
+                  </span>
+                </div>
+              )}
             </div>
           </div>
 
-          <div className="space-y-1.5 flex-1 min-w-0">
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-              <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
-                {profile.displayName || 'Pantheress'}
-              </h2>
-              <span className="text-[11px] font-mono text-pink-400 bg-pink-950/60 border border-pink-900/60 px-2 py-0.5 rounded-md">
-                @{profile.username || 'phanteress'}
-              </span>
-            </div>
-            <p className="text-xs text-zinc-400">
-              Active Roadmap:{' '}
-              <span className="text-pink-300 font-semibold uppercase">
-                {orderConfig.properties.replace('-', ' ')}
-              </span>{' '}
-              ·{' '}
-              <span className="text-zinc-200 capitalize">
-                {orderConfig.orderType} Order
-              </span>
-            </p>
-            <div className="pt-2 flex flex-wrap items-center justify-center sm:justify-start gap-3 text-xs text-zinc-300">
-              <span className="flex items-center gap-1">
-                <Award className="w-3.5 h-3.5 text-pink-400" />
-                <span>Rank: {activeAvatar.name}</span>
-              </span>
-              <span aria-hidden="true" className="text-zinc-700">
-                ·
-              </span>
-              <span className="flex items-center gap-1">
-                <Flame className="w-3.5 h-3.5 text-pink-500" />
-                <span>
-                  Pace: 1 title /{' '}
-                  {profile.paceDaysPerItem === 1
-                    ? 'day'
-                    : `${profile.paceDaysPerItem} days`}
-                </span>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Marvel Insignias Provided (From Image) */}
-        <div className="space-y-3 pt-3 border-t border-zinc-800/80">
-          <div className="flex items-center justify-between">
-            <h4 className="text-xs font-bold text-pink-400 uppercase tracking-wider">
-              Superhero Profile Icons (Tap to Select)
-            </h4>
-            <span className="text-[11px] text-zinc-400 font-mono">
-              {HERO_AVATARS.length} Icons Available
-            </span>
-          </div>
-
-          <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-10 gap-2.5 max-h-72 overflow-y-auto p-1 scrollbar-thin">
-            {HERO_AVATARS.map((option) => {
-              const isSelected = profile.avatarId === option.id;
-              return (
-                <button
-                  key={option.id}
-                  onClick={() => handleSelectAvatar(option)}
-                  className={`p-2 rounded-2xl border transition-all flex flex-col items-center gap-1.5 cursor-pointer text-center relative ${
-                    isSelected
-                      ? 'border-pink-500 bg-pink-950/40 shadow-lg ring-2 ring-pink-500/50 scale-105'
-                      : 'border-zinc-800/80 bg-zinc-900/60 hover:border-zinc-700 hover:bg-zinc-900'
-                  }`}
-                  title={option.name}
-                >
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-white/95 p-0.5 border border-pink-500/30 flex items-center justify-center shrink-0 shadow-sm">
-                    <img
-                      src={option.src}
-                      alt={option.name}
-                      className="w-full h-full object-contain rounded-full"
-                      loading="lazy"
-                    />
-                  </div>
-                  {isSelected && (
-                    <div className="absolute top-1 right-1 w-4 h-4 rounded-full bg-pink-500 text-black flex items-center justify-center text-[9px] font-extrabold shadow">
-                      ✓
-                    </div>
-                  )}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Edit Profile Details Inputs */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-3 border-t border-zinc-800/80">
-          <div className="space-y-1.5">
-            <label
-              htmlFor="display-name-input"
-              className="text-xs font-semibold text-zinc-400"
+          {/* Action Buttons: EDIT PROFILE & SIGN OUT */}
+          <div className="flex flex-col sm:flex-row items-center gap-2 shrink-0 w-full sm:w-auto">
+            <button
+              onClick={() => setIsEditModalOpen(true)}
+              className="w-full sm:w-auto py-2.5 px-4 rounded-2xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs shadow-lg shadow-pink-950/50 flex items-center justify-center gap-2 transition-all cursor-pointer active:scale-95"
             >
-              Display Name
-            </label>
-            <input
-              id="display-name-input"
-              type="text"
-              value={displayName}
-              onChange={(e) => setDisplayName(e.target.value)}
-              placeholder="Your display name"
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-pink-500"
-            />
-          </div>
+              <Edit3 className="w-4 h-4" />
+              <span>Edit Profile</span>
+            </button>
 
-          <div className="space-y-1.5">
-            <label
-              htmlFor="username-input"
-              className="text-xs font-semibold text-zinc-400"
+            <button
+              onClick={signOut}
+              className="w-full sm:w-auto py-2.5 px-3 rounded-2xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-400 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-all cursor-pointer active:scale-95"
+              title="Sign Out of account"
             >
-              Username (@)
-            </label>
-            <input
-              id="username-input"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="username"
-              className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-2 text-xs text-white focus:outline-none focus:border-pink-500 font-mono"
-            />
+              <LogOut className="w-4 h-4" />
+              <span>Log Out</span>
+            </button>
           </div>
-        </div>
-
-        {/* Viewing Pace Setting */}
-        <div className="space-y-2 pt-2 border-t border-zinc-800/80">
-          <label className="text-xs font-semibold text-zinc-400 flex items-center gap-1.5">
-            <Sliders className="w-3.5 h-3.5 text-pink-400" /> Viewing Schedule Pace
-          </label>
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { val: 1, label: '1 Day / Title', desc: 'Binge Pace' },
-              { val: 2, label: '2 Days / Title', desc: 'Standard Pace' },
-              { val: 3, label: '3 Days / Title', desc: 'Relaxed Pace' },
-            ].map((p) => (
-              <button
-                key={p.val}
-                type="button"
-                onClick={() => setPaceDays(p.val)}
-                className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer ${
-                  paceDays === p.val
-                    ? 'border-pink-500 bg-pink-950/40 text-white shadow-md'
-                    : 'border-zinc-800 bg-zinc-900/60 text-zinc-400 hover:text-zinc-200'
-                }`}
-              >
-                <div className="text-xs font-bold">{p.label}</div>
-                <div className="text-[10px] text-zinc-500">{p.desc}</div>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between pt-2">
-          {isSavedToast ? (
-            <span className="text-xs text-pink-400 flex items-center gap-1 font-semibold animate-fade-in">
-              <Check className="w-4 h-4" /> Profile details saved!
-            </span>
-          ) : (
-            <span className="text-[11px] text-zinc-500">
-              Auto-saved to device storage.
-            </span>
-          )}
-
-          <button
-            onClick={handleSaveProfile}
-            className="py-2.5 px-6 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs shadow-lg shadow-pink-950/50 transition-all cursor-pointer"
-          >
-            Save Profile
-          </button>
         </div>
       </div>
 
-      {/* STATS SECTION */}
+      {/* --- FAVORITES SECTION (Requested by user) --- */}
+      <div className="space-y-3">
+        <div className="flex items-center justify-between">
+          <h3 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
+            <Heart className="w-4 h-4 text-pink-500 fill-pink-500" />
+            <span>Favorites</span>
+            <span className="text-xs font-mono text-pink-400 bg-pink-950/80 border border-pink-900/60 px-2 py-0.5 rounded-full">
+              {favoriteTitles.length}
+            </span>
+          </h3>
+          <span className="text-xs text-zinc-400">
+            Titles you marked with ❤️
+          </span>
+        </div>
+
+        {favoriteTitles.length === 0 ? (
+          <div className="p-8 rounded-2xl bg-zinc-950/60 border border-zinc-800 text-center space-y-2">
+            <Heart className="w-8 h-8 text-zinc-700 mx-auto" />
+            <h4 className="text-sm font-bold text-white">No Favorites Added Yet</h4>
+            <p className="text-xs text-zinc-400 max-w-sm mx-auto">
+              Tap the heart icon on any title in Discover or Order to pin your all-time favorite Marvel movies and series right here!
+            </p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {favoriteTitles.map((title) => {
+              const posterInfo = getPosterInfo(title.id, title.heroCharacter, title.title, title.phase);
+              const watchData = getWatchlistItem(title.id);
+              const isWatched = watchData.status === 'watched';
+
+              return (
+                <div
+                  key={title.id}
+                  onClick={() => setSelectedFavoriteTitle(title)}
+                  className="group relative rounded-2xl overflow-hidden border border-zinc-800 hover:border-pink-500/60 bg-zinc-900 aspect-[2/3] flex flex-col justify-end p-3 cursor-pointer transition-all hover:scale-[1.02] shadow-lg"
+                >
+                  {posterInfo.posterUrl ? (
+                    <img
+                      src={posterInfo.posterUrl}
+                      alt={title.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${posterInfo.themeColor} flex items-center justify-center p-4`}
+                    >
+                      <Film className="w-8 h-8 text-white/50" />
+                    </div>
+                  )}
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none" />
+
+                  {/* Favorite Heart Toggle Button */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleFavorite(title.id);
+                    }}
+                    className="absolute top-2 right-2 z-20 w-7 h-7 rounded-full bg-pink-600 text-white flex items-center justify-center shadow-md active:scale-90 cursor-pointer"
+                    title="Remove from favorites"
+                  >
+                    <Heart className="w-3.5 h-3.5 fill-white" />
+                  </button>
+
+                  {/* Watched Badge */}
+                  {isWatched && (
+                    <div className="absolute top-2 left-2 z-10 px-2 py-0.5 rounded-full bg-emerald-950/90 border border-emerald-500/80 text-emerald-300 text-[10px] font-bold flex items-center gap-1 shadow-md">
+                      <Check className="w-2.5 h-2.5" />
+                      <span>Watched</span>
+                    </div>
+                  )}
+
+                  <div className="relative z-10 space-y-0.5">
+                    <span className="text-[10px] text-zinc-300 font-medium">
+                      {title.year} · {title.type === 'series' ? 'Series' : 'Movie'}
+                    </span>
+                    <h4 className="text-xs font-bold text-white group-hover:text-pink-300 transition-colors line-clamp-2">
+                      {title.parentTitle || title.title}
+                    </h4>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* --- STATS SECTION --- */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
             <Award className="w-4 h-4 text-pink-400" />
-            Your Watching Stats
+            Watching Stats &amp; Marathon Progress
           </h3>
           <span className="text-xs font-mono text-zinc-400">
             {stats.completedTitlesCount} of {stats.totalTitlesInOrder} titles done
@@ -312,10 +568,13 @@ export const ProfileTab: React.FC = () => {
           </div>
         </div>
 
-        {/* Completion Progress Bar */}
+        {/* Progress Bar towards Road to Doomsday */}
         <div className="p-5 rounded-2xl bg-zinc-950/80 border border-zinc-800 space-y-2.5">
           <div className="flex items-center justify-between text-xs">
-            <span className="font-bold text-white">Current Watchlist Progress</span>
+            <span className="font-bold text-white flex items-center gap-1.5">
+              <span>Current Watchlist Progress</span>
+              <span className="text-pink-400 font-mono">({orderConfig.properties.toUpperCase()})</span>
+            </span>
             <span className="font-mono font-bold text-pink-400">{stats.completionPercentage}%</span>
           </div>
 
@@ -328,7 +587,7 @@ export const ProfileTab: React.FC = () => {
 
           <div className="flex items-center justify-between text-[11px] text-zinc-400 pt-1">
             <span>{stats.completedTitlesCount} titles completed</span>
-            <span>{stats.totalTitlesInOrder - stats.completedTitlesCount} remaining to watch</span>
+            <span>{daysRemaining} days until Doomsday Target (Dec 18, 2026)</span>
           </div>
         </div>
       </div>
@@ -352,6 +611,18 @@ export const ProfileTab: React.FC = () => {
           <span>Reset</span>
         </button>
       </div>
+
+      {/* Modals */}
+      {isEditModalOpen && (
+        <EditProfileModal isOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
+      )}
+
+      {selectedFavoriteTitle && (
+        <TitleDetailModal
+          title={selectedFavoriteTitle}
+          onClose={() => setSelectedFavoriteTitle(null)}
+        />
+      )}
     </div>
   );
 };

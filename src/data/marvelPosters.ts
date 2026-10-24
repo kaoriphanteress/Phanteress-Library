@@ -1,5 +1,6 @@
-// Curated high-resolution poster images and thematic artwork for Marvel titles
-// Used by Discover tab to render cinematic visual poster grid matching modern streaming apps.
+// Marvel Titles Poster & Artwork Mapping
+// Grounded from https://marvel.fandom.com/wiki/Marvel_Films & official Marvel Database archives.
+// You can edit or add custom poster/banner image URLs directly here or in your GitHub repository!
 
 export interface PosterData {
   posterUrl: string;
@@ -8,403 +9,1768 @@ export interface PosterData {
   accentColor: string;
 }
 
-// Map of canonical Marvel title IDs to verified high-res poster artworks
 export const MARVEL_POSTER_MAP: Record<string, PosterData> = {
-  // --- SPECIAL / FEATURED ---
-  'visionquest-2026': {
-    posterUrl: '/assets/visionquest_featured.jpg',
-    backdropUrl: '/assets/visionquest_featured.jpg',
-    themeColor: 'from-amber-950 via-zinc-950 to-black',
-    accentColor: '#f59e0b',
-  },
-  'spiderman-brand-new-day-2026': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg',
-    themeColor: 'from-red-950 via-blue-950 to-black',
-    accentColor: '#ef4444',
-  },
-
-  // --- AVENGERS & SAGA CLIMAXES ---
-  'avengers-endgame-2019': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/7RyHsO4yDXtBv1zUU3mTpHeQ0d5.jpg',
-    themeColor: 'from-indigo-950 via-purple-950 to-black',
-    accentColor: '#8b5cf6',
-  },
-  'avengers-infinity-war-2018': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg',
-    themeColor: 'from-purple-950 via-amber-950 to-black',
-    accentColor: '#a855f7',
-  },
-  'the-avengers-2012': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/9BBTo63ANSmhC4e6r62OJFuK2GL.jpg',
-    themeColor: 'from-blue-950 via-slate-950 to-black',
-    accentColor: '#3b82f6',
-  },
-  'avengers-age-of-ultron-2015': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/4ssDuvEDkS9NvmR15ezabUt07Gj.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/8WW5l2G6L7m8N7xY0uQ8l5Q8p.jpg',
-    themeColor: 'from-red-950 via-zinc-950 to-black',
-    accentColor: '#ef4444',
-  },
-  'avengers-doomsday-2026': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/yDHYTjA3R0neXjY5A4P8bY0K.jpg',
-    themeColor: 'from-emerald-950 via-slate-950 to-black',
-    accentColor: '#10b981',
-  },
-  'avengers-secret-wars-2027': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
-    themeColor: 'from-purple-950 via-indigo-950 to-black',
-    accentColor: '#a855f7',
-  },
-
-  // --- DEADPOOL & WOLVERINE & MUTANTS ---
-  'deadpool-and-wolverine-2024': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/yDHYTjA3R0neXjY5A4P8bY0K.jpg',
-    themeColor: 'from-red-950 via-amber-950 to-black',
-    accentColor: '#e11d48',
-  },
-  'x-men-2000': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/bRDAc4GogS9yiUTm8P660GQ2Act.jpg',
-    themeColor: 'from-blue-950 via-slate-950 to-black',
-    accentColor: '#38bdf8',
-  },
-  'x2-x-men-united-2003': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/e9V4z0y2e6i5v4b3m1a8k7c9p.jpg',
-    themeColor: 'from-cyan-950 via-slate-950 to-black',
-    accentColor: '#06b6d4',
-  },
-
-  // --- SPIDER-MAN ---
-  'spider-man-no-way-home-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/14QbnygCuTO0vl7CAFmPf1fgZfV.jpg',
-    themeColor: 'from-red-950 via-amber-950 to-black',
-    accentColor: '#ef4444',
-  },
-  'spider-man-far-from-home-2019': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/4q2hz2m8hubgvijTyPp0agvxQz7.jpg',
-    themeColor: 'from-red-950 via-blue-950 to-black',
-    accentColor: '#3b82f6',
-  },
-  'spider-man-homecoming-2017': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg',
-    themeColor: 'from-blue-950 via-amber-950 to-black',
-    accentColor: '#f59e0b',
-  },
-  'spider-man-across-the-spider-verse-2023': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg',
-    themeColor: 'from-pink-950 via-purple-950 to-black',
+  'agatha-all-along-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/01/Agatha_All_Along_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20240908205853',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/01/Agatha_All_Along_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20240908205853',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
     accentColor: '#ec4899',
   },
-  'spider-man-into-the-spider-verse-2018': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg',
-    themeColor: 'from-purple-950 via-pink-950 to-black',
-    accentColor: '#d946ef',
-  },
-  'spider-man-beyond-the-spider-verse-2027': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/8Vt6mWEReuy4Of61Lnj5Xj704m8.jpg',
-    themeColor: 'from-purple-950 via-slate-950 to-black',
-    accentColor: '#c084fc',
-  },
-
-  // --- IRON MAN & CAPTAIN AMERICA ---
-  'iron-man-2008': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/78lPtwv72eTNqFW9COBYI0dWDJa.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/cyecB7godJ6kNHGONvjUyVN9OX5.jpg',
-    themeColor: 'from-red-950 via-amber-950 to-black',
-    accentColor: '#eab308',
-  },
-  'iron-man-2-2010': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/6WBeq40v3094GeqaoVsrncX29zg.jpg',
-    themeColor: 'from-red-950 via-slate-950 to-black',
-    accentColor: '#ef4444',
-  },
-  'iron-man-3-2013': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/qhPtAc1TKbMPqNvcdXSOn9Bn7hZ.jpg',
-    themeColor: 'from-amber-950 via-zinc-950 to-black',
-    accentColor: '#f59e0b',
-  },
-  'captain-america-the-first-avenger-2011': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/vSNxAJTlD0r02V9sPY2BvURK2IL.jpg',
-    themeColor: 'from-blue-950 via-red-950 to-black',
-    accentColor: '#3b82f6',
-  },
-  'captain-america-the-winter-soldier-2014': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/tVFRpFw3xTed5nGQqW0sdKHpRPA.jpg',
-    themeColor: 'from-slate-950 via-blue-950 to-black',
-    accentColor: '#60a5fa',
-  },
-  'captain-america-civil-war-2016': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/rAGiXaUfPzY7CDEyNKUofk3Kw2e.jpg',
-    themeColor: 'from-red-950 via-blue-950 to-black',
-    accentColor: '#f43f5e',
-  },
-  'captain-america-brave-new-world-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/pzIddUEMWhWzfvLI3TwxUG2wYLF.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/m9vhQy44V4Wb5n0a8m5Y.jpg',
-    themeColor: 'from-blue-950 via-red-950 to-black',
-    accentColor: '#38bdf8',
-  },
-
-  // --- BLACK PANTHER & THOR & DOCTOR STRANGE ---
-  'black-panther-2018': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg',
-    themeColor: 'from-purple-950 via-zinc-950 to-black',
-    accentColor: '#a855f7',
-  },
-  'black-panther-wakanda-forever-2022': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/sv1xJUazXeYqALzczSZ3O6nkH75.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/xDMIl84Qo5Tsu62c9DGWhmPI6Mc.jpg',
-    themeColor: 'from-emerald-950 via-purple-950 to-black',
-    accentColor: '#10b981',
-  },
-  'thor-2011': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/prSfAi1xGrhLQNxVSUFh61xQ4Qx.jpg',
-    themeColor: 'from-sky-950 via-slate-950 to-black',
-    accentColor: '#0284c7',
-  },
-  'thor-the-dark-world-2013': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/wp6OxE4poJ4G7c0U2ZIXasTSMR7.jpg',
-    themeColor: 'from-slate-950 via-red-950 to-black',
-    accentColor: '#dc2626',
-  },
-  'thor-ragnarok-2017': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/kaIfm5ryEOwYg8pahVIq2YRnn2S.jpg',
-    themeColor: 'from-amber-950 via-teal-950 to-black',
-    accentColor: '#f59e0b',
-  },
-  'thor-love-and-thunder-2022': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/pIkRyD18kl4F0b69em2LsgA4Hio.jpg',
-    themeColor: 'from-pink-950 via-cyan-950 to-black',
+  'agent-carter-s1-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c4/Marvel%27s_Agents_Carter_poster_001.jpg/revision/latest/scale-to-width-down/333?cb=20150928045102',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c4/Marvel%27s_Agents_Carter_poster_001.jpg/revision/latest/scale-to-width-down/333?cb=20150928045102',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
     accentColor: '#ec4899',
   },
-  'doctor-strange-2016': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/uGBVj34PvVJXiMLV1ND849Yvxtz.jpg',
-    themeColor: 'from-amber-950 via-orange-950 to-black',
-    accentColor: '#f97316',
+  'agent-carter-s2-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c4/Marvel%27s_Agents_Carter_poster_001.jpg/revision/latest/scale-to-width-down/333?cb=20150928045102',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c4/Marvel%27s_Agents_Carter_poster_001.jpg/revision/latest/scale-to-width-down/333?cb=20150928045102',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'doctor-strange-in-the-multiverse-of-madness-2022': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1oKAhiwbBKS.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/wcKFYIiVDvRURrzglV9kGu7fpfY.jpg',
-    themeColor: 'from-red-950 via-purple-950 to-black',
-    accentColor: '#ef4444',
+  'agents-of-shield-s1-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-
-  // --- GUARDIANS & SHANG-CHI & ETERNALS ---
-  'guardians-of-the-galaxy-2014': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/r7vmZjiyZw9rpJMQJdXvlshvgEx.jpg',
-    themeColor: 'from-purple-950 via-blue-950 to-black',
-    accentColor: '#8b5cf6',
+  'agents-of-shield-s2-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'guardians-of-the-galaxy-vol-2-2017': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/y4MBh0EjBlMuOzv9axM4qJmLRbF.jpg',
-    themeColor: 'from-teal-950 via-purple-950 to-black',
-    accentColor: '#14b8a6',
+  'agents-of-shield-s3-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'guardians-of-the-galaxy-vol-3-2023': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/r2J02Z2OpNTctetjST2FimOPlhg.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/5YZbUmjbMa3ClvSW1Wj3D6XGolb.jpg',
-    themeColor: 'from-sky-950 via-amber-950 to-black',
-    accentColor: '#38bdf8',
+  'agents-of-shield-s4-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'shang-chi-and-the-legend-of-the-ten-rings-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/1BIoJGKbXjdFDAvUEiA2VHqkK1Z.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/cinER0j2z989y9R6i9a7.jpg',
-    themeColor: 'from-amber-950 via-red-950 to-black',
-    accentColor: '#f59e0b',
+  'agents-of-shield-s5-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'eternals-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/bcCBq9N1EMo3daNIjWJ8kYvrQm6.jpg',
-    themeColor: 'from-amber-950 via-slate-950 to-black',
-    accentColor: '#fbbf24',
+  'agents-of-shield-s6-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'the-incredible-hulk-2008': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/gKzYx79y0AQTL4UAk1cBQJ3nvrm.jpg',
-    themeColor: 'from-emerald-950 via-green-950 to-black',
-    accentColor: '#22c55e',
+  'agents-of-shield-s7-2020': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/S.H.I.E.L.D._Vol_3_1.jpg/revision/latest/scale-to-width-down/329?cb=20141226034429',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'amazing-spider-man-pilot-1977': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'amazing-spider-man-s1-1978': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'amazing-spider-man-s2-1979': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
   'ant-man-2015': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/jOVOgm0vH00gM63Z7P6a9n14V8U.jpg',
-    themeColor: 'from-red-950 via-slate-950 to-black',
-    accentColor: '#ef4444',
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d6/Ant-Man_%28film%29_poster_001.jpeg/revision/latest/scale-to-width-down/337?cb=20150506151531',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d6/Ant-Man_%28film%29_poster_001.jpeg/revision/latest/scale-to-width-down/337?cb=20150506151531',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
   'ant-man-and-the-wasp-2018': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/eivQmS3wqz9Q1v8gX2Y70v7f0iS.jpg',
-    themeColor: 'from-amber-950 via-red-950 to-black',
-    accentColor: '#f59e0b',
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/46/Ant-Man_%26_the_Wasp_Vol_1_4_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20180523163554',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/46/Ant-Man_%26_the_Wasp_Vol_1_4_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20180523163554',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'ant-man-and-the-wasp-quantumania-2023': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/ngl2FKBlU4fhbdsrtdom9LVLBXw.jpg',
-    themeColor: 'from-purple-950 via-blue-950 to-black',
-    accentColor: '#a855f7',
+  'ant-man-quantumania-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/da/Ant-Man_And_The_Wasp_Quantumania_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20230110122605',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/da/Ant-Man_And_The_Wasp_Quantumania_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20230110122605',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'captain-marvel-2019': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/AtsgWhDnHTq68L0lLsUr8A8r3nR.jpg',
-    themeColor: 'from-blue-950 via-amber-950 to-black',
-    accentColor: '#eab308',
+  'armor-wars-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/22/Armor_Wars_Official_Logo.png/revision/latest/scale-to-width-down/500?cb=20230705222934',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/22/Armor_Wars_Official_Logo.png/revision/latest/scale-to-width-down/500?cb=20230705222934',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'the-marvels-2023': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/9GBhzXMFjgcZ3FdR9w0bYvIRbp5.jpg',
-    themeColor: 'from-purple-950 via-amber-950 to-black',
+  'armor-wars-tba': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/22/Armor_Wars_Official_Logo.png/revision/latest/scale-to-width-down/500?cb=20230705222934',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/22/Armor_Wars_Official_Logo.png/revision/latest/scale-to-width-down/500?cb=20230705222934',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-age-of-ultron-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Avengers_Age_of_Ultron_poster_001.jpg/revision/latest/scale-to-width-down/337?cb=20150224171724',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Avengers_Age_of_Ultron_poster_001.jpg/revision/latest/scale-to-width-down/337?cb=20150224171724',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-assemble-s1-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-assemble-s2-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-assemble-s3-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-assemble-s4-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-assemble-s5-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Marvel%27s_Avengers_Assemble_Season_5_poster.jpg/revision/latest/scale-to-width-down/324?cb=20180903195150',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-confidential-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e8/Avengers_Confidential_Black_Widow_%26_Punisher.jpg/revision/latest/scale-to-width-down/357?cb=20161030182342',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e8/Avengers_Confidential_Black_Widow_%26_Punisher.jpg/revision/latest/scale-to-width-down/357?cb=20161030182342',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-doomsday-2026': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Avengers_Doomsday_poster_004.jpg/revision/latest/scale-to-width-down/400?cb=20260821171919',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Avengers_Doomsday_poster_004.jpg/revision/latest/scale-to-width-down/400?cb=20260821171919',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-emh-s1-2010': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/13/Avengers_Earths_Mightiest_Heroes_Poster.jpg/revision/latest/scale-to-width-down/340?cb=20130208191005',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/13/Avengers_Earths_Mightiest_Heroes_Poster.jpg/revision/latest/scale-to-width-down/340?cb=20130208191005',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-emh-s2-2012': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/13/Avengers_Earths_Mightiest_Heroes_Poster.jpg/revision/latest/scale-to-width-down/340?cb=20130208191005',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/13/Avengers_Earths_Mightiest_Heroes_Poster.jpg/revision/latest/scale-to-width-down/340?cb=20130208191005',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-endgame-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9a/Avengers_Endgame_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20250609191756',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9a/Avengers_Endgame_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20250609191756',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-infinity-war-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Avengers_Infinity_War_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20180318160428',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Avengers_Infinity_War_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20180318160428',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-secret-wars-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Avengers_Secret_Wars_logo_002.jpg/revision/latest/scale-to-width-down/500?cb=20260826201628',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Avengers_Secret_Wars_logo_002.jpg/revision/latest/scale-to-width-down/500?cb=20260826201628',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'avengers-united-they-stand-1999': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e0/Avengers_United_They_Stand_Vol_1_1.jpg/revision/latest/scale-to-width-down/331?cb=20060327025930',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e0/Avengers_United_They_Stand_Vol_1_1.jpg/revision/latest/scale-to-width-down/331?cb=20060327025930',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'big-hero-6-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/fc/Big_Hero_%28film%29_poster_006.jpg/revision/latest/scale-to-width-down/350?cb=20210208164258',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/fc/Big_Hero_%28film%29_poster_006.jpg/revision/latest/scale-to-width-down/350?cb=20210208164258',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'big-hero-6-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5a/Big_Hero_6_The_Series_poster_003.jpg/revision/latest/scale-to-width-down/329?cb=20190922041412',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5a/Big_Hero_6_The_Series_poster_003.jpg/revision/latest/scale-to-width-down/329?cb=20190922041412',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'big-hero-6-s2-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5a/Big_Hero_6_The_Series_poster_003.jpg/revision/latest/scale-to-width-down/329?cb=20190922041412',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5a/Big_Hero_6_The_Series_poster_003.jpg/revision/latest/scale-to-width-down/329?cb=20190922041412',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'black-panther-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/Black_Panther_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20171016144930',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/Black_Panther_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20171016144930',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'black-panther-3-2028': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1a/Black_Panther_3_logo_001.jpg/revision/latest/scale-to-width-down/400?cb=20260727220206',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1a/Black_Panther_3_logo_001.jpg/revision/latest/scale-to-width-down/400?cb=20260727220206',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'black-panther-wakanda-forever-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d6/Black_Panther_Wakanda_Forever_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20221110151547',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d6/Black_Panther_Wakanda_Forever_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20221110151547',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
     accentColor: '#ec4899',
   },
   'black-widow-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/qAZ0wfzwflioeqGU8Frr90CSGjX.jpg',
-    themeColor: 'from-red-950 via-zinc-950 to-black',
-    accentColor: '#f43f5e',
-  },
-  'thunderbolts-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/pzIddUEMWhWzfvLI3TwxUG2wYLF.jpg',
-    themeColor: 'from-zinc-950 via-amber-950 to-black',
-    accentColor: '#f59e0b',
-  },
-  'the-fantastic-four-first-steps-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    themeColor: 'from-sky-950 via-blue-950 to-black',
-    accentColor: '#38bdf8',
-  },
-
-  // --- DISNEY+ SERIES ---
-  'wandavision-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/gWjGYG1hgtgE7aKq5n7VqN5x3yL.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/57vVjteucIF3LcvMBHtLf6vhkWo.jpg',
-    themeColor: 'from-red-950 via-amber-950 to-black',
-    accentColor: '#dc2626',
-  },
-  'loki-season-1-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg',
-    backdropUrl: 'https://image.tmdb.org/t/p/w1280/12VO56r4wW9u1.jpg',
-    themeColor: 'from-emerald-950 via-amber-950 to-black',
-    accentColor: '#10b981',
-  },
-  'loki-season-2-2023': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/kEl2t3OhXc3Zb9FBh1AuYzRTgZp.jpg',
-    themeColor: 'from-emerald-950 via-teal-950 to-black',
-    accentColor: '#059669',
-  },
-  'the-falcon-and-the-winter-soldier-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/6kbAMLteGO8yyewYau6bJ683sw7.jpg',
-    themeColor: 'from-blue-950 via-slate-950 to-black',
-    accentColor: '#3b82f6',
-  },
-  'what-if-season-1-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/lztNs6r93Z872UvJ5t0kS0nN1Fm.jpg',
-    themeColor: 'from-purple-950 via-blue-950 to-black',
-    accentColor: '#a855f7',
-  },
-  'hawkeye-2021': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/pqzjVP5BzxP699z51Fk3kQ2v3dE.jpg',
-    themeColor: 'from-purple-950 via-indigo-950 to-black',
-    accentColor: '#8b5cf6',
-  },
-  'moon-knight-2022': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/x6FsYvt33846G7G0Nek1A9k3f12.jpg',
-    themeColor: 'from-slate-950 via-cyan-950 to-black',
-    accentColor: '#e2e8f0',
-  },
-  'ms-marvel-2022': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/cdkyMYdu8ao2657MWg4g5Z0v7wX.jpg',
-    themeColor: 'from-pink-950 via-indigo-950 to-black',
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1c/Black_Widow_%28film%29_poster_019.jpg/revision/latest/scale-to-width-down/337?cb=20210629171105',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1c/Black_Widow_%28film%29_poster_019.jpg/revision/latest/scale-to-width-down/337?cb=20210629171105',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
     accentColor: '#ec4899',
   },
-  'she-hulk-attorney-at-law-2022': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/hJfI6tKwR52yVPI0yUe9VT8R4v0.jpg',
-    themeColor: 'from-emerald-950 via-teal-950 to-black',
-    accentColor: '#10b981',
+  'blade-1998': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Blade_Vol_6_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230726001943',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Blade_Vol_6_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230726001943',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'secret-invasion-2023': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/f5ZM8rSpHIl69o14IW086119v50.jpg',
-    themeColor: 'from-emerald-950 via-zinc-950 to-black',
-    accentColor: '#059669',
+  'blade-ii-2002': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0e/Blade_II_%28film%29.jpg/revision/latest/scale-to-width-down/395?cb=20080819200815',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0e/Blade_II_%28film%29.jpg/revision/latest/scale-to-width-down/395?cb=20080819200815',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'blade-mcu-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Blade_Vol_6_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230726001943',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Blade_Vol_6_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230726001943',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'blade-mcu-tba': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Blade_Vol_6_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230726001943',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Blade_Vol_6_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230726001943',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'blade-the-series-2006': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/60/Blade_The_Series_logo_001.png/revision/latest/scale-to-width-down/500?cb=20250408223708',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/60/Blade_The_Series_logo_001.png/revision/latest/scale-to-width-down/500?cb=20250408223708',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'blade-trinity-2004': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/91/Blade_Trinity.jpg/revision/latest/scale-to-width-down/337?cb=20080912121917',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/91/Blade_Trinity.jpg/revision/latest/scale-to-width-down/337?cb=20080912121917',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-1944': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/44/William_Nasland_%28Earth-616%29_from_Captain_America_Vol_1_215_001.jpg/revision/latest/scale-to-width-down/209?cb=20201030181501',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/44/William_Nasland_%28Earth-616%29_from_Captain_America_Vol_1_215_001.jpg/revision/latest/scale-to-width-down/209?cb=20201030181501',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-1979': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/44/William_Nasland_%28Earth-616%29_from_Captain_America_Vol_1_215_001.jpg/revision/latest/scale-to-width-down/209?cb=20201030181501',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/44/William_Nasland_%28Earth-616%29_from_Captain_America_Vol_1_215_001.jpg/revision/latest/scale-to-width-down/209?cb=20201030181501',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-1990': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/44/William_Nasland_%28Earth-616%29_from_Captain_America_Vol_1_215_001.jpg/revision/latest/scale-to-width-down/209?cb=20201030181501',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/44/William_Nasland_%28Earth-616%29_from_Captain_America_Vol_1_215_001.jpg/revision/latest/scale-to-width-down/209?cb=20201030181501',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-brave-new-world-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/Captain_America_Brave_New_World_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20250507081548',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/Captain_America_Brave_New_World_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20250507081548',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-civil-war-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/02/Captain_America_Civil_War_poster_014.jpg/revision/latest/scale-to-width-down/337?cb=20160310174551',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/02/Captain_America_Civil_War_poster_014.jpg/revision/latest/scale-to-width-down/337?cb=20160310174551',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-first-avenger-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/Captain_America_The_First_Avenger_poster.jpg/revision/latest/scale-to-width-down/337?cb=20210813195225',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/37/Captain_America_The_First_Avenger_poster.jpg/revision/latest/scale-to-width-down/337?cb=20210813195225',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-ii-1979': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Captain_America_II_Death_Too_Soon.jpg/revision/latest?cb=20110401215109',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Captain_America_II_Death_Too_Soon.jpg/revision/latest?cb=20110401215109',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-america-winter-soldier-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/03/Captain_America_The_Winter_Soldier_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20140131142746',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/03/Captain_America_The_Winter_Soldier_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20140131142746',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'captain-marvel-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/80/Secret_Avengers_Vol_1_27_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20120314011719',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/80/Secret_Avengers_Vol_1_27_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20120314011719',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'cloak-and-dagger-s1-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/86/Marvel%27s_Cloak_%26_Dagger_poster_006.jpg/revision/latest/scale-to-width-down/338?cb=20190206043142',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/86/Marvel%27s_Cloak_%26_Dagger_poster_006.jpg/revision/latest/scale-to-width-down/338?cb=20190206043142',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'cloak-and-dagger-s2-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/86/Marvel%27s_Cloak_%26_Dagger_poster_006.jpg/revision/latest/scale-to-width-down/338?cb=20190206043142',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/86/Marvel%27s_Cloak_%26_Dagger_poster_006.jpg/revision/latest/scale-to-width-down/338?cb=20190206043142',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-2003': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-born-again-s1-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8d/Daredevil_Born_Again_poster_037.jpg/revision/latest/scale-to-width-down/338?cb=20260507230757',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8d/Daredevil_Born_Again_poster_037.jpg/revision/latest/scale-to-width-down/338?cb=20260507230757',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-born-again-s2-2026': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8d/Daredevil_Born_Again_poster_037.jpg/revision/latest/scale-to-width-down/338?cb=20260507230757',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8d/Daredevil_Born_Again_poster_037.jpg/revision/latest/scale-to-width-down/338?cb=20260507230757',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-born-again-s3-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8d/Daredevil_Born_Again_poster_037.jpg/revision/latest/scale-to-width-down/338?cb=20260507230757',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8d/Daredevil_Born_Again_poster_037.jpg/revision/latest/scale-to-width-down/338?cb=20260507230757',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-s1-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-s2-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'daredevil-s3-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Daredevil_Woman_Without_Fear_Vol_1_1_Bartel_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20230111120000',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'dark-phoenix-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b7/Dark_Phoenix_%28film%29_poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20190510125733',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b7/Dark_Phoenix_%28film%29_poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20190510125733',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'deadpool-2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/de/Deadpool_2_poster_018.jpg/revision/latest/scale-to-width-down/337?cb=20180507160630',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/de/Deadpool_2_poster_018.jpg/revision/latest/scale-to-width-down/337?cb=20180507160630',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'deadpool-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/05/Deadpool_%28film%29_poster_007.jpg/revision/latest/scale-to-width-down/343?cb=20160115014703',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/05/Deadpool_%28film%29_poster_007.jpg/revision/latest/scale-to-width-down/343?cb=20160115014703',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'deadpool-and-wolverine-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/78/Deadpool_%26_Wolverine_poster_009.jpg/revision/latest/scale-to-width-down/337?cb=20240622134248',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/78/Deadpool_%26_Wolverine_poster_009.jpg/revision/latest/scale-to-width-down/337?cb=20240622134248',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'death-of-the-incredible-hulk-1990': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/eb/The_Death_of_the_Incredible_Hulk.jpg/revision/latest/scale-to-width-down/357?cb=20110430233303',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/eb/The_Death_of_the_Incredible_Hulk.jpg/revision/latest/scale-to-width-down/357?cb=20110430233303',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'doctor-strange-2007': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6d/Doctor_Strange%2C_The_Sorcerer_Supreme.jpg/revision/latest?cb=20090530024802',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6d/Doctor_Strange%2C_The_Sorcerer_Supreme.jpg/revision/latest?cb=20090530024802',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'doctor-strange-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/23/Doctor_Strange_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20160724013508',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/23/Doctor_Strange_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20160724013508',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'doctor-strange-multiverse-of-madness-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Doctor_Strange_in_the_Multiverse_of_Madness_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20220406140911',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c8/Doctor_Strange_in_the_Multiverse_of_Madness_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20220406140911',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'dr-strange-1978': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c9/Doctor_Strange_Vol_8_1_Magic_Connecting_Variant_Textless.jpg/revision/latest/scale-to-width-down/325?cb=20251031062124',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c9/Doctor_Strange_Vol_8_1_Magic_Connecting_Variant_Textless.jpg/revision/latest/scale-to-width-down/325?cb=20251031062124',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
   'echo-2024': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/v1Qc8n58KqS0j7b1c3n8x2Wq8c.jpg',
-    themeColor: 'from-red-950 via-zinc-950 to-black',
-    accentColor: '#ef4444',
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Echo_%28TV_series%29_Poster_001.jpg/revision/latest/scale-to-width-down/400?cb=20231103171035',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/68/Echo_%28TV_series%29_Poster_001.jpg/revision/latest/scale-to-width-down/400?cb=20231103171035',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'agatha-all-along-2024': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/pA2f1b4pU8jWq7y6z0h0f6v7r8k.jpg',
-    themeColor: 'from-purple-950 via-zinc-950 to-black',
-    accentColor: '#9333ea',
+  'elektra-2005': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ec/Devil%27s_Reign_Vol_1_5_Lim_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20221110132933',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ec/Devil%27s_Reign_Vol_1_5_Lim_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20221110132933',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'daredevil-born-again-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/x5Z7kK9v2m0N1p7q3R8s1v5b3.jpg',
-    themeColor: 'from-red-950 via-zinc-950 to-black',
-    accentColor: '#dc2626',
+  'eternals-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2e/Eternals_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210819100513',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2e/Eternals_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210819100513',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'eyes-of-wakanda-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/fd/Eyes_of_Wakanda_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20250804164159',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/fd/Eyes_of_Wakanda_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20250804164159',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'falcon-winter-soldier-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1e/The_Falcon_and_The_Winter_Soldier_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210208001816',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1e/The_Falcon_and_The_Winter_Soldier_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210208001816',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-1967-s1': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-1978-s1': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-2005': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-first-steps-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/24/The_Fantastic_Four_First_Steps_poster_011.jpg/revision/latest/scale-to-width-down/337?cb=20250715131043',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/24/The_Fantastic_Four_First_Steps_poster_011.jpg/revision/latest/scale-to-width-down/337?cb=20250715131043',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-silver-surfer-2007': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Fantastic_Four_Rise_of_the_Silver_Surfer_%28film%29_poster_1.jpg/revision/latest/scale-to-width-down/338?cb=20200131093604',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Fantastic_Four_Rise_of_the_Silver_Surfer_%28film%29_poster_1.jpg/revision/latest/scale-to-width-down/338?cb=20200131093604',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-tas-s1-1994': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-tas-s2-1995': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-unreleased-1994': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7f/Fantastic_Four_Vol_7_25_Capullo_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20240914225712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fantastic-four-wgh-2006': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/38/Fantastic_Four_World%27s_Greatest_Heroes_DVD_Vol_1.jpg/revision/latest?cb=20120915012637',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/38/Fantastic_Four_World%27s_Greatest_Heroes_DVD_Vol_1.jpg/revision/latest?cb=20120915012637',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'fred-barney-meet-the-thing-1979': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b6/Benjamin_Grimm_%28Earth-700974%29_from_The_Thing_%28animated_series%29_Promo_0001.jpg/revision/latest?cb=20120713233118',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b6/Benjamin_Grimm_%28Earth-700974%29_from_The_Thing_%28animated_series%29_Promo_0001.jpg/revision/latest?cb=20120713233118',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'friendly-neighborhood-spider-man-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d8/Your_Friendly_Neighborhood_Spider-Man_%28TV_Series%29_Season_2_poster.jpg/revision/latest/scale-to-width-down/375?cb=20261008205752',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d8/Your_Friendly_Neighborhood_Spider-Man_%28TV_Series%29_Season_2_poster.jpg/revision/latest/scale-to-width-down/375?cb=20261008205752',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'friendly-neighborhood-spider-man-s2-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d8/Your_Friendly_Neighborhood_Spider-Man_%28TV_Series%29_Season_2_poster.jpg/revision/latest/scale-to-width-down/375?cb=20261008205752',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d8/Your_Friendly_Neighborhood_Spider-Man_%28TV_Series%29_Season_2_poster.jpg/revision/latest/scale-to-width-down/375?cb=20261008205752',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'generation-x-1996': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1e/All-New_X-Men_Vol_1_6_X-Men_50th_Anniversary_Variant_Textless.jpg/revision/latest/scale-to-width-down/327?cb=20130103030927',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1e/All-New_X-Men_Vol_1_6_X-Men_50th_Anniversary_Variant_Textless.jpg/revision/latest/scale-to-width-down/327?cb=20130103030927',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ghost-rider-2007': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Ghost_Rider_Vol_10_11_Mobili_Variant_Textless.jpg/revision/latest/scale-to-width-down/331?cb=20240806004855',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Ghost_Rider_Vol_10_11_Mobili_Variant_Textless.jpg/revision/latest/scale-to-width-down/331?cb=20240806004855',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ghost-rider-2028': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Ghost_Rider_Vol_10_11_Mobili_Variant_Textless.jpg/revision/latest/scale-to-width-down/331?cb=20240806004855',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Ghost_Rider_Vol_10_11_Mobili_Variant_Textless.jpg/revision/latest/scale-to-width-down/331?cb=20240806004855',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ghost-rider-spirit-of-vengeance-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/00/Spirits_of_Vengeance_%28Earth-616%29_from_Ghost_Riders_Heaven%27s_on_Fire_Vol_1_6_001.jpg/revision/latest/scale-to-width-down/500?cb=20151123143238',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/00/Spirits_of_Vengeance_%28Earth-616%29_from_Ghost_Riders_Heaven%27s_on_Fire_Vol_1_6_001.jpg/revision/latest/scale-to-width-down/500?cb=20151123143238',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'guardians-galaxy-animated-s1-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Marvel%27s_Guardians_of_the_Galaxy_%28animated_series%29_poster_005.jpg/revision/latest/scale-to-width-down/296?cb=20170715014425',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Marvel%27s_Guardians_of_the_Galaxy_%28animated_series%29_poster_005.jpg/revision/latest/scale-to-width-down/296?cb=20170715014425',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'guardians-galaxy-animated-s2-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Marvel%27s_Guardians_of_the_Galaxy_%28animated_series%29_poster_005.jpg/revision/latest/scale-to-width-down/296?cb=20170715014425',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Marvel%27s_Guardians_of_the_Galaxy_%28animated_series%29_poster_005.jpg/revision/latest/scale-to-width-down/296?cb=20170715014425',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'guardians-holiday-special-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d7/The_Guardians_of_the_Galaxy_Holiday_Special_poster_002.jpg/revision/latest/scale-to-width-down/400?cb=20221125173222',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d7/The_Guardians_of_the_Galaxy_Holiday_Special_poster_002.jpg/revision/latest/scale-to-width-down/400?cb=20221125173222',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'guardians-of-the-galaxy-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/43/Guardians_of_the_Galaxy_Annual_Vol_5_1_Textless.jpg/revision/latest/scale-to-width-down/373?cb=20231202145445',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/43/Guardians_of_the_Galaxy_Annual_Vol_5_1_Textless.jpg/revision/latest/scale-to-width-down/373?cb=20231202145445',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'guardians-of-the-galaxy-vol-2-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/Guardians_of_the_Galaxy_Vol._2_%28film%29_poster_004.jpg/revision/latest/scale-to-width-down/337?cb=20170301052056',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/Guardians_of_the_Galaxy_Vol._2_%28film%29_poster_004.jpg/revision/latest/scale-to-width-down/337?cb=20170301052056',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'guardians-of-the-galaxy-vol-3-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d9/Guardians_of_the_Galaxy_Vol._3_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/400?cb=20230215194503',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d9/Guardians_of_the_Galaxy_Vol._3_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/400?cb=20230215194503',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hawkeye-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b7/Hawkeye_%28TV_series%29_poster_015.jpg/revision/latest/scale-to-width-down/333?cb=20211221164317',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b7/Hawkeye_%28TV_series%29_poster_015.jpg/revision/latest/scale-to-width-down/333?cb=20211221164317',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'helstrom-s1-2020': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/43/Helstrom_%28TV_series%29_poster_001.jpg/revision/latest/scale-to-width-down/337?cb=20200923201055',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/43/Helstrom_%28TV_series%29_poster_001.jpg/revision/latest/scale-to-width-down/337?cb=20200923201055',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hit-monkey-s1-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Hit-Monkey_%28Earth-616%29_from_Deadpool_Vol_3_61_0002.jpg/revision/latest/scale-to-width-down/329?cb=20141018182308',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Hit-Monkey_%28Earth-616%29_from_Deadpool_Vol_3_61_0002.jpg/revision/latest/scale-to-width-down/329?cb=20141018182308',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hit-monkey-s2-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Hit-Monkey_%28Earth-616%29_from_Deadpool_Vol_3_61_0002.jpg/revision/latest/scale-to-width-down/329?cb=20141018182308',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Hit-Monkey_%28Earth-616%29_from_Deadpool_Vol_3_61_0002.jpg/revision/latest/scale-to-width-down/329?cb=20141018182308',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'howard-the-duck-1986': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Guardians_of_the_Galaxy_Vol_8_6_Momoko_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20241104104417',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Guardians_of_the_Galaxy_Vol_8_6_Momoko_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20241104104417',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hulk-2003': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b0/Totally_Awesome_Hulk_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20150908201942',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b0/Totally_Awesome_Hulk_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20150908201942',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hulk-agents-of-smash-s1-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c7/Marvel_Universe_Hulk_and_the_Agents_of_S.M.A.S.H._TPB_Vol_1_1.jpg/revision/latest?cb=20250109093819',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c7/Marvel_Universe_Hulk_and_the_Agents_of_S.M.A.S.H._TPB_Vol_1_1.jpg/revision/latest?cb=20250109093819',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hulk-agents-of-smash-s2-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c7/Marvel_Universe_Hulk_and_the_Agents_of_S.M.A.S.H._TPB_Vol_1_1.jpg/revision/latest?cb=20250109093819',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c7/Marvel_Universe_Hulk_and_the_Agents_of_S.M.A.S.H._TPB_Vol_1_1.jpg/revision/latest?cb=20250109093819',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hulk-vs-2009': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c4/Hulk_Vs._Wolverine_%28film%29_poster.jpg/revision/latest/scale-to-width-down/337?cb=20241024224634',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c4/Hulk_Vs._Wolverine_%28film%29_poster.jpg/revision/latest/scale-to-width-down/337?cb=20241024224634',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'hulk-where-monsters-dwell-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/80/Where_Monsters_Dwell_Vol_1_1.jpg/revision/latest/scale-to-width-down/334?cb=20171221160132',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/80/Where_Monsters_Dwell_Vol_1_1.jpg/revision/latest/scale-to-width-down/334?cb=20171221160132',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'i-am-groot-s1-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/78/I_Am_Groot_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20231016135346',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/78/I_Am_Groot_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20231016135346',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'i-am-groot-s2-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/78/I_Am_Groot_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20231016135346',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/78/I_Am_Groot_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20231016135346',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-animated-1982': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-animated-s1-1996': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-animated-s2-1997': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0e/Hulk_-_She-Hulk.jpg/revision/latest?cb=20260109172658',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0e/Hulk_-_She-Hulk.jpg/revision/latest?cb=20260109172658',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-death-in-family-1977': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/eb/The_Death_of_the_Incredible_Hulk.jpg/revision/latest/scale-to-width-down/357?cb=20110430233303',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/eb/The_Death_of_the_Incredible_Hulk.jpg/revision/latest/scale-to-width-down/357?cb=20110430233303',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-pilot-1-1977': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-returns-1988': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/The_Incredible_Hulk_Returns.jpg/revision/latest?cb=20110430232603',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/The_Incredible_Hulk_Returns.jpg/revision/latest?cb=20110430232603',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-s1-1978': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-s2-1978': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-s3-1979': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-s4-1980': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'incredible-hulk-s5-1981': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'inhumans-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/51/Inhuman_Annual_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20150412035905',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/51/Inhuman_Annual_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20150412035905',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'invincible-iron-man-2007': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Invincible_Iron_Man_Vol_2_518_Textless.jpg/revision/latest/scale-to-width-down/328?cb=20200612014506',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Invincible_Iron_Man_Vol_2_518_Textless.jpg/revision/latest/scale-to-width-down/328?cb=20200612014506',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-fist-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Marvel%27s_Iron_Fist_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20180817022708',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Marvel%27s_Iron_Fist_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20180817022708',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-fist-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Marvel%27s_Iron_Fist_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20180817022708',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/29/Marvel%27s_Iron_Fist_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20180817022708',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-2-2010': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ed/Iron_Man_2_poster.jpg/revision/latest/scale-to-width-down/339?cb=20190309193419',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ed/Iron_Man_2_poster.jpg/revision/latest/scale-to-width-down/339?cb=20190309193419',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-2008': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/20/Ironmanposter.jpg/revision/latest/scale-to-width-down/338?cb=20080502172105',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/20/Ironmanposter.jpg/revision/latest/scale-to-width-down/338?cb=20080502172105',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-3-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e9/Iron_Man_3_%28film%29_poster_006.jpg/revision/latest/scale-to-width-down/337?cb=20130228172348',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e9/Iron_Man_3_%28film%29_poster_006.jpg/revision/latest/scale-to-width-down/337?cb=20130228172348',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-armored-adventures-s1-2009': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4b/Anthony_Stark_%28Earth-904913%29_from_Iron_Man_Armored_Adventures_Promo_0001.jpg/revision/latest/scale-to-width-down/500?cb=20130713152211',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4b/Anthony_Stark_%28Earth-904913%29_from_Iron_Man_Armored_Adventures_Promo_0001.jpg/revision/latest/scale-to-width-down/500?cb=20130713152211',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-armored-adventures-s2-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4b/Anthony_Stark_%28Earth-904913%29_from_Iron_Man_Armored_Adventures_Promo_0001.jpg/revision/latest/scale-to-width-down/500?cb=20130713152211',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4b/Anthony_Stark_%28Earth-904913%29_from_Iron_Man_Armored_Adventures_Promo_0001.jpg/revision/latest/scale-to-width-down/500?cb=20130713152211',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-cap-heroes-united-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a6/Iron_Man_and_Captain_America_Heroes_United.jpg/revision/latest?cb=20140731130808',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a6/Iron_Man_and_Captain_America_Heroes_United.jpg/revision/latest?cb=20140731130808',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-hulk-heroes-united-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/db/Iron_Man_and_Hulk_Heroes_United.jpg/revision/latest/scale-to-width-down/398?cb=20130301002811',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/db/Iron_Man_and_Hulk_Heroes_United.jpg/revision/latest/scale-to-width-down/398?cb=20130301002811',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-rise-technovore-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Iron_Man_Rise_of_Technovore_poster_001.jpg/revision/latest/scale-to-width-down/333?cb=20180828160829',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Iron_Man_Rise_of_Technovore_poster_001.jpg/revision/latest/scale-to-width-down/333?cb=20180828160829',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-tas-s1-1994': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Invincible_Iron_Man_Vol_2_518_Textless.jpg/revision/latest/scale-to-width-down/328?cb=20200612014506',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Invincible_Iron_Man_Vol_2_518_Textless.jpg/revision/latest/scale-to-width-down/328?cb=20200612014506',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'iron-man-tas-s2-1995': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Invincible_Iron_Man_Vol_2_518_Textless.jpg/revision/latest/scale-to-width-down/328?cb=20200612014506',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Invincible_Iron_Man_Vol_2_518_Textless.jpg/revision/latest/scale-to-width-down/328?cb=20200612014506',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
   'ironheart-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/s8w3n2j8c1v9r5k7m3x0q1z8b2.jpg',
-    themeColor: 'from-pink-950 via-amber-950 to-black',
-    accentColor: '#f43f5e',
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f7/Ironheart_Armor_Model_2_from_Invincible_Iron_Man_Vol_4_8_001.jpg/revision/latest/scale-to-width-down/326?cb=20170817060214',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f7/Ironheart_Armor_Model_2_from_Invincible_Iron_Man_Vol_4_8_001.jpg/revision/latest/scale-to-width-down/326?cb=20170817060214',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'jessica-jones-s1-2015': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a1/Jessica_Jones_%28Earth-2099%29_from_The_Variants_Vol_1_4_001.jpg/revision/latest?cb=20221221214642',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a1/Jessica_Jones_%28Earth-2099%29_from_The_Variants_Vol_1_4_001.jpg/revision/latest?cb=20221221214642',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'jessica-jones-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a1/Jessica_Jones_%28Earth-2099%29_from_The_Variants_Vol_1_4_001.jpg/revision/latest?cb=20221221214642',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a1/Jessica_Jones_%28Earth-2099%29_from_The_Variants_Vol_1_4_001.jpg/revision/latest?cb=20221221214642',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'jessica-jones-s3-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a1/Jessica_Jones_%28Earth-2099%29_from_The_Variants_Vol_1_4_001.jpg/revision/latest?cb=20221221214642',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a1/Jessica_Jones_%28Earth-2099%29_from_The_Variants_Vol_1_4_001.jpg/revision/latest?cb=20221221214642',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'kraven-the-hunter-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Amazing_Spider-Man_Vol_5_19_ComicXposure_Exclusive_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20210222060432',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Amazing_Spider-Man_Vol_5_19_ComicXposure_Exclusive_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20210222060432',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'legion-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Legion_%28TV_series%29_poster_005.jpg/revision/latest/scale-to-width-down/333?cb=20260818123704',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Legion_%28TV_series%29_poster_005.jpg/revision/latest/scale-to-width-down/333?cb=20260818123704',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'legion-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Legion_%28TV_series%29_poster_005.jpg/revision/latest/scale-to-width-down/333?cb=20260818123704',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Legion_%28TV_series%29_poster_005.jpg/revision/latest/scale-to-width-down/333?cb=20260818123704',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'legion-s3-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Legion_%28TV_series%29_poster_005.jpg/revision/latest/scale-to-width-down/333?cb=20260818123704',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Legion_%28TV_series%29_poster_005.jpg/revision/latest/scale-to-width-down/333?cb=20260818123704',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'logan-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3d/Logan_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/338?cb=20170127090323',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3d/Logan_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/338?cb=20170127090323',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'loki-s1-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/cb/Loki_%28TV_series%29_poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20230731220137',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/cb/Loki_%28TV_series%29_poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20230731220137',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'loki-s2-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/cb/Loki_%28TV_series%29_poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20230731220137',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/cb/Loki_%28TV_series%29_poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20230731220137',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'luke-cage-s1-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/45/Marvel%27s_Luke_Cage_poster_009.jpg/revision/latest/scale-to-width-down/337?cb=20180507141722',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/45/Marvel%27s_Luke_Cage_poster_009.jpg/revision/latest/scale-to-width-down/337?cb=20180507141722',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'luke-cage-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/45/Marvel%27s_Luke_Cage_poster_009.jpg/revision/latest/scale-to-width-down/337?cb=20180507141722',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/45/Marvel%27s_Luke_Cage_poster_009.jpg/revision/latest/scale-to-width-down/337?cb=20180507141722',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'madame-web-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/cd/Cassandra_Webb_%28Earth-92131%29_from_Spider-Man_%281994_animated_series%29_Season_3_3_001.png/revision/latest/scale-to-width-down/500?cb=20240124191225',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/cd/Cassandra_Webb_%28Earth-92131%29_from_Spider-Man_%281994_animated_series%29_Season_3_3_001.png/revision/latest/scale-to-width-down/500?cb=20240124191225',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'man-thing-2005': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/69/Theodore_Sallis_%28Earth-1610%29_from_Official_Handbook_of_the_Ultimate_Marvel_Universe_Ultimate_Spider-Man_-_Ultimate_Fantastic_Four_2005_Vol_1_1_0001.png/revision/latest/scale-to-width-down/241?cb=20230425221126',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/69/Theodore_Sallis_%28Earth-1610%29_from_Official_Handbook_of_the_Ultimate_Marvel_Universe_Ultimate_Spider-Man_-_Ultimate_Fantastic_Four_2005_Vol_1_1_0001.png/revision/latest/scale-to-width-down/241?cb=20230425221126',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-anime-blade-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/19/Eric_Brooks_%28Earth-101001%29_and_Sakomizu_%28Earth-101001%29_from_Blade_%28animated_series%29_Season_1_2.jpg/revision/latest/scale-to-width-down/500?cb=20220107030636',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/19/Eric_Brooks_%28Earth-101001%29_and_Sakomizu_%28Earth-101001%29_from_Blade_%28animated_series%29_Season_1_2.jpg/revision/latest/scale-to-width-down/500?cb=20220107030636',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-anime-iron-man-2010': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c5/Iron_Man_The_Animated_Series_002.jpg/revision/latest/scale-to-width-down/359?cb=20250930174730',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c5/Iron_Man_The_Animated_Series_002.jpg/revision/latest/scale-to-width-down/359?cb=20250930174730',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-anime-wolverine-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/87/Wolverine_%28animated_series%29_Season_1_1_Screenshot.jpg/revision/latest?cb=20130516213647',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/87/Wolverine_%28animated_series%29_Season_1_1_Screenshot.jpg/revision/latest?cb=20130516213647',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-anime-x-men-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/X-Men_%282011_animated_series%29_Season_1_12.jpg/revision/latest/scale-to-width-down/500?cb=20160511195853',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/X-Men_%282011_animated_series%29_Season_1_12.jpg/revision/latest/scale-to-width-down/500?cb=20160511195853',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-spider-man-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-spider-man-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-super-heroes-1966': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/77/Marvel_Superheroes.jpg/revision/latest/scale-to-width-down/306?cb=20211116200203',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/77/Marvel_Superheroes.jpg/revision/latest/scale-to-width-down/306?cb=20211116200203',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-zombies-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f8/Marvel_Zombies_%28animated_series%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20250916183134',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f8/Marvel_Zombies_%28animated_series%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20250916183134',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'marvel-zombies-specials-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f7/Marvel_Zombies_Vol_1_1.jpg/revision/latest/scale-to-width-down/325?cb=20191130201640',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f7/Marvel_Zombies_Vol_1_1.jpg/revision/latest/scale-to-width-down/325?cb=20191130201640',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'modok-s1-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/George_Tarleton_%28Earth-616%29_from_Hulk_Vol_2_28_001.jpg/revision/latest/scale-to-width-down/500?cb=20231201015442',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/George_Tarleton_%28Earth-616%29_from_Hulk_Vol_2_28_001.jpg/revision/latest/scale-to-width-down/500?cb=20231201015442',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'moon-knight-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d8/Moon_Knight_%28TV_series%29_poster_011.jpg/revision/latest/scale-to-width-down/337?cb=20220413110806',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d8/Moon_Knight_%28TV_series%29_poster_011.jpg/revision/latest/scale-to-width-down/337?cb=20220413110806',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'morbius-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6c/Morbius_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20211102194828',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6c/Morbius_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20211102194828',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ms-marvel-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/89/Ms._Marvel_%28TV_series%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20220419151541',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/89/Ms._Marvel_%28TV_series%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20220419151541',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'mutant-x-s1-2001': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b3/Mutant_X_%28Earth-704509%29_from_Mutant_X_%28TV_series%29_Season_1_Promo_001.png/revision/latest/scale-to-width-down/354?cb=20120714001010',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b3/Mutant_X_%28Earth-704509%29_from_Mutant_X_%28TV_series%29_Season_1_Promo_001.png/revision/latest/scale-to-width-down/354?cb=20120714001010',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'mutant-x-s2-2002': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b3/Mutant_X_%28Earth-704509%29_from_Mutant_X_%28TV_series%29_Season_1_Promo_001.png/revision/latest/scale-to-width-down/354?cb=20120714001010',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b3/Mutant_X_%28Earth-704509%29_from_Mutant_X_%28TV_series%29_Season_1_Promo_001.png/revision/latest/scale-to-width-down/354?cb=20120714001010',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'mutant-x-s3-2003': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b3/Mutant_X_%28Earth-704509%29_from_Mutant_X_%28TV_series%29_Season_1_Promo_001.png/revision/latest/scale-to-width-down/354?cb=20120714001010',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b3/Mutant_X_%28Earth-704509%29_from_Mutant_X_%28TV_series%29_Season_1_Promo_001.png/revision/latest/scale-to-width-down/354?cb=20120714001010',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'next-avengers-2008': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/eb/Next-avengers-heroes-of-tomorrow.jpg/revision/latest/scale-to-width-down/402?cb=20091128032136',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/eb/Next-avengers-heroes-of-tomorrow.jpg/revision/latest/scale-to-width-down/402?cb=20091128032136',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'nick-fury-agent-of-shield-1998': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3a/Civil_War_II_Choosing_Sides_Vol_1_1_Shalvey_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20160617065433',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3a/Civil_War_II_Choosing_Sides_Vol_1_1_Shalvey_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20160617065433',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'night-man-s1-1997': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/75/John_Domino_%28Earth-93060%29_from_Night_Man_Vol_2_1_001.jpg/revision/latest/scale-to-width-down/190?cb=20100224035140',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/75/John_Domino_%28Earth-93060%29_from_Night_Man_Vol_2_1_001.jpg/revision/latest/scale-to-width-down/190?cb=20100224035140',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'night-man-s2-1998': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/75/John_Domino_%28Earth-93060%29_from_Night_Man_Vol_2_1_001.jpg/revision/latest/scale-to-width-down/190?cb=20100224035140',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/75/John_Domino_%28Earth-93060%29_from_Night_Man_Vol_2_1_001.jpg/revision/latest/scale-to-width-down/190?cb=20100224035140',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'nova-tba': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/69/Nova_Special_Vol_1_1_Brooks_Variant_Textless.jpg/revision/latest/scale-to-width-down/326?cb=20141230170247',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/69/Nova_Special_Vol_1_1_Brooks_Variant_Textless.jpg/revision/latest/scale-to-width-down/326?cb=20141230170247',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'one-shot-agent-carter-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/14/Marvel_One-Shot_Agent_Carter.jpg/revision/latest/scale-to-width-down/326?cb=20130711221546',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/14/Marvel_One-Shot_Agent_Carter.jpg/revision/latest/scale-to-width-down/326?cb=20130711221546',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'one-shot-all-hail-the-king-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/47/Marvel_One-Shot_All_Hail_the_King_poster.jpg/revision/latest/scale-to-width-down/325?cb=20140224205507',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/47/Marvel_One-Shot_All_Hail_the_King_poster.jpg/revision/latest/scale-to-width-down/325?cb=20140224205507',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'one-shot-consultant-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/Marvel_One-Shot_The_Consultant.jpg/revision/latest/scale-to-width-down/333?cb=20150908225811',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/88/Marvel_One-Shot_The_Consultant.jpg/revision/latest/scale-to-width-down/333?cb=20150908225811',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'one-shot-funny-thing-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/Marvel_One-Shot_A_Funny_Thing_Happened_on_the_Way_to_Thor%27s_Hammer.jpg/revision/latest/scale-to-width-down/334?cb=20150908225813',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/Marvel_One-Shot_A_Funny_Thing_Happened_on_the_Way_to_Thor%27s_Hammer.jpg/revision/latest/scale-to-width-down/334?cb=20150908225813',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'one-shot-item-47-2012': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/Item-47-poster_%28Earth-199999%29.jpg/revision/latest/scale-to-width-down/324?cb=20120715044208',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/Item-47-poster_%28Earth-199999%29.jpg/revision/latest/scale-to-width-down/324?cb=20120715044208',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'peters-todo-list-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/35/Peter_Parker_%28Earth-199999%29_from_Spider-Man_Far_from_Home_003.jpg/revision/latest/scale-to-width-down/500?cb=20240903085520',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/35/Peter_Parker_%28Earth-199999%29_from_Spider-Man_Far_from_Home_003.jpg/revision/latest/scale-to-width-down/500?cb=20240903085520',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'planet-hulk-2010': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/16/Planet_Hulk_%28novel%29.jpg/revision/latest/scale-to-width-down/375?cb=20260515035153',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/16/Planet_Hulk_%28novel%29.jpg/revision/latest/scale-to-width-down/375?cb=20260515035153',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'pryde-of-the-x-men-1989': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0f/Pryde_of_the_X-Men_Home_Video_Cover_0001.jpg/revision/latest/scale-to-width-down/272?cb=20180804203723',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0f/Pryde_of_the_X-Men_Home_Video_Cover_0001.jpg/revision/latest/scale-to-width-down/272?cb=20180804203723',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'punisher-war-zone-2008': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d2/Punisher_War_Zone_%28film%29_Poster_005.jpg/revision/latest/scale-to-width-down/338?cb=20081118024304',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d2/Punisher_War_Zone_%28film%29_Poster_005.jpg/revision/latest/scale-to-width-down/338?cb=20081118024304',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'runaways-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Runaways_%28Earth-616%29_from_Runaways_Vol_5_38_001.jpg/revision/latest/scale-to-width-down/496?cb=20210814221934',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Runaways_%28Earth-616%29_from_Runaways_Vol_5_38_001.jpg/revision/latest/scale-to-width-down/496?cb=20210814221934',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'runaways-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Runaways_%28Earth-616%29_from_Runaways_Vol_5_38_001.jpg/revision/latest/scale-to-width-down/496?cb=20210814221934',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Runaways_%28Earth-616%29_from_Runaways_Vol_5_38_001.jpg/revision/latest/scale-to-width-down/496?cb=20210814221934',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'runaways-s3-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Runaways_%28Earth-616%29_from_Runaways_Vol_5_38_001.jpg/revision/latest/scale-to-width-down/496?cb=20210814221934',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/6e/Runaways_%28Earth-616%29_from_Runaways_Vol_5_38_001.jpg/revision/latest/scale-to-width-down/496?cb=20210814221934',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'secret-invasion-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/47/Secret_Invasion_%28TV_series%29_poster_010.jpg/revision/latest/scale-to-width-down/400?cb=20230607153225',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/47/Secret_Invasion_%28TV_series%29_poster_010.jpg/revision/latest/scale-to-width-down/400?cb=20230607153225',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'shang-chi-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/dd/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210923062359',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/dd/Shang-Chi_and_the_Legend_of_the_Ten_Rings_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210923062359',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'she-hulk-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3b/She-Hulk_Attorney_at_Law_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20220724071526',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3b/She-Hulk_Attorney_at_Law_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20220724071526',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'silver-surfer-1998': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8c/Silver_Surfer_The_Best_Defense_Vol_1_1_Skan_Variant_Textless.jpg/revision/latest/scale-to-width-down/334?cb=20180918172607',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8c/Silver_Surfer_The_Best_Defense_Vol_1_1_Skan_Variant_Textless.jpg/revision/latest/scale-to-width-down/334?cb=20180918172607',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spectacular-spider-man-s1-2008': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Peter_Parker%2C_The_Spectacular_Spider-Man_Vol_1_2.jpg/revision/latest/scale-to-width-down/320?cb=20190223062428',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Peter_Parker%2C_The_Spectacular_Spider-Man_Vol_1_2.jpg/revision/latest/scale-to-width-down/320?cb=20190223062428',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spectacular-spider-man-s2-2009': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Peter_Parker%2C_The_Spectacular_Spider-Man_Vol_1_2.jpg/revision/latest/scale-to-width-down/320?cb=20190223062428',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Peter_Parker%2C_The_Spectacular_Spider-Man_Vol_1_2.jpg/revision/latest/scale-to-width-down/320?cb=20190223062428',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-1967-s1': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3a/Spider-Man_%281967_animated_series%29.jpg/revision/latest/scale-to-width-down/500?cb=20160206170110',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3a/Spider-Man_%281967_animated_series%29.jpg/revision/latest/scale-to-width-down/500?cb=20160206170110',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-1968-s2': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-1969-s3': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-1981-s1': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-2-2004': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/10/Marvel%27s_Spider-Man_2_%28video_game%29_box_art_001.jpg/revision/latest/scale-to-width-down/368?cb=20230608235526',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/10/Marvel%27s_Spider-Man_2_%28video_game%29_box_art_001.jpg/revision/latest/scale-to-width-down/368?cb=20230608235526',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-2002': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-3-2007': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ed/Spider-Man_3_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/333?cb=20260929151928',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ed/Spider-Man_3_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/333?cb=20260929151928',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-4-2026': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/61/Spider-Man_Brand_New_Day_poster_015.jpg/revision/latest/scale-to-width-down/337?cb=20260727010425',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/61/Spider-Man_Brand_New_Day_poster_015.jpg/revision/latest/scale-to-width-down/337?cb=20260727010425',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-across-spider-verse-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3d/Spider-Man_Across_the_Spider-Verse_poster_004.jpg/revision/latest/scale-to-width-down/336?cb=20230601183419',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3d/Spider-Man_Across_the_Spider-Verse_poster_004.jpg/revision/latest/scale-to-width-down/336?cb=20230601183419',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-amazing-friends-s1-1981': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Spider-Man_and_His_Amazing_Friends_logo.jpg/revision/latest/scale-to-width-down/500?cb=20140530010237',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Spider-Man_and_His_Amazing_Friends_logo.jpg/revision/latest/scale-to-width-down/500?cb=20140530010237',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-amazing-friends-s2-1982': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Spider-Man_and_His_Amazing_Friends_logo.jpg/revision/latest/scale-to-width-down/500?cb=20140530010237',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Spider-Man_and_His_Amazing_Friends_logo.jpg/revision/latest/scale-to-width-down/500?cb=20140530010237',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-amazing-friends-s3-1983': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Spider-Man_and_His_Amazing_Friends_logo.jpg/revision/latest/scale-to-width-down/500?cb=20140530010237',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ee/Spider-Man_and_His_Amazing_Friends_logo.jpg/revision/latest/scale-to-width-down/500?cb=20140530010237',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-beyond-the-spider-verse-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Spider-Man_Beyond_the_Spider-Verse_logo_from_Spider-Man_Across_the_Spider-Verse_001.png/revision/latest/scale-to-width-down/500?cb=20230809153807',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/83/Spider-Man_Beyond_the_Spider-Verse_logo_from_Spider-Man_Across_the_Spider-Verse_001.png/revision/latest/scale-to-width-down/500?cb=20230809153807',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-brand-new-day-2026': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3a/Amazing_Spider-Man_Vol_2_546_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20251016112128',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/3a/Amazing_Spider-Man_Vol_2_546_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20251016112128',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-far-from-home-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f8/Spider-Man_Far_From_Home_poster_006.jpg/revision/latest/scale-to-width-down/337?cb=20190522174627',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/f/f8/Spider-Man_Far_From_Home_poster_006.jpg/revision/latest/scale-to-width-down/337?cb=20190522174627',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-homecoming-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4f/Spider-Man_Homecoming_poster_004.jpg/revision/latest/scale-to-width-down/337?cb=20170524085936',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4f/Spider-Man_Homecoming_poster_004.jpg/revision/latest/scale-to-width-down/337?cb=20170524085936',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-into-the-spider-verse-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ef/Spider-Man_Into_the_Spider-Verse_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20181002154623',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/ef/Spider-Man_Into_the_Spider-Verse_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20181002154623',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-no-way-home-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5b/Spider-Man_No_Way_Home_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20211129224243',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5b/Spider-Man_No_Way_Home_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20211129224243',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-tas-s1-1994': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-tas-s2-1995': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-tas-s3-1996': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-tas-s4-1997': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-tas-s5-1997': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/65/Marvel%27s_Spider-Man_%28animated_series%29_poster_003.jpg/revision/latest/scale-to-width-down/353?cb=20200312191115',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-tnas-2003': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/87/MTV_Spider-Man.jpg/revision/latest?cb=20080521160710',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/87/MTV_Spider-Man.jpg/revision/latest?cb=20080521160710',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-toei-1978': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/ae/Amazing_Spider-Man_Vol_5_75_Lee_Virgin_Variant.jpg/revision/latest/scale-to-width-down/328?cb=20220405001421',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-man-unlimited-1999': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/75/Spider-Man_Unlimited_Infinity_Comic_Vol_1_1.jpg/revision/latest/scale-to-width-down/329?cb=20231018150135',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/75/Spider-Man_Unlimited_Infinity_Comic_Vol_1_1.jpg/revision/latest/scale-to-width-down/329?cb=20231018150135',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spider-woman-1979': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4e/Julia_Carpenter_%28Earth-616%29_from_Ms._Marvel_Vol_2_13_0001.png/revision/latest/scale-to-width-down/321?cb=20230701112201',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4e/Julia_Carpenter_%28Earth-616%29_from_Ms._Marvel_Vol_2_13_0001.png/revision/latest/scale-to-width-down/321?cb=20230701112201',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'spidey-super-stories-1974': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e1/Spidey_Super_Stories_Vol_1_1.jpg/revision/latest/scale-to-width-down/329?cb=20100525204644',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e1/Spidey_Super_Stories_Vol_1_1.jpg/revision/latest/scale-to-width-down/329?cb=20100525204644',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'star-lord-project-tba': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Star-Lord_%28Earth-6160%29_from_Ultimates_Vol_3_8_cover_001.jpg/revision/latest?cb=20250108000810',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/Star-Lord_%28Earth-6160%29_from_Ultimates_Vol_3_8_cover_001.jpg/revision/latest?cb=20250108000810',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'super-hero-squad-s1-2009': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Super_Hero_Squad_Show_Season_2_title.jpg/revision/latest/scale-to-width-down/500?cb=20120731040855',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Super_Hero_Squad_Show_Season_2_title.jpg/revision/latest/scale-to-width-down/500?cb=20120731040855',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'super-hero-squad-s2-2010': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Super_Hero_Squad_Show_Season_2_title.jpg/revision/latest/scale-to-width-down/500?cb=20120731040855',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Super_Hero_Squad_Show_Season_2_title.jpg/revision/latest/scale-to-width-down/500?cb=20120731040855',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'team-darryl-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/ca/En_Dwi_Gast_%28Earth-16828%29_and_Darryl_Jacobson_%28Earth-16828%29_from_Team_Darryl_001.png/revision/latest/scale-to-width-down/500?cb=20191002121706',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/ca/En_Dwi_Gast_%28Earth-16828%29_and_Darryl_Jacobson_%28Earth-16828%29_from_Team_Darryl_001.png/revision/latest/scale-to-width-down/500?cb=20191002121706',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'team-thor-part-1-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7c/Thor_Odinson_%28Earth-16828%29_and_Darryl_Jacobson_%28Earth-16828%29_from_Team_Thor_001.png/revision/latest/scale-to-width-down/500?cb=20191002115944',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7c/Thor_Odinson_%28Earth-16828%29_and_Darryl_Jacobson_%28Earth-16828%29_from_Team_Thor_001.png/revision/latest/scale-to-width-down/500?cb=20191002115944',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'team-thor-part-2-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b8/Thor_Odinson_%28Earth-16828%29_and_Darryl_Jacobson_%28Earth-16828%29_from_Team_Thor_Part_2.png/revision/latest/scale-to-width-down/500?cb=20191002121259',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b8/Thor_Odinson_%28Earth-16828%29_and_Darryl_Jacobson_%28Earth-16828%29_from_Team_Thor_Part_2.png/revision/latest/scale-to-width-down/500?cb=20191002121259',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-amazing-spider-man-2-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/53/The_Amazing_Spider-Man_2_%28film%29_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20140324160158',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/53/The_Amazing_Spider-Man_2_%28film%29_poster_005.jpg/revision/latest/scale-to-width-down/337?cb=20140324160158',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-amazing-spider-man-2012': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8a/The_Amazing_Spider-Man_%281977_film%29.jpg/revision/latest/scale-to-width-down/280?cb=20110430212602',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-avengers-2012': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1a/The_Avengers_%28film%29_poster_011.jpg/revision/latest/scale-to-width-down/338?cb=20120229020811',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1a/The_Avengers_%28film%29_poster_011.jpg/revision/latest/scale-to-width-down/338?cb=20120229020811',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-defenders-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/43/Marvel%27s_The_Defenders_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20170802104111',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/43/Marvel%27s_The_Defenders_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20170802104111',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-gifted-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c1/The_Gifted_%28TV_series%29_poster_008.jpg/revision/latest/scale-to-width-down/338?cb=20190205184046',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c1/The_Gifted_%28TV_series%29_poster_008.jpg/revision/latest/scale-to-width-down/338?cb=20190205184046',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-gifted-s2-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c1/The_Gifted_%28TV_series%29_poster_008.jpg/revision/latest/scale-to-width-down/338?cb=20190205184046',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/c/c1/The_Gifted_%28TV_series%29_poster_008.jpg/revision/latest/scale-to-width-down/338?cb=20190205184046',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-incredible-hulk-2008': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/07/The_Incredible_Hulk_%281977_film%29_Poster_002.jpg/revision/latest?cb=20071103075751',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-marvels-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/62/The_Marvels_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20230721130057',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/62/The_Marvels_%28film%29_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20230721130057',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-new-mutants-2020': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2f/The_New_Mutants_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20200514002913',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2f/The_New_Mutants_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/337?cb=20200514002913',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-punisher-1989': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-punisher-2004': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-punisher-s1-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-punisher-s2-2019': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel%27s_The_Punisher_poster_008.jpg/revision/latest/scale-to-width-down/337?cb=20190109204056',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'the-wolverine-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Champions_Vol_2_7_ResurrXion_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20170915011952',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/97/Champions_Vol_2_7_ResurrXion_Variant_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20170915011952',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'thor-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9c/Thor_Theatrical_Poster.jpg/revision/latest/scale-to-width-down/337?cb=20201016131607',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9c/Thor_Theatrical_Poster.jpg/revision/latest/scale-to-width-down/337?cb=20201016131607',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'thor-love-and-thunder-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/06/Thor_Love_and_Thunder_poster_003.jpg/revision/latest/scale-to-width-down/400?cb=20220524044313',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/06/Thor_Love_and_Thunder_poster_003.jpg/revision/latest/scale-to-width-down/400?cb=20220524044313',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'thor-ragnarok-2017': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/30/Thor_Ragnarok_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20170723014825',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/30/Thor_Ragnarok_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20170723014825',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'thor-tales-of-asgard-2011': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1b/Thor_Tales_of_Asgard_film_cover.jpg/revision/latest/scale-to-width-down/397?cb=20110407000853',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/1/1b/Thor_Tales_of_Asgard_film_cover.jpg/revision/latest/scale-to-width-down/397?cb=20110407000853',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'thor-the-dark-world-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e5/Thor_The_Dark_World_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210813193308',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e5/Thor_The_Dark_World_poster_002.jpg/revision/latest/scale-to-width-down/337?cb=20210813193308',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'thunderbolts-2025': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a9/Thunderbolts%2A_poster_015.jpg/revision/latest/scale-to-width-down/337?cb=20250417125617',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a9/Thunderbolts%2A_poster_015.jpg/revision/latest/scale-to-width-down/337?cb=20250417125617',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'trial-of-the-incredible-hulk-1989': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9d/The_Trial_of_the_Incredible_Hulk.jpg/revision/latest/scale-to-width-down/333?cb=20260722023602',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9d/The_Trial_of_the_Incredible_Hulk.jpg/revision/latest/scale-to-width-down/333?cb=20260722023602',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultimate-avengers-2-2006': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d0/Ultimate_Avengers_2_Rise_of_the_Panther_poster_001.jpg/revision/latest/scale-to-width-down/350?cb=20180828161359',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d0/Ultimate_Avengers_2_Rise_of_the_Panther_poster_001.jpg/revision/latest/scale-to-width-down/350?cb=20180828161359',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultimate-avengers-2006': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b8/Ultimate_Avengers_The_Movie_poster_001.jpg/revision/latest/scale-to-width-down/353?cb=20180828161553',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b8/Ultimate_Avengers_The_Movie_poster_001.jpg/revision/latest/scale-to-width-down/353?cb=20180828161553',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultimate-spider-man-s1-2012': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e2/Ultimate_Spider-Man_Omnibus_Vol_1_1.jpg/revision/latest?cb=20230411093537',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e2/Ultimate_Spider-Man_Omnibus_Vol_1_1.jpg/revision/latest?cb=20230411093537',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultimate-spider-man-s2-2013': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e2/Ultimate_Spider-Man_Omnibus_Vol_1_1.jpg/revision/latest?cb=20230411093537',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/e/e2/Ultimate_Spider-Man_Omnibus_Vol_1_1.jpg/revision/latest?cb=20230411093537',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultimate-spider-man-s3-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel_Universe_Ultimate_Spider-Man_Web_Warriors_-_Contest_of_Champions_TPB_Vol_1_1.jpg/revision/latest/scale-to-width-down/325?cb=20250611135712',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/d/d3/Marvel_Universe_Ultimate_Spider-Man_Web_Warriors_-_Contest_of_Champions_TPB_Vol_1_1.jpg/revision/latest/scale-to-width-down/325?cb=20250611135712',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultimate-spider-man-s4-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/Marvel_Universe_Ultimate_Spider-Man_vs._the_Sinister_Six_TPB_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20250611152433',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/94/Marvel_Universe_Ultimate_Spider-Man_vs._the_Sinister_Six_TPB_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20250611152433',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'ultraforce-s1-1995': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b4/UltraForce_%28Earth-32659%29_from_UltraForce_Vol_2_%E2%88%9E_001.jpg/revision/latest/scale-to-width-down/321?cb=20110726014212',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/b4/UltraForce_%28Earth-32659%29_from_UltraForce_Vol_2_%E2%88%9E_001.jpg/revision/latest/scale-to-width-down/321?cb=20110726014212',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'untitled-wakanda-okoye-series-tba': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/87/Black_Panther_and_the_Agents_of_Wakanda_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20220508125835',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/87/Black_Panther_and_the_Agents_of_Wakanda_Vol_1_1_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20220508125835',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'untitled-x-men-movie-2028': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7c/X-Men_%282028_film%29_logo_001.jpg/revision/latest/scale-to-width-down/500?cb=20260909132907',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/7/7c/X-Men_%282028_film%29_logo_001.jpg/revision/latest/scale-to-width-down/500?cb=20260909132907',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'venom-2018': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4a/Venom_Vol_4_11_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20181122070225',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/4a/Venom_Vol_4_11_Textless.jpg/revision/latest/scale-to-width-down/329?cb=20181122070225',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'venom-carnage-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Venom_Let_There_Be_Carnage_poster_004.jpg/revision/latest/scale-to-width-down/386?cb=20210831150457',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2d/Venom_Let_There_Be_Carnage_poster_004.jpg/revision/latest/scale-to-width-down/386?cb=20210831150457',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'venom-last-dance-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/be/Venom_The_Last_Dance_poster_002.jpg/revision/latest/scale-to-width-down/333?cb=20241007144947',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/b/be/Venom_The_Last_Dance_poster_002.jpg/revision/latest/scale-to-width-down/333?cb=20241007144947',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'vision-quest-2026': {
+    posterUrl: '/assets/visionquest_featured.jpg',
+    backdropUrl: '/assets/visionquest_featured.jpg',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'visionquest-2026': {
+    posterUrl: '/assets/visionquest_featured.jpg',
+    backdropUrl: '/assets/visionquest_featured.jpg',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'wandavision-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/48/WandaVision_poster_022.jpg/revision/latest/scale-to-width-down/333?cb=20210201163054',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/4/48/WandaVision_poster_022.jpg/revision/latest/scale-to-width-down/333?cb=20210201163054',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'werewolf-by-night-2022': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/32/Marvel_Masterworks_Werewolf_by_Night_Vol_1_1.jpg/revision/latest/scale-to-width-down/349?cb=20240122152707',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/32/Marvel_Masterworks_Werewolf_by_Night_Vol_1_1.jpg/revision/latest/scale-to-width-down/349?cb=20240122152707',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'what-if-s1-2021': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/39/What_If%3F_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20171226050241',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/39/What_If%3F_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20171226050241',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'what-if-s2-2023': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/39/What_If%3F_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20171226050241',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/39/What_If%3F_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20171226050241',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'what-if-s3-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/39/What_If%3F_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20171226050241',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/3/39/What_If%3F_Vol_1_2.jpg/revision/latest/scale-to-width-down/325?cb=20171226050241',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'wolverine-and-x-men-2008': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/05/Wolverine_%26_the_X-Men_Vol_1_1.jpg/revision/latest/scale-to-width-down/324?cb=20111026195754',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/05/Wolverine_%26_the_X-Men_Vol_1_1.jpg/revision/latest/scale-to-width-down/324?cb=20111026195754',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
   'wonder-man-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/m2n5b8v3x1c9q8z7k0p2y4r6t1.jpg',
-    themeColor: 'from-red-950 via-purple-950 to-black',
-    accentColor: '#ef4444',
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a8/Wonder_Man_Vol_4_1_Besch_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20260407030016',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a8/Wonder_Man_Vol_4_1_Besch_Virgin_Variant.jpg/revision/latest/scale-to-width-down/325?cb=20260407030016',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
-  'your-friendly-neighborhood-spider-man-2025': {
-    posterUrl: 'https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
-    themeColor: 'from-blue-950 via-red-950 to-black',
-    accentColor: '#38bdf8',
+  'x-men-2000': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0a/X-Men_%28film%29_2000.jpg/revision/latest/scale-to-width-down/338?cb=20200731143719',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/0/0a/X-Men_%28film%29_2000.jpg/revision/latest/scale-to-width-down/338?cb=20200731143719',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-97-s1-2024': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/X-Men_%2797_Poster_005.jpg/revision/latest/scale-to-width-down/396?cb=20260812174616',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/X-Men_%2797_Poster_005.jpg/revision/latest/scale-to-width-down/396?cb=20260812174616',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-97-s2-2026': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/X-Men_%2797_Poster_005.jpg/revision/latest/scale-to-width-down/396?cb=20260812174616',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/X-Men_%2797_Poster_005.jpg/revision/latest/scale-to-width-down/396?cb=20260812174616',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-97-s3-2027': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/X-Men_%2797_Poster_005.jpg/revision/latest/scale-to-width-down/396?cb=20260812174616',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/21/X-Men_%2797_Poster_005.jpg/revision/latest/scale-to-width-down/396?cb=20260812174616',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-apocalypse-2016': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9c/X-Men_Apocalypse_Poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20261011220217',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/9c/X-Men_Apocalypse_Poster_017.jpg/revision/latest/scale-to-width-down/337?cb=20261011220217',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-days-of-future-past-2014': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5f/X-Men_Days_of_Future_Past_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/338?cb=20140324155123',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/5/5f/X-Men_Days_of_Future_Past_%28film%29_poster_003.jpg/revision/latest/scale-to-width-down/338?cb=20140324155123',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-evolution-s1-2000': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-evolution-s2-2001': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-evolution-s3-2002': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-evolution-s4-2003': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/8/8b/X-Men_Evolution_logo_001.jpg/revision/latest?cb=20200924064248',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-origins-wolverine-2009': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a5/X-MenOriginsWolverineMoviePoster.jpg/revision/latest?cb=20110720142028',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a5/X-MenOriginsWolverineMoviePoster.jpg/revision/latest?cb=20110720142028',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-tas-s1-1992': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-tas-s2-1993': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-tas-s3-1994': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-tas-s4-1995': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-tas-s5-1997': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/a/a4/X-Men-_The_Animated_Series.jpg/revision/latest?cb=20080403145905',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x-men-the-last-stand-2006': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/67/X-Men_The_Last_Stand_novel.jpg/revision/latest/scale-to-width-down/304?cb=20210304210946',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/6/67/X-Men_The_Last_Stand_novel.jpg/revision/latest/scale-to-width-down/304?cb=20210304210946',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'x2-united-2003': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2e/X2PosterMovie.jpg/revision/latest/scale-to-width-down/338?cb=20251218182949',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/2/2e/X2PosterMovie.jpg/revision/latest/scale-to-width-down/338?cb=20251218182949',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
+  },
+  'zodiac-2028': {
+    posterUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/96/Zodiac_%28Earth-730784%29_from_United_They_Stand_Season_1_13_0001.jpg/revision/latest?cb=20190617231222',
+    backdropUrl: 'https://static.wikia.nocookie.net/marveldatabase/images/9/96/Zodiac_%28Earth-730784%29_from_United_They_Stand_Season_1_13_0001.jpg/revision/latest?cb=20190617231222',
+    themeColor: 'from-zinc-950 via-slate-950 to-black',
+    accentColor: '#ec4899',
   },
 };
 
-// Character thematic color & gradient mapping generator for any title
 export function getPosterInfo(id: string, heroCharacter: string, titleName: string, phase: string): PosterData {
   if (MARVEL_POSTER_MAP[id]) {
     return MARVEL_POSTER_MAP[id];
   }
 
-  // Deduce high-style visual theme based on hero/title
-  const heroLower = (heroCharacter + ' ' + titleName).toLowerCase();
+  const heroLower = (heroCharacter + " " + titleName).toLowerCase();
+  let themeColor = "from-zinc-900 via-zinc-950 to-black";
+  let accentColor = "#ec4899";
 
-  let themeColor = 'from-zinc-900 via-zinc-950 to-black';
-  let accentColor = '#ec4899';
-
-  if (heroLower.includes('spider')) {
-    themeColor = 'from-red-950 via-blue-950 to-black';
-    accentColor = '#ef4444';
-  } else if (heroLower.includes('iron man') || heroLower.includes('stark')) {
-    themeColor = 'from-red-950 via-amber-950 to-black';
-    accentColor = '#f59e0b';
-  } else if (heroLower.includes('thor') || heroLower.includes('loki') || heroLower.includes('asgard')) {
-    themeColor = 'from-sky-950 via-indigo-950 to-black';
-    accentColor = '#38bdf8';
-  } else if (heroLower.includes('captain america') || heroLower.includes('bucky') || heroLower.includes('falcon')) {
-    themeColor = 'from-blue-950 via-slate-950 to-black';
-    accentColor = '#3b82f6';
-  } else if (heroLower.includes('hulk') || heroLower.includes('she-hulk')) {
-    themeColor = 'from-emerald-950 via-green-950 to-black';
-    accentColor = '#10b981';
-  } else if (heroLower.includes('wolverine') || heroLower.includes('x-men') || heroLower.includes('mutant') || heroLower.includes('magneto')) {
-    themeColor = 'from-amber-950 via-blue-950 to-black';
-    accentColor = '#eab308';
-  } else if (heroLower.includes('panther') || heroLower.includes('wakanda')) {
-    themeColor = 'from-purple-950 via-zinc-950 to-black';
-    accentColor = '#a855f7';
-  } else if (heroLower.includes('strange') || heroLower.includes('wanda') || heroLower.includes('witch') || heroLower.includes('agatha')) {
-    themeColor = 'from-red-950 via-purple-950 to-black';
-    accentColor = '#c084fc';
-  } else if (heroLower.includes('fantastic') || heroLower.includes('doom')) {
-    themeColor = 'from-blue-950 via-cyan-950 to-black';
-    accentColor = '#06b6d4';
-  } else if (heroLower.includes('deadpool')) {
-    themeColor = 'from-red-950 via-rose-950 to-black';
-    accentColor = '#e11d48';
-  } else if (phase.includes('Legacy') || phase.includes('Fox') || phase.includes('Sony')) {
-    themeColor = 'from-indigo-950 via-slate-950 to-black';
-    accentColor = '#818cf8';
+  if (heroLower.includes("spider")) {
+    themeColor = "from-red-950 via-blue-950 to-black";
+    accentColor = "#ef4444";
+  } else if (heroLower.includes("iron man") || heroLower.includes("stark")) {
+    themeColor = "from-red-950 via-amber-950 to-black";
+    accentColor = "#f59e0b";
+  } else if (heroLower.includes("thor") || heroLower.includes("loki") || heroLower.includes("asgard")) {
+    themeColor = "from-sky-950 via-indigo-950 to-black";
+    accentColor = "#38bdf8";
+  } else if (heroLower.includes("captain america") || heroLower.includes("bucky") || heroLower.includes("falcon")) {
+    themeColor = "from-blue-950 via-slate-950 to-black";
+    accentColor = "#3b82f6";
+  } else if (heroLower.includes("hulk") || heroLower.includes("she-hulk")) {
+    themeColor = "from-emerald-950 via-green-950 to-black";
+    accentColor = "#10b981";
+  } else if (heroLower.includes("wolverine") || heroLower.includes("x-men") || heroLower.includes("mutant") || heroLower.includes("magneto")) {
+    themeColor = "from-amber-950 via-blue-950 to-black";
+    accentColor = "#eab308";
+  } else if (heroLower.includes("panther") || heroLower.includes("wakanda")) {
+    themeColor = "from-purple-950 via-zinc-950 to-black";
+    accentColor = "#a855f7";
+  } else if (heroLower.includes("strange") || heroLower.includes("wanda") || heroLower.includes("witch") || heroLower.includes("agatha")) {
+    themeColor = "from-red-950 via-purple-950 to-black";
+    accentColor = "#c084fc";
+  } else if (heroLower.includes("fantastic") || heroLower.includes("doom")) {
+    themeColor = "from-blue-950 via-cyan-950 to-black";
+    accentColor = "#06b6d4";
+  } else if (heroLower.includes("deadpool")) {
+    themeColor = "from-red-950 via-rose-950 to-black";
+    accentColor = "#e11d48";
   }
 
-  // Use a fallback gradient poster style
   return {
-    posterUrl: '', // Will trigger cinematic fallback canvas with hero icon & typography
+    posterUrl: "",
     themeColor,
     accentColor,
   };

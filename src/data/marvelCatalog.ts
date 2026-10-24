@@ -20,8 +20,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain America",
     "bannerColor": "#1e3a8a",
     "releaseRank": 1,
-    "chronologicalRank": 2,
-    "phanteressRank": 27
+    "chronologicalRank": 1,
+    "phanteressRank": 27,
+    "parentTitle": "Captain America",
+    "allTitleInfos": "Direct-to-video / limited theatrical feature film released in December 1990.",
+    "storyRank": 1
   },
   {
     "id": "marvel-super-heroes-1966",
@@ -43,7 +46,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#7c2d12",
     "releaseRank": 2,
     "chronologicalRank": 3,
-    "phanteressRank": 28
+    "phanteressRank": 28,
+    "parentTitle": "The Marvel Super Heroes Season 1",
+    "allTitleInfos": "1 Season, 65 episodes (195 segments), originally aired from September 1 to December 1, 1966, featuring daily rotating spotlight segments on Captain America, Hulk, Iron Man, Thor, and Sub-Mariner.",
+    "storyRank": 3
   },
   {
     "id": "spider-man-1967-s1",
@@ -64,8 +70,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man",
     "bannerColor": "#991b1b",
     "releaseRank": 3,
-    "chronologicalRank": 4,
-    "phanteressRank": 29
+    "chronologicalRank": 96,
+    "phanteressRank": 29,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 96
   },
   {
     "id": "fantastic-four-1967-s1",
@@ -87,7 +99,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 4,
     "chronologicalRank": 5,
-    "phanteressRank": 30
+    "phanteressRank": 30,
+    "parentTitle": "Fantastic Four",
+    "seriesId": "fantastic-four-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 5
   },
   {
     "id": "spider-man-1968-s2",
@@ -108,8 +126,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man",
     "bannerColor": "#991b1b",
     "releaseRank": 5,
-    "chronologicalRank": 6,
-    "phanteressRank": 31
+    "chronologicalRank": 104,
+    "phanteressRank": 31,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 104
   },
   {
     "id": "spider-man-1969-s3",
@@ -131,7 +155,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#991b1b",
     "releaseRank": 6,
     "chronologicalRank": 7,
-    "phanteressRank": 32
+    "phanteressRank": 32,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 7
   },
   {
     "id": "spidey-super-stories-1974",
@@ -153,7 +183,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 7,
     "chronologicalRank": 8,
-    "phanteressRank": 33
+    "phanteressRank": 33,
+    "parentTitle": "Spidey Super Stories",
+    "allTitleInfos": "TV Segments featured on *The Electric Company*, premiering in November 1974.",
+    "storyRank": 8
   },
   {
     "id": "amazing-spider-man-pilot-1977",
@@ -174,7 +207,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1d4ed8",
     "releaseRank": 8,
     "chronologicalRank": 9,
-    "phanteressRank": 34
+    "phanteressRank": 34,
+    "parentTitle": "The Amazing Spider-Man",
+    "allTitleInfos": "Live-action theatrical feature film starring Andrew Garfield, released in July 2012.",
+    "storyRank": 9
   },
   {
     "id": "incredible-hulk-pilot-1-1977",
@@ -194,8 +230,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 9,
-    "chronologicalRank": 10,
-    "phanteressRank": 35
+    "chronologicalRank": 4,
+    "phanteressRank": 35,
+    "parentTitle": "The Incredible Hulk",
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "incredible-hulk-death-in-family-1977",
@@ -215,8 +254,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 10,
-    "chronologicalRank": 11,
-    "phanteressRank": 37
+    "chronologicalRank": 4,
+    "phanteressRank": 37,
+    "parentTitle": "The Incredible Hulk: Death in the Family",
+    "storyRank": 4
   },
   {
     "id": "incredible-hulk-s1-1978",
@@ -237,8 +278,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 11,
-    "chronologicalRank": 12,
-    "phanteressRank": 38
+    "chronologicalRank": 4,
+    "phanteressRank": 38,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 1,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "amazing-spider-man-s1-1978",
@@ -260,7 +307,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1e40af",
     "releaseRank": 12,
     "chronologicalRank": 13,
-    "phanteressRank": 39
+    "phanteressRank": 39,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action theatrical feature film starring Andrew Garfield, released in July 2012.",
+    "storyRank": 13
   },
   {
     "id": "spider-man-toei-1978",
@@ -281,8 +334,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man (Takuya)",
     "bannerColor": "#b91c1c",
     "releaseRank": 13,
-    "chronologicalRank": 14,
-    "phanteressRank": 40
+    "chronologicalRank": 32,
+    "phanteressRank": 40,
+    "parentTitle": "Spider-Man",
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 32
   },
   {
     "id": "dr-strange-1978",
@@ -302,8 +358,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Doctor Strange",
     "bannerColor": "#047857",
     "releaseRank": 14,
-    "chronologicalRank": 15,
-    "phanteressRank": 41
+    "chronologicalRank": 34,
+    "phanteressRank": 41,
+    "parentTitle": "Doctor Strange",
+    "allTitleInfos": "MCU Film starring Benedict Cumberbatch, released in November 2016.",
+    "storyRank": 34
   },
   {
     "id": "fantastic-four-1978-s1",
@@ -325,7 +384,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 15,
     "chronologicalRank": 16,
-    "phanteressRank": 42
+    "phanteressRank": 42,
+    "parentTitle": "Fantastic Four",
+    "seriesId": "fantastic-four-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 16
   },
   {
     "id": "incredible-hulk-s2-1978",
@@ -346,8 +411,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 16,
-    "chronologicalRank": 17,
-    "phanteressRank": 44
+    "chronologicalRank": 4,
+    "phanteressRank": 44,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 2,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "captain-america-1979",
@@ -367,8 +438,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain America",
     "bannerColor": "#1d4ed8",
     "releaseRank": 17,
-    "chronologicalRank": 18,
-    "phanteressRank": 45
+    "chronologicalRank": 1,
+    "phanteressRank": 45,
+    "parentTitle": "Captain America",
+    "allTitleInfos": "Direct-to-video / limited theatrical feature film released in December 1990.",
+    "storyRank": 1
   },
   {
     "id": "amazing-spider-man-s2-1979",
@@ -390,7 +464,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1e40af",
     "releaseRank": 18,
     "chronologicalRank": 19,
-    "phanteressRank": 46
+    "phanteressRank": 46,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action theatrical feature film starring Andrew Garfield, released in July 2012.",
+    "storyRank": 19
   },
   {
     "id": "fred-barney-meet-the-thing-1979",
@@ -412,7 +492,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#c2410c",
     "releaseRank": 19,
     "chronologicalRank": 20,
-    "phanteressRank": 47
+    "phanteressRank": 47,
+    "parentTitle": "Fred and Barney Meet the Thing Season 1",
+    "allTitleInfos": "Animated Series Season 1, featuring 26 episodes of *The Thing* segments starting September 1979.",
+    "storyRank": 20
   },
   {
     "id": "incredible-hulk-s3-1979",
@@ -433,8 +516,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 20,
-    "chronologicalRank": 21,
-    "phanteressRank": 48
+    "chronologicalRank": 4,
+    "phanteressRank": 48,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 3,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "spider-woman-1979",
@@ -456,7 +545,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#be123c",
     "releaseRank": 21,
     "chronologicalRank": 22,
-    "phanteressRank": 49
+    "phanteressRank": 49,
+    "parentTitle": "Spider-Woman Season 1",
+    "allTitleInfos": "Animated Series Season 1, 16 episodes, premiered September 1979.",
+    "storyRank": 22
   },
   {
     "id": "captain-america-ii-1979",
@@ -477,7 +569,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1d4ed8",
     "releaseRank": 22,
     "chronologicalRank": 23,
-    "phanteressRank": 51
+    "phanteressRank": 51,
+    "parentTitle": "Captain America II: Death Too Soon",
+    "allTitleInfos": "Live-action TV movie broadcast in November 1979.",
+    "storyRank": 23
   },
   {
     "id": "incredible-hulk-s4-1980",
@@ -498,8 +593,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 23,
-    "chronologicalRank": 24,
-    "phanteressRank": 52
+    "chronologicalRank": 4,
+    "phanteressRank": 52,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 4,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "spider-man-1981-s1",
@@ -520,8 +621,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 24,
-    "chronologicalRank": 25,
-    "phanteressRank": 54
+    "chronologicalRank": 96,
+    "phanteressRank": 54,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 96
   },
   {
     "id": "spider-man-amazing-friends-s1-1981",
@@ -543,7 +650,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 25,
     "chronologicalRank": 26,
-    "phanteressRank": 55
+    "phanteressRank": 55,
+    "parentTitle": "Spider-Man and His Amazing Friends Season 1",
+    "allTitleInfos": "3 Seasons, total of 24 episodes. Season 1 aired in 1981 (12 episodes); Season 2 aired in 1982 (3 episodes); Season 3 aired in 1983 (9 episodes).",
+    "storyRank": 26
   },
   {
     "id": "incredible-hulk-s5-1981",
@@ -564,8 +674,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 26,
-    "chronologicalRank": 27,
-    "phanteressRank": 56
+    "chronologicalRank": 4,
+    "phanteressRank": 56,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 5,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "incredible-hulk-animated-1982",
@@ -586,8 +702,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#16a34a",
     "releaseRank": 27,
-    "chronologicalRank": 28,
-    "phanteressRank": 57
+    "chronologicalRank": 4,
+    "phanteressRank": 57,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 1,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "spider-man-amazing-friends-s2-1982",
@@ -609,7 +731,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 28,
     "chronologicalRank": 29,
-    "phanteressRank": 58
+    "phanteressRank": 58,
+    "parentTitle": "Spider-Man and His Amazing Friends Season 2",
+    "allTitleInfos": "3 Seasons, total of 24 episodes. Season 1 aired in 1981 (12 episodes); Season 2 aired in 1982 (3 episodes); Season 3 aired in 1983 (9 episodes).",
+    "storyRank": 29
   },
   {
     "id": "spider-man-amazing-friends-s3-1983",
@@ -631,7 +756,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 29,
     "chronologicalRank": 30,
-    "phanteressRank": 60
+    "phanteressRank": 60,
+    "parentTitle": "Spider-Man and His Amazing Friends Season 3",
+    "allTitleInfos": "3 Seasons, total of 24 episodes. Season 1 aired in 1981 (12 episodes); Season 2 aired in 1982 (3 episodes); Season 3 aired in 1983 (9 episodes).",
+    "storyRank": 30
   },
   {
     "id": "howard-the-duck-1986",
@@ -652,7 +780,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#d97706",
     "releaseRank": 30,
     "chronologicalRank": 31,
-    "phanteressRank": 61
+    "phanteressRank": 61,
+    "parentTitle": "Howard the Duck",
+    "allTitleInfos": "Theatrical feature film released in August 1986.",
+    "storyRank": 31
   },
   {
     "id": "incredible-hulk-returns-1988",
@@ -672,8 +803,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk & Thor",
     "bannerColor": "#15803d",
     "releaseRank": 31,
-    "chronologicalRank": 32,
-    "phanteressRank": 62
+    "chronologicalRank": 4,
+    "phanteressRank": 62,
+    "parentTitle": "The Incredible Hulk Returns",
+    "allTitleInfos": "Live-action TV reunion movie broadcast in May 1988.",
+    "storyRank": 4
   },
   {
     "id": "trial-of-the-incredible-hulk-1989",
@@ -693,8 +827,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk & Daredevil",
     "bannerColor": "#dc2626",
     "releaseRank": 32,
-    "chronologicalRank": 33,
-    "phanteressRank": 63
+    "chronologicalRank": 4,
+    "phanteressRank": 63,
+    "parentTitle": "The Trial of the Incredible Hulk",
+    "allTitleInfos": "Live-action TV movie featuring Daredevil, broadcast in May 1989.",
+    "storyRank": 4
   },
   {
     "id": "pryde-of-the-x-men-1989",
@@ -715,7 +852,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 33,
     "chronologicalRank": 34,
-    "phanteressRank": 64
+    "phanteressRank": 64,
+    "parentTitle": "X-Men: Pryde of the X-Men",
+    "allTitleInfos": "Animated TV pilot broadcast in September 1989.",
+    "storyRank": 34
   },
   {
     "id": "the-punisher-1989",
@@ -735,8 +875,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Punisher",
     "bannerColor": "#27272a",
     "releaseRank": 34,
-    "chronologicalRank": 35,
-    "phanteressRank": 66
+    "chronologicalRank": 38,
+    "phanteressRank": 66,
+    "parentTitle": "The Punisher",
+    "allTitleInfos": "Live-action theatrical feature film starring Thomas Jane, released in April 2004.",
+    "storyRank": 38
   },
   {
     "id": "death-of-the-incredible-hulk-1990",
@@ -756,8 +899,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 35,
-    "chronologicalRank": 36,
-    "phanteressRank": 67
+    "chronologicalRank": 4,
+    "phanteressRank": 67,
+    "parentTitle": "The Death of the Incredible Hulk",
+    "allTitleInfos": "Live-action TV movie broadcast in February 1990.",
+    "storyRank": 4
   },
   {
     "id": "captain-america-1990",
@@ -777,8 +923,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain America",
     "bannerColor": "#1e40af",
     "releaseRank": 36,
-    "chronologicalRank": 37,
-    "phanteressRank": 68
+    "chronologicalRank": 1,
+    "phanteressRank": 68,
+    "parentTitle": "Captain America",
+    "allTitleInfos": "Direct-to-video / limited theatrical feature film released in December 1990.",
+    "storyRank": 1
   },
   {
     "id": "x-men-tas-s1-1992",
@@ -800,7 +949,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 37,
     "chronologicalRank": 38,
-    "phanteressRank": 69
+    "phanteressRank": 69,
+    "parentTitle": "X-Men: The Animated Series",
+    "seriesId": "x-men-1992",
+    "seasonNumber": 1,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "storyRank": 38
   },
   {
     "id": "x-men-tas-s2-1993",
@@ -822,7 +977,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 38,
     "chronologicalRank": 39,
-    "phanteressRank": 70
+    "phanteressRank": 70,
+    "parentTitle": "X-Men: The Animated Series",
+    "seriesId": "x-men-1992",
+    "seasonNumber": 2,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "storyRank": 39
   },
   {
     "id": "fantastic-four-unreleased-1994",
@@ -842,8 +1003,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Fantastic Four",
     "bannerColor": "#0284c7",
     "releaseRank": 39,
-    "chronologicalRank": 40,
-    "phanteressRank": 71
+    "chronologicalRank": 97,
+    "phanteressRank": 71,
+    "parentTitle": "The Fantastic Four",
+    "storyRank": 97
   },
   {
     "id": "x-men-tas-s3-1994",
@@ -865,7 +1028,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ea580c",
     "releaseRank": 40,
     "chronologicalRank": 41,
-    "phanteressRank": 72
+    "phanteressRank": 72,
+    "parentTitle": "X-Men: The Animated Series",
+    "seriesId": "x-men-1992",
+    "seasonNumber": 3,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "storyRank": 41
   },
   {
     "id": "iron-man-tas-s1-1994",
@@ -886,8 +1055,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 41,
-    "chronologicalRank": 42,
-    "phanteressRank": 73
+    "chronologicalRank": 2,
+    "phanteressRank": 73,
+    "parentTitle": "Iron Man",
+    "seriesId": "iron-man-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "MCU Film, kicks off the Marvel Cinematic Universe, released in May 2008.",
+    "storyRank": 2
   },
   {
     "id": "fantastic-four-tas-s1-1994",
@@ -909,7 +1084,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 42,
     "chronologicalRank": 43,
-    "phanteressRank": 74
+    "phanteressRank": 74,
+    "parentTitle": "Fantastic Four",
+    "seriesId": "fantastic-four-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 43
   },
   {
     "id": "spider-man-tas-s1-1994",
@@ -931,7 +1112,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 43,
     "chronologicalRank": 44,
-    "phanteressRank": 76
+    "phanteressRank": 76,
+    "parentTitle": "Spider-Man: The Animated Series",
+    "seriesId": "spider-man-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "storyRank": 44
   },
   {
     "id": "x-men-tas-s4-1995",
@@ -953,7 +1140,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 44,
     "chronologicalRank": 45,
-    "phanteressRank": 77
+    "phanteressRank": 77,
+    "parentTitle": "X-Men: The Animated Series",
+    "seriesId": "x-men-1992",
+    "seasonNumber": 4,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "storyRank": 45
   },
   {
     "id": "spider-man-tas-s2-1995",
@@ -975,7 +1168,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 45,
     "chronologicalRank": 46,
-    "phanteressRank": 78
+    "phanteressRank": 78,
+    "parentTitle": "Spider-Man: The Animated Series",
+    "seriesId": "spider-man-1994",
+    "seasonNumber": 2,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "storyRank": 46
   },
   {
     "id": "iron-man-tas-s2-1995",
@@ -996,8 +1195,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 46,
-    "chronologicalRank": 47,
-    "phanteressRank": 79
+    "chronologicalRank": 2,
+    "phanteressRank": 79,
+    "parentTitle": "Iron Man",
+    "seriesId": "iron-man-1994",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "MCU Film, kicks off the Marvel Cinematic Universe, released in May 2008.",
+    "storyRank": 2
   },
   {
     "id": "fantastic-four-tas-s2-1995",
@@ -1019,7 +1224,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 47,
     "chronologicalRank": 48,
-    "phanteressRank": 80
+    "phanteressRank": 80,
+    "parentTitle": "Fantastic Four",
+    "seriesId": "fantastic-four-1994",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 48
   },
   {
     "id": "ultraforce-s1-1995",
@@ -1041,7 +1252,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 48,
     "chronologicalRank": 49,
-    "phanteressRank": 81
+    "phanteressRank": 81,
+    "parentTitle": "Ultraforce Season 1",
+    "storyRank": 49
   },
   {
     "id": "generation-x-1996",
@@ -1062,7 +1275,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#9333ea",
     "releaseRank": 49,
     "chronologicalRank": 51,
-    "phanteressRank": 82
+    "phanteressRank": 82,
+    "parentTitle": "Generation X",
+    "allTitleInfos": "Live-action TV movie broadcast in February 1996.",
+    "storyRank": 51
   },
   {
     "id": "spider-man-tas-s3-1996",
@@ -1084,7 +1300,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 50,
     "chronologicalRank": 52,
-    "phanteressRank": 83
+    "phanteressRank": 83,
+    "parentTitle": "Spider-Man: The Animated Series",
+    "seriesId": "spider-man-1994",
+    "seasonNumber": 3,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "storyRank": 52
   },
   {
     "id": "incredible-hulk-animated-s1-1996",
@@ -1105,8 +1327,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 51,
-    "chronologicalRank": 53,
-    "phanteressRank": 84
+    "chronologicalRank": 4,
+    "phanteressRank": 84,
+    "parentTitle": "The Incredible Hulk",
+    "seriesId": "the-incredible-hulk-tv",
+    "seasonNumber": 1,
+    "totalSeasons": 5,
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "spider-man-tas-s4-1997",
@@ -1128,7 +1356,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 52,
     "chronologicalRank": 54,
-    "phanteressRank": 86
+    "phanteressRank": 86,
+    "parentTitle": "Spider-Man: The Animated Series",
+    "seriesId": "spider-man-1994",
+    "seasonNumber": 4,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "storyRank": 54
   },
   {
     "id": "spider-man-tas-s5-1997",
@@ -1150,7 +1384,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 53,
     "chronologicalRank": 55,
-    "phanteressRank": 87
+    "phanteressRank": 87,
+    "parentTitle": "Spider-Man: The Animated Series",
+    "seriesId": "spider-man-1994",
+    "seasonNumber": 5,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "storyRank": 55
   },
   {
     "id": "x-men-tas-s5-1997",
@@ -1172,7 +1412,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 54,
     "chronologicalRank": 56,
-    "phanteressRank": 88
+    "phanteressRank": 88,
+    "parentTitle": "X-Men: The Animated Series",
+    "seriesId": "x-men-1992",
+    "seasonNumber": 5,
+    "totalSeasons": 5,
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "storyRank": 56
   },
   {
     "id": "night-man-s1-1997",
@@ -1194,7 +1440,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1e1b4b",
     "releaseRank": 55,
     "chronologicalRank": 57,
-    "phanteressRank": 89
+    "phanteressRank": 89,
+    "parentTitle": "Night Man Season 1",
+    "storyRank": 57
   },
   {
     "id": "incredible-hulk-animated-s2-1997",
@@ -1215,8 +1463,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk & She-Hulk",
     "bannerColor": "#16a34a",
     "releaseRank": 56,
-    "chronologicalRank": 58,
-    "phanteressRank": 90
+    "chronologicalRank": 4,
+    "phanteressRank": 90,
+    "parentTitle": "The Incredible Hulk and She-Hulk Season 2",
+    "storyRank": 4
   },
   {
     "id": "silver-surfer-1998",
@@ -1238,7 +1488,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 57,
     "chronologicalRank": 59,
-    "phanteressRank": 91
+    "phanteressRank": 91,
+    "parentTitle": "Silver Surfer Season 1",
+    "allTitleInfos": "Animated Series Season 1, 13 episodes, premiered February 1998.",
+    "storyRank": 59
   },
   {
     "id": "nick-fury-agent-of-shield-1998",
@@ -1259,7 +1512,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#334155",
     "releaseRank": 58,
     "chronologicalRank": 60,
-    "phanteressRank": 92
+    "phanteressRank": 92,
+    "parentTitle": "Nick Fury: Agent of S.H.I.E.L.D.",
+    "allTitleInfos": "Live-action TV movie starring David Hasselhoff, broadcast in May 1998.",
+    "storyRank": 60
   },
   {
     "id": "blade-1998",
@@ -1279,8 +1535,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Blade",
     "bannerColor": "#881337",
     "releaseRank": 59,
-    "chronologicalRank": 61,
-    "phanteressRank": 93
+    "chronologicalRank": 114,
+    "phanteressRank": 93,
+    "parentTitle": "Blade",
+    "allTitleInfos": "Theatrical feature film starring Wesley Snipes, released in August 1998.",
+    "storyRank": 114
   },
   {
     "id": "night-man-s2-1998",
@@ -1302,7 +1561,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1e1b4b",
     "releaseRank": 60,
     "chronologicalRank": 62,
-    "phanteressRank": 94
+    "phanteressRank": 94,
+    "parentTitle": "Night Man Season 2",
+    "storyRank": 62
   },
   {
     "id": "spider-man-unlimited-1999",
@@ -1324,7 +1585,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#9f1239",
     "releaseRank": 61,
     "chronologicalRank": 63,
-    "phanteressRank": 96
+    "phanteressRank": 96,
+    "parentTitle": "Spider-Man Unlimited Season 1",
+    "allTitleInfos": "Animated Series Season 1, 13 episodes, premiered September 1999.",
+    "storyRank": 63
   },
   {
     "id": "avengers-united-they-stand-1999",
@@ -1345,8 +1609,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers",
     "bannerColor": "#0369a1",
     "releaseRank": 62,
-    "chronologicalRank": 64,
-    "phanteressRank": 97
+    "chronologicalRank": 8,
+    "phanteressRank": 97,
+    "parentTitle": "The Avengers: United They Stand Season 1",
+    "allTitleInfos": "Animated Series Season 1, 13 episodes, premiered October 1999.",
+    "storyRank": 8
   },
   {
     "id": "x-men-2000",
@@ -1366,8 +1633,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Wolverine & X-Men",
     "bannerColor": "#1e3a8a",
     "releaseRank": 63,
-    "chronologicalRank": 65,
-    "phanteressRank": 5
+    "chronologicalRank": 106,
+    "phanteressRank": 5,
+    "parentTitle": "X-Men",
+    "allTitleInfos": "Live-action theatrical feature film directed by Bryan Singer, released in July 2000.",
+    "storyRank": 106
   },
   {
     "id": "x-men-evolution-s1-2000",
@@ -1389,7 +1659,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 64,
     "chronologicalRank": 66,
-    "phanteressRank": 98
+    "phanteressRank": 98,
+    "parentTitle": "X-Men: Evolution",
+    "seriesId": "x-men-evolution",
+    "seasonNumber": 1,
+    "totalSeasons": 4,
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "storyRank": 66
   },
   {
     "id": "x-men-evolution-s2-2001",
@@ -1411,7 +1687,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 65,
     "chronologicalRank": 67,
-    "phanteressRank": 99
+    "phanteressRank": 99,
+    "parentTitle": "X-Men: Evolution",
+    "seriesId": "x-men-evolution",
+    "seasonNumber": 2,
+    "totalSeasons": 4,
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "storyRank": 67
   },
   {
     "id": "mutant-x-s1-2001",
@@ -1433,7 +1715,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 66,
     "chronologicalRank": 68,
-    "phanteressRank": 101
+    "phanteressRank": 101,
+    "parentTitle": "Mutant X Season 1",
+    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001\u20132002, 22 episodes); Season 2 (2002\u20132003, 22 episodes); Season 3 (2003\u20132004, 22 episodes).",
+    "storyRank": 68
   },
   {
     "id": "blade-ii-2002",
@@ -1453,8 +1738,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Blade",
     "bannerColor": "#881337",
     "releaseRank": 67,
-    "chronologicalRank": 69,
-    "phanteressRank": 103
+    "chronologicalRank": 114,
+    "phanteressRank": 103,
+    "parentTitle": "Blade II",
+    "allTitleInfos": "Theatrical feature film directed by Guillermo del Toro, released in March 2002.",
+    "storyRank": 114
   },
   {
     "id": "spider-man-2002",
@@ -1474,8 +1762,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man (Tobey)",
     "bannerColor": "#b91c1c",
     "releaseRank": 68,
-    "chronologicalRank": 70,
-    "phanteressRank": 104
+    "chronologicalRank": 32,
+    "phanteressRank": 104,
+    "parentTitle": "Spider-Man",
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 32
   },
   {
     "id": "x-men-evolution-s3-2002",
@@ -1497,7 +1788,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 69,
     "chronologicalRank": 71,
-    "phanteressRank": 105
+    "phanteressRank": 105,
+    "parentTitle": "X-Men: Evolution",
+    "seriesId": "x-men-evolution",
+    "seasonNumber": 3,
+    "totalSeasons": 4,
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "storyRank": 71
   },
   {
     "id": "mutant-x-s2-2002",
@@ -1519,7 +1816,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 70,
     "chronologicalRank": 72,
-    "phanteressRank": 107
+    "phanteressRank": 107,
+    "parentTitle": "Mutant X Season 2",
+    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001\u20132002, 22 episodes); Season 2 (2002\u20132003, 22 episodes); Season 3 (2003\u20132004, 22 episodes).",
+    "storyRank": 72
   },
   {
     "id": "daredevil-2003",
@@ -1539,8 +1839,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daredevil",
     "bannerColor": "#991b1b",
     "releaseRank": 71,
-    "chronologicalRank": 73,
-    "phanteressRank": 109
+    "chronologicalRank": 22,
+    "phanteressRank": 109,
+    "parentTitle": "Daredevil",
+    "allTitleInfos": "Live-action theatrical feature film starring Ben Affleck, released in February 2003.",
+    "storyRank": 22
   },
   {
     "id": "x2-united-2003",
@@ -1554,14 +1857,17 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "synopsis": "X-Men ally with Magneto to save mutants from Colonel Stryker.",
     "directorOrCreator": "Bryan Singer",
     "releaseDate": "2003-05-02",
-    "inDoomsdayList": true,
+    "inDoomsdayList": false,
     "inFocusMcu": false,
     "inAllMarvel": true,
     "heroCharacter": "Wolverine & X-Men",
     "bannerColor": "#1e3a8a",
     "releaseRank": 72,
     "chronologicalRank": 74,
-    "phanteressRank": 8
+    "phanteressRank": 8,
+    "parentTitle": "X2: X-Men United",
+    "allTitleInfos": "Live-action theatrical feature film released in May 2003.",
+    "storyRank": 74
   },
   {
     "id": "hulk-2003",
@@ -1581,8 +1887,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 73,
-    "chronologicalRank": 75,
-    "phanteressRank": 110
+    "chronologicalRank": 4,
+    "phanteressRank": 110,
+    "parentTitle": "Hulk",
+    "allTitleInfos": "Theatrical feature film directed by Ang Lee, released in June 2003.",
+    "storyRank": 4
   },
   {
     "id": "spider-man-tnas-2003",
@@ -1604,7 +1913,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 74,
     "chronologicalRank": 76,
-    "phanteressRank": 112
+    "phanteressRank": 112,
+    "parentTitle": "Spider-Man: The New Animated Series Season 1",
+    "allTitleInfos": "CGI Animated Series Season 1, 13 episodes, premiered July 2003.",
+    "storyRank": 76
   },
   {
     "id": "x-men-evolution-s4-2003",
@@ -1626,7 +1938,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 75,
     "chronologicalRank": 77,
-    "phanteressRank": 113
+    "phanteressRank": 113,
+    "parentTitle": "X-Men: Evolution",
+    "seriesId": "x-men-evolution",
+    "seasonNumber": 4,
+    "totalSeasons": 4,
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "storyRank": 77
   },
   {
     "id": "mutant-x-s3-2003",
@@ -1648,7 +1966,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 76,
     "chronologicalRank": 78,
-    "phanteressRank": 115
+    "phanteressRank": 115,
+    "parentTitle": "Mutant X Season 3",
+    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001\u20132002, 22 episodes); Season 2 (2002\u20132003, 22 episodes); Season 3 (2003\u20132004, 22 episodes).",
+    "storyRank": 78
   },
   {
     "id": "the-punisher-2004",
@@ -1668,8 +1989,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Punisher",
     "bannerColor": "#18181b",
     "releaseRank": 77,
-    "chronologicalRank": 79,
-    "phanteressRank": 116
+    "chronologicalRank": 38,
+    "phanteressRank": 116,
+    "parentTitle": "The Punisher",
+    "allTitleInfos": "Live-action theatrical feature film starring Thomas Jane, released in April 2004.",
+    "storyRank": 38
   },
   {
     "id": "spider-man-2-2004",
@@ -1690,7 +2014,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 78,
     "chronologicalRank": 80,
-    "phanteressRank": 118
+    "phanteressRank": 118,
+    "parentTitle": "Spider-Man 2",
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in June 2004.",
+    "storyRank": 80
   },
   {
     "id": "blade-trinity-2004",
@@ -1710,8 +2037,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Blade & Nightstalkers",
     "bannerColor": "#881337",
     "releaseRank": 79,
-    "chronologicalRank": 81,
-    "phanteressRank": 119
+    "chronologicalRank": 114,
+    "phanteressRank": 119,
+    "parentTitle": "Blade: Trinity",
+    "allTitleInfos": "Theatrical feature film released in December 2004.",
+    "storyRank": 114
   },
   {
     "id": "elektra-2005",
@@ -1732,7 +2062,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#991b1b",
     "releaseRank": 80,
     "chronologicalRank": 82,
-    "phanteressRank": 120
+    "phanteressRank": 120,
+    "parentTitle": "Elektra",
+    "allTitleInfos": "Live-action theatrical feature film starring Jennifer Garner, released in January 2005.",
+    "storyRank": 82
   },
   {
     "id": "man-thing-2005",
@@ -1753,7 +2086,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#166534",
     "releaseRank": 81,
     "chronologicalRank": 83,
-    "phanteressRank": 122
+    "phanteressRank": 122,
+    "parentTitle": "Man-Thing",
+    "storyRank": 83
   },
   {
     "id": "fantastic-four-2005",
@@ -1773,8 +2108,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Fantastic Four",
     "bannerColor": "#0284c7",
     "releaseRank": 82,
-    "chronologicalRank": 84,
-    "phanteressRank": 124
+    "chronologicalRank": 97,
+    "phanteressRank": 124,
+    "parentTitle": "Fantastic Four",
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 97
   },
   {
     "id": "ultimate-avengers-2006",
@@ -1795,7 +2133,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 83,
     "chronologicalRank": 85,
-    "phanteressRank": 125
+    "phanteressRank": 125,
+    "parentTitle": "Ultimate Avengers: The Movie",
+    "allTitleInfos": "Direct-to-video animated feature film released in February 2006.",
+    "storyRank": 85
   },
   {
     "id": "x-men-the-last-stand-2006",
@@ -1816,7 +2157,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ea580c",
     "releaseRank": 84,
     "chronologicalRank": 86,
-    "phanteressRank": 127
+    "phanteressRank": 127,
+    "parentTitle": "X-Men: The Last Stand",
+    "allTitleInfos": "Live-action theatrical feature film released in May 2006.",
+    "storyRank": 86
   },
   {
     "id": "blade-the-series-2006",
@@ -1837,8 +2181,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Blade",
     "bannerColor": "#881337",
     "releaseRank": 85,
-    "chronologicalRank": 87,
-    "phanteressRank": 128
+    "chronologicalRank": 114,
+    "phanteressRank": 128,
+    "parentTitle": "Blade: The Series Season 1",
+    "allTitleInfos": "Live-action TV series Season 1, 12 episodes, premiered June 2006.",
+    "storyRank": 114
   },
   {
     "id": "ultimate-avengers-2-2006",
@@ -1859,7 +2206,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#581c87",
     "releaseRank": 86,
     "chronologicalRank": 88,
-    "phanteressRank": 129
+    "phanteressRank": 129,
+    "parentTitle": "Ultimate Avengers 2: Rise of the Panther",
+    "allTitleInfos": "Direct-to-video animated feature film released in August 2006.",
+    "storyRank": 88
   },
   {
     "id": "fantastic-four-wgh-2006",
@@ -1881,7 +2231,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 87,
     "chronologicalRank": 89,
-    "phanteressRank": 130
+    "phanteressRank": 130,
+    "parentTitle": "Fantastic Four",
+    "seriesId": "fantastic-four-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 89
   },
   {
     "id": "invincible-iron-man-2007",
@@ -1901,8 +2257,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 88,
-    "chronologicalRank": 90,
-    "phanteressRank": 132
+    "chronologicalRank": 2,
+    "phanteressRank": 132,
+    "parentTitle": "The Invincible Iron Man",
+    "allTitleInfos": "Direct-to-video animated feature film released in January 2007.",
+    "storyRank": 2
   },
   {
     "id": "ghost-rider-2007",
@@ -1922,8 +2281,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ghost Rider",
     "bannerColor": "#ea580c",
     "releaseRank": 89,
-    "chronologicalRank": 91,
-    "phanteressRank": 134
+    "chronologicalRank": 110,
+    "phanteressRank": 134,
+    "parentTitle": "Ghost Rider",
+    "allTitleInfos": "Live-action theatrical feature film starring Nicolas Cage, released in February 2007.",
+    "storyRank": 110
   },
   {
     "id": "spider-man-3-2007",
@@ -1944,7 +2306,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#18181b",
     "releaseRank": 90,
     "chronologicalRank": 92,
-    "phanteressRank": 135
+    "phanteressRank": 135,
+    "parentTitle": "Spider-Man 3",
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2007.",
+    "storyRank": 92
   },
   {
     "id": "fantastic-four-silver-surfer-2007",
@@ -1965,7 +2330,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 91,
     "chronologicalRank": 93,
-    "phanteressRank": 137
+    "phanteressRank": 137,
+    "parentTitle": "Fantastic Four: Rise of the Silver Surfer",
+    "allTitleInfos": "Live-action theatrical feature film released in June 2007.",
+    "storyRank": 93
   },
   {
     "id": "doctor-strange-2007",
@@ -1985,8 +2353,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Doctor Strange",
     "bannerColor": "#047857",
     "releaseRank": 92,
-    "chronologicalRank": 94,
-    "phanteressRank": 138
+    "chronologicalRank": 34,
+    "phanteressRank": 138,
+    "parentTitle": "Doctor Strange: The Sorcerer Supreme",
+    "allTitleInfos": "Direct-to-video animated feature film released in August 2007.",
+    "storyRank": 34
   },
   {
     "id": "spectacular-spider-man-s1-2008",
@@ -2008,7 +2379,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 93,
     "chronologicalRank": 95,
-    "phanteressRank": 139
+    "phanteressRank": 139,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Series, 2 Seasons, 26 episodes total. Season 1 (2008, 13 episodes); Season 2 (2009, 13 episodes).",
+    "storyRank": 95
   },
   {
     "id": "iron-man-2008",
@@ -2028,8 +2405,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 94,
-    "chronologicalRank": 96,
-    "phanteressRank": 17
+    "chronologicalRank": 2,
+    "phanteressRank": 17,
+    "parentTitle": "Iron Man",
+    "allTitleInfos": "MCU Film, kicks off the Marvel Cinematic Universe, released in May 2008.",
+    "storyRank": 2
   },
   {
     "id": "the-incredible-hulk-2008",
@@ -2049,8 +2429,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 95,
-    "chronologicalRank": 110,
-    "phanteressRank": 18
+    "chronologicalRank": 4,
+    "phanteressRank": 18,
+    "parentTitle": "The Incredible Hulk",
+    "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
+    "storyRank": 4
   },
   {
     "id": "next-avengers-2008",
@@ -2071,7 +2454,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0284c7",
     "releaseRank": 96,
     "chronologicalRank": 97,
-    "phanteressRank": 143
+    "phanteressRank": 143,
+    "parentTitle": "Next Avengers: Heroes of Tomorrow",
+    "allTitleInfos": "Direct-to-video animated feature film released in September 2008.",
+    "storyRank": 97
   },
   {
     "id": "wolverine-and-x-men-2008",
@@ -2093,7 +2479,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 97,
     "chronologicalRank": 98,
-    "phanteressRank": 144
+    "phanteressRank": 144,
+    "parentTitle": "Wolverine and the X-Men Season 1",
+    "allTitleInfos": "Animated Series Season 1, 26 episodes, premiered January 2009.",
+    "storyRank": 98
   },
   {
     "id": "punisher-war-zone-2008",
@@ -2114,7 +2503,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#18181b",
     "releaseRank": 98,
     "chronologicalRank": 99,
-    "phanteressRank": 145
+    "phanteressRank": 145,
+    "parentTitle": "Punisher: War Zone",
+    "allTitleInfos": "Live-action theatrical feature film released in December 2008.",
+    "storyRank": 99
   },
   {
     "id": "hulk-vs-2009",
@@ -2134,8 +2526,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hulk, Wolverine & Thor",
     "bannerColor": "#15803d",
     "releaseRank": 99,
-    "chronologicalRank": 100,
-    "phanteressRank": 146
+    "chronologicalRank": 6,
+    "phanteressRank": 146,
+    "parentTitle": "Hulk Vs. Thor & Wolverine",
+    "storyRank": 6
   },
   {
     "id": "spectacular-spider-man-s2-2009",
@@ -2157,7 +2551,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 100,
     "chronologicalRank": 101,
-    "phanteressRank": 147
+    "phanteressRank": 147,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Series, 2 Seasons, 26 episodes total. Season 1 (2008, 13 episodes); Season 2 (2009, 13 episodes).",
+    "storyRank": 101
   },
   {
     "id": "iron-man-armored-adventures-s1-2009",
@@ -2178,8 +2578,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 101,
-    "chronologicalRank": 102,
-    "phanteressRank": 149
+    "chronologicalRank": 2,
+    "phanteressRank": 149,
+    "parentTitle": "Iron Man: Armored Adventures Season 1",
+    "allTitleInfos": "CGI Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009, 26 episodes); Season 2 (2011\u20132012, 26 episodes).",
+    "storyRank": 2
   },
   {
     "id": "x-men-origins-wolverine-2009",
@@ -2200,7 +2603,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 102,
     "chronologicalRank": 103,
-    "phanteressRank": 150
+    "phanteressRank": 150,
+    "parentTitle": "X-Men Origins: Wolverine",
+    "allTitleInfos": "Live-action theatrical feature film released in May 2009.",
+    "storyRank": 103
   },
   {
     "id": "super-hero-squad-s1-2009",
@@ -2222,7 +2628,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#eab308",
     "releaseRank": 103,
     "chronologicalRank": 104,
-    "phanteressRank": 151
+    "phanteressRank": 151,
+    "parentTitle": "The Super Hero Squad Show Season 1",
+    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009\u20132010, 26 episodes); Season 2 (2010\u20132011, 26 episodes).",
+    "storyRank": 104
   },
   {
     "id": "planet-hulk-2010",
@@ -2243,7 +2652,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#15803d",
     "releaseRank": 104,
     "chronologicalRank": 105,
-    "phanteressRank": 153
+    "phanteressRank": 153,
+    "parentTitle": "Planet Hulk",
+    "allTitleInfos": "Direct-to-video animated feature film released in February 2010.",
+    "storyRank": 105
   },
   {
     "id": "iron-man-2-2010",
@@ -2263,8 +2675,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man & War Machine",
     "bannerColor": "#b91c1c",
     "releaseRank": 105,
-    "chronologicalRank": 106,
-    "phanteressRank": 19
+    "chronologicalRank": 2,
+    "phanteressRank": 19,
+    "parentTitle": "Iron Man 2",
+    "allTitleInfos": "MCU Film released in May 2010.",
+    "storyRank": 2
   },
   {
     "id": "marvel-anime-iron-man-2010",
@@ -2285,8 +2700,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 106,
-    "chronologicalRank": 107,
-    "phanteressRank": 155
+    "chronologicalRank": 2,
+    "phanteressRank": 155,
+    "parentTitle": "Iron Man",
+    "seriesId": "iron-man-1994",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "MCU Film, kicks off the Marvel Cinematic Universe, released in May 2008.",
+    "storyRank": 2
   },
   {
     "id": "avengers-emh-s1-2010",
@@ -2307,8 +2728,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers",
     "bannerColor": "#0369a1",
     "releaseRank": 107,
-    "chronologicalRank": 108,
-    "phanteressRank": 157
+    "chronologicalRank": 8,
+    "phanteressRank": 157,
+    "parentTitle": "The Avengers: Earth Mightiest Heroes Season 1",
+    "storyRank": 8
   },
   {
     "id": "super-hero-squad-s2-2010",
@@ -2330,7 +2753,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#eab308",
     "releaseRank": 108,
     "chronologicalRank": 109,
-    "phanteressRank": 158
+    "phanteressRank": 158,
+    "parentTitle": "The Super Hero Squad Show Season 2",
+    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009\u20132010, 26 episodes); Season 2 (2010\u20132011, 26 episodes).",
+    "storyRank": 109
   },
   {
     "id": "marvel-anime-wolverine-2011",
@@ -2352,7 +2778,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 109,
     "chronologicalRank": 111,
-    "phanteressRank": 160
+    "phanteressRank": 160,
+    "parentTitle": "Marvel Anime: Wolverine Season 1",
+    "storyRank": 111
   },
   {
     "id": "marvel-anime-x-men-2011",
@@ -2374,7 +2802,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 110,
     "chronologicalRank": 112,
-    "phanteressRank": 161
+    "phanteressRank": 161,
+    "parentTitle": "Marvel Anime: X-Men Season 1",
+    "storyRank": 112
   },
   {
     "id": "thor-2011",
@@ -2394,8 +2824,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Loki",
     "bannerColor": "#0284c7",
     "releaseRank": 111,
-    "chronologicalRank": 113,
-    "phanteressRank": 20
+    "chronologicalRank": 6,
+    "phanteressRank": 20,
+    "parentTitle": "Thor",
+    "allTitleInfos": "MCU Film directed by Kenneth Branagh, released in May 2011.",
+    "storyRank": 6
   },
   {
     "id": "thor-tales-of-asgard-2011",
@@ -2415,8 +2848,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Loki",
     "bannerColor": "#0284c7",
     "releaseRank": 112,
-    "chronologicalRank": 114,
-    "phanteressRank": 162
+    "chronologicalRank": 6,
+    "phanteressRank": 162,
+    "parentTitle": "Thor: Tales of Asgard",
+    "allTitleInfos": "Direct-to-video animated feature film released in May 2011.",
+    "storyRank": 6
   },
   {
     "id": "marvel-anime-blade-2011",
@@ -2437,8 +2873,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Blade",
     "bannerColor": "#881337",
     "releaseRank": 113,
-    "chronologicalRank": 115,
-    "phanteressRank": 164
+    "chronologicalRank": 114,
+    "phanteressRank": 164,
+    "parentTitle": "Marvel Anime: Blade Season 1",
+    "storyRank": 114
   },
   {
     "id": "iron-man-armored-adventures-s2-2011",
@@ -2459,8 +2897,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 114,
-    "chronologicalRank": 116,
-    "phanteressRank": 165
+    "chronologicalRank": 2,
+    "phanteressRank": 165,
+    "parentTitle": "Iron Man: Armored Adventures Season 2",
+    "allTitleInfos": "CGI Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009, 26 episodes); Season 2 (2011\u20132012, 26 episodes).",
+    "storyRank": 2
   },
   {
     "id": "captain-america-first-avenger-2011",
@@ -2481,7 +2922,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1d4ed8",
     "releaseRank": 115,
     "chronologicalRank": 1,
-    "phanteressRank": 1
+    "phanteressRank": 1,
+    "parentTitle": "Captain America: The First Avenger",
+    "allTitleInfos": "MCU Film released in July 2011.",
+    "storyRank": 1
   },
   {
     "id": "one-shot-consultant-2011",
@@ -2501,8 +2945,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Coulson & Sitwell",
     "bannerColor": "#334155",
     "releaseRank": 116,
-    "chronologicalRank": 117,
-    "phanteressRank": 166
+    "chronologicalRank": 5,
+    "phanteressRank": 166,
+    "parentTitle": "Marvel One-Shot: The Consultant",
+    "storyRank": 5
   },
   {
     "id": "one-shot-funny-thing-2011",
@@ -2522,8 +2968,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Agent Coulson",
     "bannerColor": "#334155",
     "releaseRank": 117,
-    "chronologicalRank": 118,
-    "phanteressRank": 168
+    "chronologicalRank": 6,
+    "phanteressRank": 168,
+    "parentTitle": "Marvel One-Shot: A Funny Thing Happened on the Way to Thor Hammer",
+    "storyRank": 6
   },
   {
     "id": "ghost-rider-spirit-of-vengeance-2011",
@@ -2543,8 +2991,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ghost Rider",
     "bannerColor": "#ea580c",
     "releaseRank": 118,
-    "chronologicalRank": 119,
-    "phanteressRank": 170
+    "chronologicalRank": 110,
+    "phanteressRank": 170,
+    "parentTitle": "Ghost Rider: Spirit of Vengeance",
+    "allTitleInfos": "Live-action theatrical feature film released in February 2012.",
+    "storyRank": 110
   },
   {
     "id": "avengers-emh-s2-2012",
@@ -2565,8 +3016,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers",
     "bannerColor": "#0369a1",
     "releaseRank": 119,
-    "chronologicalRank": 120,
-    "phanteressRank": 171
+    "chronologicalRank": 8,
+    "phanteressRank": 171,
+    "parentTitle": "The Avengers: Earth Mightiest Heroes Season 2",
+    "storyRank": 8
   },
   {
     "id": "ultimate-spider-man-s1-2012",
@@ -2588,7 +3041,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 120,
     "chronologicalRank": 121,
-    "phanteressRank": 172
+    "phanteressRank": 172,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Series, 4 Seasons, 104 episodes total. Season 1 (2012, 26 episodes); Season 2 (2013, 26 episodes); Season 3 (Web-Warriors, 2014\u20132015, 26 episodes); Season 4 (Vs. the Sinister 6, 2016, 26 episodes).",
+    "storyRank": 121
   },
   {
     "id": "the-avengers-2012",
@@ -2608,8 +3067,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers",
     "bannerColor": "#0369a1",
     "releaseRank": 121,
-    "chronologicalRank": 122,
-    "phanteressRank": 2
+    "chronologicalRank": 8,
+    "phanteressRank": 2,
+    "parentTitle": "The Avengers",
+    "allTitleInfos": "MCU Film directed by Joss Whedon, released in May 2012.",
+    "storyRank": 8
   },
   {
     "id": "the-amazing-spider-man-2012",
@@ -2630,7 +3092,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1d4ed8",
     "releaseRank": 122,
     "chronologicalRank": 123,
-    "phanteressRank": 173
+    "phanteressRank": 173,
+    "parentTitle": "The Amazing Spider-Man",
+    "allTitleInfos": "Live-action theatrical feature film starring Andrew Garfield, released in July 2012.",
+    "storyRank": 123
   },
   {
     "id": "one-shot-item-47-2012",
@@ -2650,8 +3115,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "S.H.I.E.L.D.",
     "bannerColor": "#334155",
     "releaseRank": 123,
-    "chronologicalRank": 124,
-    "phanteressRank": 174
+    "chronologicalRank": 9,
+    "phanteressRank": 174,
+    "parentTitle": "Marvel One-Shot: Item 47",
+    "storyRank": 9
   },
   {
     "id": "ultimate-spider-man-s2-2013",
@@ -2673,7 +3140,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 124,
     "chronologicalRank": 125,
-    "phanteressRank": 175
+    "phanteressRank": 175,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Series, 4 Seasons, 104 episodes total. Season 1 (2012, 26 episodes); Season 2 (2013, 26 episodes); Season 3 (Web-Warriors, 2014\u20132015, 26 episodes); Season 4 (Vs. the Sinister 6, 2016, 26 episodes).",
+    "storyRank": 125
   },
   {
     "id": "iron-man-rise-technovore-2013",
@@ -2693,8 +3166,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man & Punisher",
     "bannerColor": "#b91c1c",
     "releaseRank": 125,
-    "chronologicalRank": 126,
-    "phanteressRank": 176
+    "chronologicalRank": 2,
+    "phanteressRank": 176,
+    "parentTitle": "Iron Man: Rise of Technovore",
+    "allTitleInfos": "Direct-to-video anime film released in April 2013.",
+    "storyRank": 2
   },
   {
     "id": "iron-man-3-2013",
@@ -2714,8 +3190,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 126,
-    "chronologicalRank": 127,
-    "phanteressRank": 21
+    "chronologicalRank": 2,
+    "phanteressRank": 21,
+    "parentTitle": "Iron Man 3",
+    "allTitleInfos": "MCU Film released in May 2013.",
+    "storyRank": 2
   },
   {
     "id": "avengers-assemble-s1-2013",
@@ -2737,7 +3216,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 127,
     "chronologicalRank": 128,
-    "phanteressRank": 177
+    "phanteressRank": 177,
+    "parentTitle": "Avengers Assemble",
+    "seriesId": "avengers-assemble",
+    "seasonNumber": 1,
+    "totalSeasons": 5,
+    "allTitleInfos": "Animated Series, 5 Seasons, 126 episodes total spanning from May 2013 to February 2019.",
+    "storyRank": 128
   },
   {
     "id": "the-wolverine-2013",
@@ -2758,7 +3243,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 128,
     "chronologicalRank": 129,
-    "phanteressRank": 178
+    "phanteressRank": 178,
+    "parentTitle": "The Wolverine",
+    "allTitleInfos": "Live-action theatrical feature film released in July 2013.",
+    "storyRank": 129
   },
   {
     "id": "hulk-agents-of-smash-s1-2013",
@@ -2780,7 +3268,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#15803d",
     "releaseRank": 129,
     "chronologicalRank": 130,
-    "phanteressRank": 179
+    "phanteressRank": 179,
+    "parentTitle": "Hulk and the Agents of S.M.A.S.H. Season 1",
+    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total, running from August 2013 to June 2015.",
+    "storyRank": 130
   },
   {
     "id": "one-shot-agent-carter-2013",
@@ -2800,8 +3291,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Peggy Carter",
     "bannerColor": "#991b1b",
     "releaseRank": 130,
-    "chronologicalRank": 131,
-    "phanteressRank": 180
+    "chronologicalRank": 12,
+    "phanteressRank": 180,
+    "parentTitle": "Marvel One-Shot: Agent Carter",
+    "storyRank": 12
   },
   {
     "id": "agents-of-shield-s1-2013",
@@ -2822,8 +3315,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Coulson & S.H.I.E.L.D.",
     "bannerColor": "#334155",
     "releaseRank": 131,
-    "chronologicalRank": 132,
-    "phanteressRank": 181
+    "chronologicalRank": 13,
+    "phanteressRank": 181,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 1,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 13
   },
   {
     "id": "thor-the-dark-world-2013",
@@ -2843,8 +3342,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Loki",
     "bannerColor": "#0284c7",
     "releaseRank": 132,
-    "chronologicalRank": 134,
-    "phanteressRank": 22
+    "chronologicalRank": 6,
+    "phanteressRank": 22,
+    "parentTitle": "Thor: The Dark World",
+    "allTitleInfos": "MCU Film released in November 2013.",
+    "storyRank": 6
   },
   {
     "id": "iron-man-hulk-heroes-united-2013",
@@ -2864,8 +3366,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Man & Hulk",
     "bannerColor": "#15803d",
     "releaseRank": 133,
-    "chronologicalRank": 133,
-    "phanteressRank": 182
+    "chronologicalRank": 2,
+    "phanteressRank": 182,
+    "parentTitle": "Iron Man & Hulk: Heroes United",
+    "allTitleInfos": "Direct-to-video computer-animated film released in December 2013.",
+    "storyRank": 2
   },
   {
     "id": "one-shot-all-hail-the-king-2014",
@@ -2885,8 +3390,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Trevor Slattery",
     "bannerColor": "#ca8a04",
     "releaseRank": 134,
-    "chronologicalRank": 135,
-    "phanteressRank": 183
+    "chronologicalRank": 11,
+    "phanteressRank": 183,
+    "parentTitle": "Marvel One-Shot: All Hail the King",
+    "storyRank": 11
   },
   {
     "id": "avengers-confidential-2014",
@@ -2906,8 +3413,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Black Widow & Punisher",
     "bannerColor": "#881337",
     "releaseRank": 135,
-    "chronologicalRank": 136,
-    "phanteressRank": 184
+    "chronologicalRank": 30,
+    "phanteressRank": 184,
+    "parentTitle": "Avengers Confidential: Black Widow & Punisher",
+    "allTitleInfos": "Direct-to-video anime feature film released in January 2014.",
+    "storyRank": 30
   },
   {
     "id": "captain-america-winter-soldier-2014",
@@ -2927,8 +3437,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Cap & Bucky",
     "bannerColor": "#1d4ed8",
     "releaseRank": 136,
-    "chronologicalRank": 137,
-    "phanteressRank": 23
+    "chronologicalRank": 15,
+    "phanteressRank": 23,
+    "parentTitle": "Captain America: The Winter Soldier",
+    "allTitleInfos": "MCU Film directed by the Russo Brothers, released in April 2014.",
+    "storyRank": 15
   },
   {
     "id": "the-amazing-spider-man-2-2014",
@@ -2949,7 +3462,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1d4ed8",
     "releaseRank": 137,
     "chronologicalRank": 138,
-    "phanteressRank": 185
+    "phanteressRank": 185,
+    "parentTitle": "The Amazing Spider-Man 2",
+    "allTitleInfos": "Live-action theatrical feature film released in May 2014.",
+    "storyRank": 138
   },
   {
     "id": "x-men-days-of-future-past-2014",
@@ -2970,7 +3486,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1e3a8a",
     "releaseRank": 138,
     "chronologicalRank": 139,
-    "phanteressRank": 186
+    "phanteressRank": 186,
+    "parentTitle": "X-Men: Days of Future Past",
+    "allTitleInfos": "Live-action theatrical feature film released in May 2014.",
+    "storyRank": 139
   },
   {
     "id": "iron-man-cap-heroes-united-2014",
@@ -2990,8 +3509,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Cap & Iron Man",
     "bannerColor": "#1d4ed8",
     "releaseRank": 139,
-    "chronologicalRank": 140,
-    "phanteressRank": 187
+    "chronologicalRank": 2,
+    "phanteressRank": 187,
+    "parentTitle": "Iron Man & Captain America: Heroes United",
+    "allTitleInfos": "Direct-to-video computer-animated film released in July 2014.",
+    "storyRank": 2
   },
   {
     "id": "guardians-of-the-galaxy-2014",
@@ -3011,8 +3533,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Star-Lord & Guardians",
     "bannerColor": "#7c3aed",
     "releaseRank": 140,
-    "chronologicalRank": 146,
-    "phanteressRank": 24
+    "chronologicalRank": 16,
+    "phanteressRank": 24,
+    "parentTitle": "Guardians of the Galaxy",
+    "allTitleInfos": "MCU Film directed by James Gunn, released in August 2014.",
+    "storyRank": 16
   },
   {
     "id": "ultimate-spider-man-s3-2014",
@@ -3034,7 +3559,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 141,
     "chronologicalRank": 141,
-    "phanteressRank": 188
+    "phanteressRank": 188,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 141
   },
   {
     "id": "agents-of-shield-s2-2014",
@@ -3055,8 +3586,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daisy Johnson (Quake)",
     "bannerColor": "#334155",
     "releaseRank": 142,
-    "chronologicalRank": 142,
-    "phanteressRank": 189
+    "chronologicalRank": 20,
+    "phanteressRank": 189,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 2,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 20
   },
   {
     "id": "avengers-assemble-s2-2014",
@@ -3078,7 +3615,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 143,
     "chronologicalRank": 143,
-    "phanteressRank": 190
+    "phanteressRank": 190,
+    "parentTitle": "Avengers Assemble",
+    "seriesId": "avengers-assemble",
+    "seasonNumber": 2,
+    "totalSeasons": 5,
+    "allTitleInfos": "Animated Series, 5 Seasons, 126 episodes total spanning from May 2013 to February 2019.",
+    "storyRank": 143
   },
   {
     "id": "hulk-agents-of-smash-s2-2014",
@@ -3100,7 +3643,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#15803d",
     "releaseRank": 144,
     "chronologicalRank": 144,
-    "phanteressRank": 191
+    "phanteressRank": 191,
+    "parentTitle": "Hulk and the Agents of S.M.A.S.H. Season 2",
+    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total, running from August 2013 to June 2015.",
+    "storyRank": 144
   },
   {
     "id": "big-hero-6-2014",
@@ -3121,7 +3667,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 145,
     "chronologicalRank": 145,
-    "phanteressRank": 192
+    "phanteressRank": 192,
+    "parentTitle": "Big Hero 6",
+    "storyRank": 145
   },
   {
     "id": "agent-carter-s1-2015",
@@ -3142,8 +3690,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Peggy Carter",
     "bannerColor": "#991b1b",
     "releaseRank": 146,
-    "chronologicalRank": 148,
-    "phanteressRank": 193
+    "chronologicalRank": 21,
+    "phanteressRank": 193,
+    "parentTitle": "Agent Carter",
+    "seriesId": "agent-carter",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action MCU TV series, 2 Seasons, 18 episodes total. Season 1 (2015, 8 episodes); Season 2 (2016, 10 episodes).",
+    "storyRank": 21
   },
   {
     "id": "daredevil-s1-2015",
@@ -3164,8 +3718,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daredevil",
     "bannerColor": "#991b1b",
     "releaseRank": 147,
-    "chronologicalRank": 149,
-    "phanteressRank": 194
+    "chronologicalRank": 22,
+    "phanteressRank": 194,
+    "parentTitle": "Daredevil",
+    "seriesId": "daredevil",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action theatrical feature film starring Ben Affleck, released in February 2003.",
+    "storyRank": 22
   },
   {
     "id": "avengers-age-of-ultron-2015",
@@ -3185,8 +3745,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers & Ultron",
     "bannerColor": "#0369a1",
     "releaseRank": 148,
-    "chronologicalRank": 150,
-    "phanteressRank": 25
+    "chronologicalRank": 23,
+    "phanteressRank": 25,
+    "parentTitle": "Avengers: Age of Ultron",
+    "allTitleInfos": "MCU Film released in May 2015.",
+    "storyRank": 23
   },
   {
     "id": "ant-man-2015",
@@ -3206,8 +3769,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ant-Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 149,
-    "chronologicalRank": 155,
-    "phanteressRank": 26
+    "chronologicalRank": 24,
+    "phanteressRank": 26,
+    "parentTitle": "Ant-Man",
+    "allTitleInfos": "MCU Film released in July 2015.",
+    "storyRank": 24
   },
   {
     "id": "fantastic-four-2015",
@@ -3227,8 +3793,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Fantastic Four",
     "bannerColor": "#0284c7",
     "releaseRank": 150,
-    "chronologicalRank": 151,
-    "phanteressRank": 195
+    "chronologicalRank": 97,
+    "phanteressRank": 195,
+    "parentTitle": "Fantastic Four",
+    "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
+    "storyRank": 97
   },
   {
     "id": "guardians-galaxy-animated-s1-2015",
@@ -3249,8 +3818,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Guardians of the Galaxy",
     "bannerColor": "#7c3aed",
     "releaseRank": 151,
-    "chronologicalRank": 152,
-    "phanteressRank": 196
+    "chronologicalRank": 16,
+    "phanteressRank": 196,
+    "parentTitle": "Marvel Guardians of the Galaxy Season 1",
+    "storyRank": 16
   },
   {
     "id": "agents-of-shield-s3-2015",
@@ -3271,8 +3842,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Quake & S.H.I.E.L.D.",
     "bannerColor": "#334155",
     "releaseRank": 152,
-    "chronologicalRank": 153,
-    "phanteressRank": 197
+    "chronologicalRank": 28,
+    "phanteressRank": 197,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 3,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 28
   },
   {
     "id": "jessica-jones-s1-2015",
@@ -3293,8 +3870,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Jessica Jones",
     "bannerColor": "#4c1d95",
     "releaseRank": 153,
-    "chronologicalRank": 154,
-    "phanteressRank": 198
+    "chronologicalRank": 26,
+    "phanteressRank": 198,
+    "parentTitle": "Jessica Jones",
+    "seriesId": "jessica-jones",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "storyRank": 26
   },
   {
     "id": "agent-carter-s2-2016",
@@ -3315,8 +3897,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Peggy Carter",
     "bannerColor": "#991b1b",
     "releaseRank": 154,
-    "chronologicalRank": 156,
-    "phanteressRank": 199
+    "chronologicalRank": 25,
+    "phanteressRank": 199,
+    "parentTitle": "Agent Carter",
+    "seriesId": "agent-carter",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action MCU TV series, 2 Seasons, 18 episodes total. Season 1 (2015, 8 episodes); Season 2 (2016, 10 episodes).",
+    "storyRank": 25
   },
   {
     "id": "deadpool-2016",
@@ -3336,8 +3924,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Deadpool",
     "bannerColor": "#dc2626",
     "releaseRank": 155,
-    "chronologicalRank": 157,
-    "phanteressRank": 200
+    "chronologicalRank": 87,
+    "phanteressRank": 200,
+    "parentTitle": "Deadpool",
+    "allTitleInfos": "Live-action 20th Century Fox X-Men Universe film released in February 2016.",
+    "storyRank": 87
   },
   {
     "id": "ultimate-spider-man-s4-2016",
@@ -3359,7 +3950,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 156,
     "chronologicalRank": 158,
-    "phanteressRank": 201
+    "phanteressRank": 201,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 4,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 158
   },
   {
     "id": "avengers-assemble-s3-2016",
@@ -3381,7 +3978,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 157,
     "chronologicalRank": 159,
-    "phanteressRank": 202
+    "phanteressRank": 202,
+    "parentTitle": "Avengers Assemble",
+    "seriesId": "avengers-assemble",
+    "seasonNumber": 3,
+    "totalSeasons": 5,
+    "allTitleInfos": "Animated Series, 5 Seasons, 126 episodes total spanning from May 2013 to February 2019.",
+    "storyRank": 159
   },
   {
     "id": "daredevil-s2-2016",
@@ -3402,8 +4005,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daredevil & Punisher",
     "bannerColor": "#991b1b",
     "releaseRank": 158,
-    "chronologicalRank": 160,
-    "phanteressRank": 203
+    "chronologicalRank": 27,
+    "phanteressRank": 203,
+    "parentTitle": "Daredevil",
+    "seriesId": "daredevil",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action theatrical feature film starring Ben Affleck, released in February 2003.",
+    "storyRank": 27
   },
   {
     "id": "captain-america-civil-war-2016",
@@ -3423,8 +4032,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Cap vs Iron Man",
     "bannerColor": "#1d4ed8",
     "releaseRank": 159,
-    "chronologicalRank": 161,
-    "phanteressRank": 36
+    "chronologicalRank": 29,
+    "phanteressRank": 36,
+    "parentTitle": "Captain America: Civil War",
+    "allTitleInfos": "MCU Film released in May 2016.",
+    "storyRank": 29
   },
   {
     "id": "x-men-apocalypse-2016",
@@ -3445,7 +4057,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#581c87",
     "releaseRank": 160,
     "chronologicalRank": 162,
-    "phanteressRank": 204
+    "phanteressRank": 204,
+    "parentTitle": "X-Men: Apocalypse",
+    "allTitleInfos": "Live-action theatrical feature film released in May 2016.",
+    "storyRank": 162
   },
   {
     "id": "team-thor-part-1-2016",
@@ -3465,8 +4080,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Darryl",
     "bannerColor": "#0284c7",
     "releaseRank": 161,
-    "chronologicalRank": 163,
-    "phanteressRank": 205
+    "chronologicalRank": 6,
+    "phanteressRank": 205,
+    "parentTitle": "Team Thor: Part 1",
+    "storyRank": 6
   },
   {
     "id": "agents-of-shield-s4-2016",
@@ -3487,8 +4104,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ghost Rider & S.H.I.E.L.D.",
     "bannerColor": "#ea580c",
     "releaseRank": 162,
-    "chronologicalRank": 164,
-    "phanteressRank": 206
+    "chronologicalRank": 35,
+    "phanteressRank": 206,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 4,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 35
   },
   {
     "id": "luke-cage-s1-2016",
@@ -3509,8 +4132,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Luke Cage",
     "bannerColor": "#ca8a04",
     "releaseRank": 163,
-    "chronologicalRank": 165,
-    "phanteressRank": 207
+    "chronologicalRank": 33,
+    "phanteressRank": 207,
+    "parentTitle": "Luke Cage",
+    "seriesId": "luke-cage",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "storyRank": 33
   },
   {
     "id": "hulk-where-monsters-dwell-2016",
@@ -3531,7 +4159,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#047857",
     "releaseRank": 164,
     "chronologicalRank": 166,
-    "phanteressRank": 208
+    "phanteressRank": 208,
+    "parentTitle": "Hulk: Where Monsters Dwell",
+    "allTitleInfos": "Direct-to-video animated feature film released in October 2016.",
+    "storyRank": 166
   },
   {
     "id": "doctor-strange-2016",
@@ -3551,8 +4182,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Doctor Strange",
     "bannerColor": "#047857",
     "releaseRank": 165,
-    "chronologicalRank": 170,
-    "phanteressRank": 43
+    "chronologicalRank": 34,
+    "phanteressRank": 43,
+    "parentTitle": "Doctor Strange",
+    "allTitleInfos": "MCU Film starring Benedict Cumberbatch, released in November 2016.",
+    "storyRank": 34
   },
   {
     "id": "legion-s1-2017",
@@ -3574,7 +4208,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#f59e0b",
     "releaseRank": 166,
     "chronologicalRank": 171,
-    "phanteressRank": 209
+    "phanteressRank": 209,
+    "parentTitle": "Legion",
+    "seriesId": "legion",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "storyRank": 171
   },
   {
     "id": "team-thor-part-2-2017",
@@ -3594,8 +4233,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Darryl",
     "bannerColor": "#0284c7",
     "releaseRank": 167,
-    "chronologicalRank": 172,
-    "phanteressRank": 210
+    "chronologicalRank": 6,
+    "phanteressRank": 210,
+    "parentTitle": "Team Thor: Part 2",
+    "storyRank": 6
   },
   {
     "id": "logan-2017",
@@ -3616,7 +4257,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#78350f",
     "releaseRank": 168,
     "chronologicalRank": 173,
-    "phanteressRank": 211
+    "phanteressRank": 211,
+    "parentTitle": "Logan",
+    "allTitleInfos": "Live-action theatrical feature film released in March 2017.",
+    "storyRank": 173
   },
   {
     "id": "guardians-galaxy-animated-s2-2017",
@@ -3637,8 +4281,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Guardians of the Galaxy",
     "bannerColor": "#7c3aed",
     "releaseRank": 169,
-    "chronologicalRank": 174,
-    "phanteressRank": 212
+    "chronologicalRank": 16,
+    "phanteressRank": 212,
+    "parentTitle": "Marvel Guardians of the Galaxy Season 2",
+    "storyRank": 16
   },
   {
     "id": "iron-fist-s1-2017",
@@ -3659,8 +4305,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Iron Fist",
     "bannerColor": "#16a34a",
     "releaseRank": 170,
-    "chronologicalRank": 175,
-    "phanteressRank": 213
+    "chronologicalRank": 36,
+    "phanteressRank": 213,
+    "parentTitle": "Iron Fist",
+    "seriesId": "iron-fist",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "storyRank": 36
   },
   {
     "id": "guardians-of-the-galaxy-vol-2-2017",
@@ -3680,8 +4331,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Guardians of the Galaxy",
     "bannerColor": "#7c3aed",
     "releaseRank": 171,
-    "chronologicalRank": 147,
-    "phanteressRank": 50
+    "chronologicalRank": 16,
+    "phanteressRank": 50,
+    "parentTitle": "Guardians of the Galaxy Vol. 2",
+    "allTitleInfos": "MCU Film released in May 2017.",
+    "storyRank": 16
   },
   {
     "id": "avengers-assemble-s4-2017",
@@ -3703,7 +4357,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#0369a1",
     "releaseRank": 172,
     "chronologicalRank": 176,
-    "phanteressRank": 214
+    "phanteressRank": 214,
+    "parentTitle": "Avengers Assemble",
+    "seriesId": "avengers-assemble",
+    "seasonNumber": 4,
+    "totalSeasons": 5,
+    "allTitleInfos": "Animated Series, 5 Seasons, 126 episodes total spanning from May 2013 to February 2019.",
+    "storyRank": 176
   },
   {
     "id": "spider-man-homecoming-2017",
@@ -3723,8 +4383,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man (Tom)",
     "bannerColor": "#b91c1c",
     "releaseRank": 173,
-    "chronologicalRank": 169,
-    "phanteressRank": 53
+    "chronologicalRank": 32,
+    "phanteressRank": 53,
+    "parentTitle": "Spider-Man: Homecoming",
+    "allTitleInfos": "MCU Film starring Tom Holland, released in July 2017.",
+    "storyRank": 32
   },
   {
     "id": "the-defenders-s1-2017",
@@ -3746,7 +4409,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#1e3a8a",
     "releaseRank": 174,
     "chronologicalRank": 177,
-    "phanteressRank": 215
+    "phanteressRank": 215,
+    "parentTitle": "Marvel The Defenders",
+    "storyRank": 177
   },
   {
     "id": "marvel-spider-man-s1-2017",
@@ -3768,7 +4433,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 175,
     "chronologicalRank": 178,
-    "phanteressRank": 216
+    "phanteressRank": 216,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 178
   },
   {
     "id": "inhumans-s1-2017",
@@ -3789,8 +4460,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Black Bolt & Inhumans",
     "bannerColor": "#1e293b",
     "releaseRank": 176,
-    "chronologicalRank": 179,
-    "phanteressRank": 217
+    "chronologicalRank": 39,
+    "phanteressRank": 217,
+    "parentTitle": "Marvel Inhumans Season 1",
+    "storyRank": 39
   },
   {
     "id": "the-gifted-s1-2017",
@@ -3812,7 +4485,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 177,
     "chronologicalRank": 180,
-    "phanteressRank": 218
+    "phanteressRank": 218,
+    "parentTitle": "The Gifted",
+    "seriesId": "the-gifted",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "storyRank": 180
   },
   {
     "id": "thor-ragnarok-2017",
@@ -3832,8 +4510,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Hulk",
     "bannerColor": "#0284c7",
     "releaseRank": 178,
-    "chronologicalRank": 185,
-    "phanteressRank": 59
+    "chronologicalRank": 6,
+    "phanteressRank": 59,
+    "parentTitle": "Thor: Ragnarok",
+    "allTitleInfos": "MCU Film directed by Taika Waititi, released in November 2017.",
+    "storyRank": 6
   },
   {
     "id": "the-punisher-s1-2017",
@@ -3854,8 +4535,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Punisher",
     "bannerColor": "#18181b",
     "releaseRank": 179,
-    "chronologicalRank": 181,
-    "phanteressRank": 219
+    "chronologicalRank": 38,
+    "phanteressRank": 219,
+    "parentTitle": "The Punisher",
+    "seriesId": "the-punisher",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical feature film starring Thomas Jane, released in April 2004.",
+    "storyRank": 38
   },
   {
     "id": "big-hero-6-s1-2017",
@@ -3877,7 +4564,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 180,
     "chronologicalRank": 182,
-    "phanteressRank": 220
+    "phanteressRank": 220,
+    "parentTitle": "Big Hero 6: The Series",
+    "seriesId": "big-hero-6",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "storyRank": 182
   },
   {
     "id": "runaways-s1-2017",
@@ -3898,8 +4590,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Runaways",
     "bannerColor": "#0284c7",
     "releaseRank": 181,
-    "chronologicalRank": 183,
-    "phanteressRank": 221
+    "chronologicalRank": 40,
+    "phanteressRank": 221,
+    "parentTitle": "Runaways",
+    "seriesId": "runaways",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "storyRank": 40
   },
   {
     "id": "agents-of-shield-s5-2017",
@@ -3920,8 +4617,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Coulson & S.H.I.E.L.D.",
     "bannerColor": "#334155",
     "releaseRank": 182,
-    "chronologicalRank": 184,
-    "phanteressRank": 222
+    "chronologicalRank": 51,
+    "phanteressRank": 222,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 5,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 51
   },
   {
     "id": "black-panther-2018",
@@ -3941,8 +4644,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Black Panther",
     "bannerColor": "#581c87",
     "releaseRank": 183,
-    "chronologicalRank": 168,
-    "phanteressRank": 65
+    "chronologicalRank": 31,
+    "phanteressRank": 65,
+    "parentTitle": "Black Panther",
+    "allTitleInfos": "MCU Film directed by Ryan Coogler, released in February 2018.",
+    "storyRank": 31
   },
   {
     "id": "team-darryl-2018",
@@ -3962,8 +4668,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Grandmaster & Darryl",
     "bannerColor": "#d97706",
     "releaseRank": 184,
-    "chronologicalRank": 186,
-    "phanteressRank": 223
+    "chronologicalRank": 56,
+    "phanteressRank": 223,
+    "parentTitle": "Team Darryl",
+    "storyRank": 56
   },
   {
     "id": "jessica-jones-s2-2018",
@@ -3984,8 +4692,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Jessica Jones",
     "bannerColor": "#4c1d95",
     "releaseRank": 185,
-    "chronologicalRank": 187,
-    "phanteressRank": 224
+    "chronologicalRank": 42,
+    "phanteressRank": 224,
+    "parentTitle": "Jessica Jones",
+    "seriesId": "jessica-jones",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "storyRank": 42
   },
   {
     "id": "legion-s2-2018",
@@ -4007,7 +4720,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#f59e0b",
     "releaseRank": 186,
     "chronologicalRank": 188,
-    "phanteressRank": 225
+    "phanteressRank": 225,
+    "parentTitle": "Legion",
+    "seriesId": "legion",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "storyRank": 188
   },
   {
     "id": "avengers-infinity-war-2018",
@@ -4027,8 +4745,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers & Thanos",
     "bannerColor": "#0369a1",
     "releaseRank": 187,
-    "chronologicalRank": 201,
-    "phanteressRank": 3
+    "chronologicalRank": 58,
+    "phanteressRank": 3,
+    "parentTitle": "Avengers: Infinity War",
+    "allTitleInfos": "MCU Film released in April 2018.",
+    "storyRank": 58
   },
   {
     "id": "deadpool-2-2018",
@@ -4049,7 +4770,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 188,
     "chronologicalRank": 189,
-    "phanteressRank": 226
+    "phanteressRank": 226,
+    "parentTitle": "Deadpool 2",
+    "allTitleInfos": "Live-action 20th Century Fox film released in May 2018.",
+    "storyRank": 189
   },
   {
     "id": "cloak-and-dagger-s1-2018",
@@ -4070,8 +4794,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Cloak & Dagger",
     "bannerColor": "#0f172a",
     "releaseRank": 189,
-    "chronologicalRank": 190,
-    "phanteressRank": 227
+    "chronologicalRank": 41,
+    "phanteressRank": 227,
+    "parentTitle": "Cloak & Dagger",
+    "seriesId": "cloak-and-dagger",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "storyRank": 41
   },
   {
     "id": "marvel-spider-man-s2-2018",
@@ -4093,7 +4822,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 190,
     "chronologicalRank": 191,
-    "phanteressRank": 228
+    "phanteressRank": 228,
+    "parentTitle": "Spider-Man",
+    "seriesId": "spider-man-1967",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
+    "storyRank": 191
   },
   {
     "id": "luke-cage-s2-2018",
@@ -4114,8 +4849,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Luke Cage",
     "bannerColor": "#ca8a04",
     "releaseRank": 191,
-    "chronologicalRank": 192,
-    "phanteressRank": 229
+    "chronologicalRank": 43,
+    "phanteressRank": 229,
+    "parentTitle": "Luke Cage",
+    "seriesId": "luke-cage",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "storyRank": 43
   },
   {
     "id": "ant-man-and-the-wasp-2018",
@@ -4135,8 +4875,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ant-Man & The Wasp",
     "bannerColor": "#b91c1c",
     "releaseRank": 192,
-    "chronologicalRank": 193,
-    "phanteressRank": 75
+    "chronologicalRank": 24,
+    "phanteressRank": 75,
+    "parentTitle": "Ant-Man and the Wasp",
+    "allTitleInfos": "MCU Film released in July 2018.",
+    "storyRank": 24
   },
   {
     "id": "iron-fist-s2-2018",
@@ -4157,8 +4900,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Colleen & Danny",
     "bannerColor": "#16a34a",
     "releaseRank": 193,
-    "chronologicalRank": 194,
-    "phanteressRank": 230
+    "chronologicalRank": 44,
+    "phanteressRank": 230,
+    "parentTitle": "Iron Fist",
+    "seriesId": "iron-fist",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "storyRank": 44
   },
   {
     "id": "avengers-assemble-s5-2018",
@@ -4179,8 +4927,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Black Panther",
     "bannerColor": "#581c87",
     "releaseRank": 194,
-    "chronologicalRank": 195,
-    "phanteressRank": 231
+    "chronologicalRank": 31,
+    "phanteressRank": 231,
+    "parentTitle": "Avengers Assemble",
+    "seriesId": "avengers-assemble",
+    "seasonNumber": 5,
+    "totalSeasons": 5,
+    "allTitleInfos": "Animated Series, 5 Seasons, 126 episodes total spanning from May 2013 to February 2019.",
+    "storyRank": 31
   },
   {
     "id": "the-gifted-s2-2018",
@@ -4202,7 +4956,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#2563eb",
     "releaseRank": 195,
     "chronologicalRank": 196,
-    "phanteressRank": 232
+    "phanteressRank": 232,
+    "parentTitle": "The Gifted",
+    "seriesId": "the-gifted",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "storyRank": 196
   },
   {
     "id": "venom-2018",
@@ -4223,7 +4982,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#18181b",
     "releaseRank": 196,
     "chronologicalRank": 197,
-    "phanteressRank": 233
+    "phanteressRank": 233,
+    "parentTitle": "Venom",
+    "allTitleInfos": "Sony's Spider-Man Universe live-action film released in October 2018.",
+    "storyRank": 197
   },
   {
     "id": "daredevil-s3-2018",
@@ -4244,8 +5006,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daredevil",
     "bannerColor": "#991b1b",
     "releaseRank": 197,
-    "chronologicalRank": 198,
-    "phanteressRank": 234
+    "chronologicalRank": 45,
+    "phanteressRank": 234,
+    "parentTitle": "Daredevil",
+    "seriesId": "daredevil",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action theatrical feature film starring Ben Affleck, released in February 2003.",
+    "storyRank": 45
   },
   {
     "id": "spider-man-into-the-spider-verse-2018",
@@ -4266,7 +5034,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 198,
     "chronologicalRank": 199,
-    "phanteressRank": 235
+    "phanteressRank": 235,
+    "parentTitle": "Spider-Man: Into the Spider-Verse",
+    "allTitleInfos": "Academy Award-winning animated feature film released in December 2018.",
+    "storyRank": 199
   },
   {
     "id": "runaways-s2-2018",
@@ -4287,8 +5058,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Runaways",
     "bannerColor": "#0284c7",
     "releaseRank": 199,
-    "chronologicalRank": 200,
-    "phanteressRank": 236
+    "chronologicalRank": 46,
+    "phanteressRank": 236,
+    "parentTitle": "Runaways",
+    "seriesId": "runaways",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "storyRank": 46
   },
   {
     "id": "the-punisher-s2-2019",
@@ -4309,8 +5085,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Punisher",
     "bannerColor": "#18181b",
     "releaseRank": 200,
-    "chronologicalRank": 202,
-    "phanteressRank": 237
+    "chronologicalRank": 47,
+    "phanteressRank": 237,
+    "parentTitle": "The Punisher",
+    "seriesId": "the-punisher",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Live-action theatrical feature film starring Thomas Jane, released in April 2004.",
+    "storyRank": 47
   },
   {
     "id": "captain-marvel-2019",
@@ -4330,8 +5112,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain Marvel",
     "bannerColor": "#d97706",
     "releaseRank": 201,
-    "chronologicalRank": 50,
-    "phanteressRank": 85
+    "chronologicalRank": 60,
+    "phanteressRank": 85,
+    "parentTitle": "Captain Marvel",
+    "allTitleInfos": "MCU Film released in March 2019.",
+    "storyRank": 60
   },
   {
     "id": "cloak-and-dagger-s2-2019",
@@ -4352,8 +5137,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Cloak & Dagger",
     "bannerColor": "#0f172a",
     "releaseRank": 202,
-    "chronologicalRank": 203,
-    "phanteressRank": 238
+    "chronologicalRank": 48,
+    "phanteressRank": 238,
+    "parentTitle": "Cloak & Dagger",
+    "seriesId": "cloak-and-dagger",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "storyRank": 48
   },
   {
     "id": "avengers-endgame-2019",
@@ -4373,8 +5163,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Avengers Assemble",
     "bannerColor": "#0369a1",
     "releaseRank": 203,
-    "chronologicalRank": 221,
-    "phanteressRank": 4
+    "chronologicalRank": 59,
+    "phanteressRank": 4,
+    "parentTitle": "Avengers: Endgame",
+    "allTitleInfos": "MCU Film concluding the Infinity Saga, released in April 2019.",
+    "storyRank": 59
   },
   {
     "id": "big-hero-6-s2-2019",
@@ -4396,7 +5189,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 204,
     "chronologicalRank": 204,
-    "phanteressRank": 239
+    "phanteressRank": 239,
+    "parentTitle": "Big Hero 6: The Series",
+    "seriesId": "big-hero-6",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "storyRank": 204
   },
   {
     "id": "agents-of-shield-s6-2019",
@@ -4417,8 +5215,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "S.H.I.E.L.D.",
     "bannerColor": "#334155",
     "releaseRank": 205,
-    "chronologicalRank": 205,
-    "phanteressRank": 240
+    "chronologicalRank": 63,
+    "phanteressRank": 240,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 6,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 63
   },
   {
     "id": "dark-phoenix-2019",
@@ -4439,7 +5243,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ea580c",
     "releaseRank": 206,
     "chronologicalRank": 206,
-    "phanteressRank": 241
+    "phanteressRank": 241,
+    "parentTitle": "Dark Phoenix",
+    "allTitleInfos": "Final 20th Century Fox X-Men film released in June 2019.",
+    "storyRank": 206
   },
   {
     "id": "jessica-jones-s3-2019",
@@ -4460,8 +5267,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Jessica Jones",
     "bannerColor": "#4c1d95",
     "releaseRank": 207,
-    "chronologicalRank": 207,
-    "phanteressRank": 242
+    "chronologicalRank": 49,
+    "phanteressRank": 242,
+    "parentTitle": "Jessica Jones",
+    "seriesId": "jessica-jones",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "storyRank": 49
   },
   {
     "id": "legion-s3-2019",
@@ -4483,7 +5295,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#f59e0b",
     "releaseRank": 208,
     "chronologicalRank": 208,
-    "phanteressRank": 243
+    "phanteressRank": 243,
+    "parentTitle": "Legion",
+    "seriesId": "legion",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "storyRank": 208
   },
   {
     "id": "peters-todo-list-2019",
@@ -4504,7 +5321,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#b91c1c",
     "releaseRank": 209,
     "chronologicalRank": 209,
-    "phanteressRank": 244
+    "phanteressRank": 244,
+    "parentTitle": "Peter To-Do List",
+    "storyRank": 209
   },
   {
     "id": "spider-man-far-from-home-2019",
@@ -4524,8 +5343,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man (Tom)",
     "bannerColor": "#b91c1c",
     "releaseRank": 210,
-    "chronologicalRank": 229,
-    "phanteressRank": 95
+    "chronologicalRank": 69,
+    "phanteressRank": 95,
+    "parentTitle": "Spider-Man: Far From Home",
+    "allTitleInfos": "MCU Film released in July 2019.",
+    "storyRank": 69
   },
   {
     "id": "runaways-s3-2019",
@@ -4546,8 +5368,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Runaways & Cloak and Dagger",
     "bannerColor": "#0284c7",
     "releaseRank": 211,
-    "chronologicalRank": 210,
-    "phanteressRank": 245
+    "chronologicalRank": 50,
+    "phanteressRank": 245,
+    "parentTitle": "Runaways",
+    "seriesId": "runaways",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "storyRank": 50
   },
   {
     "id": "agents-of-shield-s7-2020",
@@ -4568,8 +5395,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "S.H.I.E.L.D.",
     "bannerColor": "#334155",
     "releaseRank": 212,
-    "chronologicalRank": 211,
-    "phanteressRank": 246
+    "chronologicalRank": 64,
+    "phanteressRank": 246,
+    "parentTitle": "Agents of S.H.I.E.L.D.",
+    "seriesId": "agents-of-shield",
+    "seasonNumber": 7,
+    "totalSeasons": 7,
+    "allTitleInfos": "Live-action MCU-tied TV series, 7 Seasons, 136 episodes total. Seasons 1 through 7 aired consecutively from September 2013 to May 2020.",
+    "storyRank": 64
   },
   {
     "id": "the-new-mutants-2020",
@@ -4590,7 +5423,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#475569",
     "releaseRank": 213,
     "chronologicalRank": 212,
-    "phanteressRank": 247
+    "phanteressRank": 247,
+    "parentTitle": "The New Mutants",
+    "allTitleInfos": "Live-action X-Men Universe horror film released in August 2020.",
+    "storyRank": 212
   },
   {
     "id": "helstrom-s1-2020",
@@ -4611,8 +5447,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daimon & Ana Helstrom",
     "bannerColor": "#450a0a",
     "releaseRank": 214,
-    "chronologicalRank": 213,
-    "phanteressRank": 248
+    "chronologicalRank": 52,
+    "phanteressRank": 248,
+    "parentTitle": "Marvel Helstrom Season 1",
+    "storyRank": 52
   },
   {
     "id": "wandavision-2021",
@@ -4633,8 +5471,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Scarlet Witch",
     "bannerColor": "#be123c",
     "releaseRank": 215,
-    "chronologicalRank": 227,
-    "phanteressRank": 100
+    "chronologicalRank": 65,
+    "phanteressRank": 100,
+    "parentTitle": "WandaVision",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 9 episodes, premiered January 2021.",
+    "storyRank": 65
   },
   {
     "id": "falcon-winter-soldier-2021",
@@ -4655,8 +5496,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain America (Sam)",
     "bannerColor": "#1d4ed8",
     "releaseRank": 216,
-    "chronologicalRank": 228,
-    "phanteressRank": 102
+    "chronologicalRank": 66,
+    "phanteressRank": 102,
+    "parentTitle": "The Falcon and the Winter Soldier",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 6 episodes, premiered March 2021.",
+    "storyRank": 66
   },
   {
     "id": "modok-s1-2021",
@@ -4678,7 +5522,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 217,
     "chronologicalRank": 214,
-    "phanteressRank": 249
+    "phanteressRank": 249,
+    "parentTitle": "M.O.D.O.K. Season 1",
+    "allTitleInfos": "Stop-motion animated series Season 1, 10 episodes, premiered May 2021.",
+    "storyRank": 214
   },
   {
     "id": "loki-s1-2021",
@@ -4693,14 +5540,20 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "synopsis": "Loki is captured by the Time Variance Authority and meets He Who Remains at the End of Time.",
     "directorOrCreator": "Kate Herron",
     "releaseDate": "2021-06-09",
-    "inDoomsdayList": true,
+    "inDoomsdayList": false,
     "inFocusMcu": true,
     "inAllMarvel": true,
     "heroCharacter": "Loki & Sylvie",
     "bannerColor": "#15803d",
     "releaseRank": 218,
-    "chronologicalRank": 225,
-    "phanteressRank": 6
+    "chronologicalRank": 61,
+    "phanteressRank": 6,
+    "parentTitle": "Loki",
+    "seriesId": "loki",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Disney+ MCU Series, 2 Seasons, 12 episodes total. Season 1 (2021, 6 episodes); Season 2 (2023, 6 episodes).",
+    "storyRank": 61
   },
   {
     "id": "black-widow-2021",
@@ -4720,8 +5573,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Black Widow",
     "bannerColor": "#881337",
     "releaseRank": 219,
-    "chronologicalRank": 167,
-    "phanteressRank": 106
+    "chronologicalRank": 30,
+    "phanteressRank": 106,
+    "parentTitle": "Black Widow",
+    "allTitleInfos": "MCU Film released in July 2021.",
+    "storyRank": 30
   },
   {
     "id": "what-if-s1-2021",
@@ -4742,8 +5598,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Watcher",
     "bannerColor": "#4338ca",
     "releaseRank": 220,
-    "chronologicalRank": 226,
-    "phanteressRank": 108
+    "chronologicalRank": 62,
+    "phanteressRank": 108,
+    "parentTitle": "What If...?",
+    "seriesId": "what-if",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Disney+ MCU Series, 3 Seasons, 26 episodes total. Season 1 (2021, 9 episodes); Season 2 (2023, 9 episodes); Season 3 (2024, 8 episodes).",
+    "storyRank": 62
   },
   {
     "id": "shang-chi-2021",
@@ -4763,8 +5625,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Shang-Chi",
     "bannerColor": "#b91c1c",
     "releaseRank": 221,
-    "chronologicalRank": 236,
-    "phanteressRank": 7
+    "chronologicalRank": 67,
+    "phanteressRank": 7,
+    "parentTitle": "Shang-Chi and the Legend of the Ten Rings",
+    "allTitleInfos": "MCU Film released in September 2021.",
+    "storyRank": 67
   },
   {
     "id": "venom-carnage-2021",
@@ -4785,7 +5650,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#991b1b",
     "releaseRank": 222,
     "chronologicalRank": 215,
-    "phanteressRank": 250
+    "phanteressRank": 250,
+    "parentTitle": "Venom: Let There Be Carnage",
+    "allTitleInfos": "Sony's Spider-Man Universe film released in October 2021.",
+    "storyRank": 215
   },
   {
     "id": "eternals-2021",
@@ -4805,8 +5673,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Eternals",
     "bannerColor": "#d97706",
     "releaseRank": 223,
-    "chronologicalRank": 237,
-    "phanteressRank": 111
+    "chronologicalRank": 68,
+    "phanteressRank": 111,
+    "parentTitle": "Eternals",
+    "allTitleInfos": "MCU Film directed by Chlo\u00e9 Zhao, released in November 2021.",
+    "storyRank": 68
   },
   {
     "id": "hit-monkey-s1-2021",
@@ -4828,7 +5699,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 224,
     "chronologicalRank": 216,
-    "phanteressRank": 251
+    "phanteressRank": 251,
+    "parentTitle": "Hit-Monkey",
+    "seriesId": "hit-monkey",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated series, 2 Seasons, 20 episodes total. Season 1 (2021, 10 episodes); Season 2 (2024, 10 episodes).",
+    "storyRank": 216
   },
   {
     "id": "hawkeye-2021",
@@ -4849,8 +5726,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Hawkeye & Kate Bishop",
     "bannerColor": "#6d28d9",
     "releaseRank": 225,
-    "chronologicalRank": 240,
-    "phanteressRank": 114
+    "chronologicalRank": 72,
+    "phanteressRank": 114,
+    "parentTitle": "Hawkeye",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 6 episodes, premiered November 2021.",
+    "storyRank": 72
   },
   {
     "id": "spider-man-no-way-home-2021",
@@ -4864,14 +5744,17 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "synopsis": "Peter Parker botches Doctor Strange spell, bringing multiversal villains and three Spider-Men together.",
     "directorOrCreator": "Jon Watts",
     "releaseDate": "2021-12-17",
-    "inDoomsdayList": true,
+    "inDoomsdayList": false,
     "inFocusMcu": true,
     "inAllMarvel": true,
     "heroCharacter": "Spider-Men Trio",
     "bannerColor": "#b91c1c",
     "releaseRank": 226,
-    "chronologicalRank": 238,
-    "phanteressRank": 9
+    "chronologicalRank": 70,
+    "phanteressRank": 9,
+    "parentTitle": "Spider-Man: No Way Home",
+    "allTitleInfos": "MCU / Sony crossover film released in December 2021.",
+    "storyRank": 70
   },
   {
     "id": "moon-knight-2022",
@@ -4892,8 +5775,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Moon Knight",
     "bannerColor": "#e2e8f0",
     "releaseRank": 227,
-    "chronologicalRank": 241,
-    "phanteressRank": 117
+    "chronologicalRank": 73,
+    "phanteressRank": 117,
+    "parentTitle": "Moon Knight",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 6 episodes, premiered March 2022.",
+    "storyRank": 73
   },
   {
     "id": "morbius-2022",
@@ -4914,7 +5800,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#09090b",
     "releaseRank": 228,
     "chronologicalRank": 217,
-    "phanteressRank": 252
+    "phanteressRank": 252,
+    "parentTitle": "Morbius",
+    "allTitleInfos": "Sony's Spider-Man Universe live-action film released in April 2022.",
+    "storyRank": 217
   },
   {
     "id": "doctor-strange-multiverse-of-madness-2022",
@@ -4928,14 +5817,17 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "synopsis": "Strange protects America Chavez across alternate dimensions from a grief-corrupted Scarlet Witch.",
     "directorOrCreator": "Sam Raimi",
     "releaseDate": "2022-05-06",
-    "inDoomsdayList": true,
+    "inDoomsdayList": false,
     "inFocusMcu": true,
     "inAllMarvel": true,
     "heroCharacter": "Doctor Strange & America",
     "bannerColor": "#047857",
     "releaseRank": 229,
-    "chronologicalRank": 239,
-    "phanteressRank": 10
+    "chronologicalRank": 34,
+    "phanteressRank": 10,
+    "parentTitle": "Doctor Strange in the Multiverse of Madness",
+    "allTitleInfos": "MCU Film released in May 2022.",
+    "storyRank": 34
   },
   {
     "id": "ms-marvel-2022",
@@ -4956,8 +5848,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ms. Marvel",
     "bannerColor": "#0284c7",
     "releaseRank": 230,
-    "chronologicalRank": 251,
-    "phanteressRank": 121
+    "chronologicalRank": 74,
+    "phanteressRank": 121,
+    "parentTitle": "Ms. Marvel",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 6 episodes, premiered June 2022.",
+    "storyRank": 74
   },
   {
     "id": "thor-love-and-thunder-2022",
@@ -4977,8 +5872,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Thor & Mighty Thor",
     "bannerColor": "#0284c7",
     "releaseRank": 231,
-    "chronologicalRank": 252,
-    "phanteressRank": 123
+    "chronologicalRank": 6,
+    "phanteressRank": 123,
+    "parentTitle": "Thor: Love and Thunder",
+    "allTitleInfos": "MCU Film released in July 2022.",
+    "storyRank": 6
   },
   {
     "id": "i-am-groot-s1-2022",
@@ -4999,8 +5897,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Baby Groot",
     "bannerColor": "#15803d",
     "releaseRank": 232,
-    "chronologicalRank": 218,
-    "phanteressRank": 253
+    "chronologicalRank": 17,
+    "phanteressRank": 253,
+    "parentTitle": "I Am Groot",
+    "seriesId": "i-am-groot",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated Disney+ MCU Shorts, 2 Seasons, 10 short episodes total (2022 and 2023).",
+    "storyRank": 17
   },
   {
     "id": "she-hulk-2022",
@@ -5021,8 +5925,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "She-Hulk & Daredevil",
     "bannerColor": "#16a34a",
     "releaseRank": 233,
-    "chronologicalRank": 250,
-    "phanteressRank": 126
+    "chronologicalRank": 76,
+    "phanteressRank": 126,
+    "parentTitle": "She-Hulk: Attorney at Law",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 9 episodes, premiered August 2022.",
+    "storyRank": 76
   },
   {
     "id": "werewolf-by-night-2022",
@@ -5042,8 +5949,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Jack Russell & Man-Thing",
     "bannerColor": "#1c1917",
     "releaseRank": 234,
-    "chronologicalRank": 219,
-    "phanteressRank": 254
+    "chronologicalRank": 77,
+    "phanteressRank": 254,
+    "parentTitle": "Werewolf by Night",
+    "storyRank": 77
   },
   {
     "id": "black-panther-wakanda-forever-2022",
@@ -5063,8 +5972,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Shuri & Namor",
     "bannerColor": "#581c87",
     "releaseRank": 235,
-    "chronologicalRank": 248,
-    "phanteressRank": 11
+    "chronologicalRank": 31,
+    "phanteressRank": 11,
+    "parentTitle": "Black Panther: Wakanda Forever",
+    "allTitleInfos": "MCU Film released in November 2022.",
+    "storyRank": 31
   },
   {
     "id": "guardians-holiday-special-2022",
@@ -5084,8 +5996,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Mantis & Drax",
     "bannerColor": "#15803d",
     "releaseRank": 236,
-    "chronologicalRank": 220,
-    "phanteressRank": 255
+    "chronologicalRank": 16,
+    "phanteressRank": 255,
+    "parentTitle": "The Guardians of the Galaxy Holiday Special",
+    "storyRank": 16
   },
   {
     "id": "ant-man-quantumania-2023",
@@ -5105,8 +6019,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ant-Man & Kang",
     "bannerColor": "#6366f1",
     "releaseRank": 237,
-    "chronologicalRank": 253,
-    "phanteressRank": 131
+    "chronologicalRank": 24,
+    "phanteressRank": 131,
+    "parentTitle": "Ant-Man and the Wasp: Quantumania",
+    "allTitleInfos": "MCU Film released in February 2023.",
+    "storyRank": 24
   },
   {
     "id": "guardians-of-the-galaxy-vol-3-2023",
@@ -5126,8 +6043,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Rocket & Guardians",
     "bannerColor": "#7c3aed",
     "releaseRank": 238,
-    "chronologicalRank": 257,
-    "phanteressRank": 133
+    "chronologicalRank": 16,
+    "phanteressRank": 133,
+    "parentTitle": "Guardians of the Galaxy Vol. 3",
+    "allTitleInfos": "MCU Film directed by James Gunn, released in May 2023.",
+    "storyRank": 16
   },
   {
     "id": "spider-man-across-spider-verse-2023",
@@ -5148,7 +6068,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ec4899",
     "releaseRank": 239,
     "chronologicalRank": 222,
-    "phanteressRank": 256
+    "phanteressRank": 256,
+    "parentTitle": "Spider-Man: Across the Spider-Verse",
+    "allTitleInfos": "Animated theatrical feature film released in June 2023.",
+    "storyRank": 222
   },
   {
     "id": "secret-invasion-2023",
@@ -5169,8 +6092,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Nick Fury",
     "bannerColor": "#14532d",
     "releaseRank": 240,
-    "chronologicalRank": 258,
-    "phanteressRank": 136
+    "chronologicalRank": 82,
+    "phanteressRank": 136,
+    "parentTitle": "Secret Invasion",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 6 episodes, premiered June 2023.",
+    "storyRank": 82
   },
   {
     "id": "i-am-groot-s2-2023",
@@ -5191,8 +6117,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Baby Groot",
     "bannerColor": "#15803d",
     "releaseRank": 241,
-    "chronologicalRank": 223,
-    "phanteressRank": 257
+    "chronologicalRank": 19,
+    "phanteressRank": 257,
+    "parentTitle": "I Am Groot",
+    "seriesId": "i-am-groot",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated Disney+ MCU Shorts, 2 Seasons, 10 short episodes total (2022 and 2023).",
+    "storyRank": 19
   },
   {
     "id": "loki-s2-2023",
@@ -5207,14 +6139,20 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "synopsis": "Loki time-slips across the multiverse and sacrifices his freedom to become God of Stories.",
     "directorOrCreator": "Justin Benson, Aaron Moorhead",
     "releaseDate": "2023-10-05",
-    "inDoomsdayList": true,
+    "inDoomsdayList": false,
     "inFocusMcu": true,
     "inAllMarvel": true,
     "heroCharacter": "Loki God of Stories",
     "bannerColor": "#ca8a04",
     "releaseRank": 242,
-    "chronologicalRank": 260,
-    "phanteressRank": 12
+    "chronologicalRank": 83,
+    "phanteressRank": 12,
+    "parentTitle": "Loki",
+    "seriesId": "loki",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Disney+ MCU Series, 2 Seasons, 12 episodes total. Season 1 (2021, 6 episodes); Season 2 (2023, 6 episodes).",
+    "storyRank": 83
   },
   {
     "id": "the-marvels-2023",
@@ -5234,8 +6172,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Marvels Trio",
     "bannerColor": "#0284c7",
     "releaseRank": 243,
-    "chronologicalRank": 259,
-    "phanteressRank": 140
+    "chronologicalRank": 84,
+    "phanteressRank": 140,
+    "parentTitle": "The Marvels",
+    "allTitleInfos": "MCU Film released in November 2023.",
+    "storyRank": 84
   },
   {
     "id": "what-if-s2-2023",
@@ -5256,8 +6197,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain Carter & Kahhori",
     "bannerColor": "#4338ca",
     "releaseRank": 244,
-    "chronologicalRank": 224,
-    "phanteressRank": 141
+    "chronologicalRank": 85,
+    "phanteressRank": 141,
+    "parentTitle": "What If...?",
+    "seriesId": "what-if",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Disney+ MCU Series, 3 Seasons, 26 episodes total. Season 1 (2021, 9 episodes); Season 2 (2023, 9 episodes); Season 3 (2024, 8 episodes).",
+    "storyRank": 85
   },
   {
     "id": "echo-2024",
@@ -5278,8 +6225,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Echo & Kingpin",
     "bannerColor": "#7f1d1d",
     "releaseRank": 245,
-    "chronologicalRank": 249,
-    "phanteressRank": 142
+    "chronologicalRank": 86,
+    "phanteressRank": 142,
+    "parentTitle": "Echo",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 5 episodes, premiered January 2024.",
+    "storyRank": 86
   },
   {
     "id": "madame-web-2024",
@@ -5300,7 +6250,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#be123c",
     "releaseRank": 246,
     "chronologicalRank": 230,
-    "phanteressRank": 258
+    "phanteressRank": 258,
+    "parentTitle": "Madame Web",
+    "storyRank": 230
   },
   {
     "id": "x-men-97-s1-2024",
@@ -5322,7 +6274,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#ca8a04",
     "releaseRank": 247,
     "chronologicalRank": 231,
-    "phanteressRank": 259
+    "phanteressRank": 259,
+    "parentTitle": "X-Men 97 Season 1",
+    "storyRank": 231
   },
   {
     "id": "hit-monkey-s2-2024",
@@ -5344,7 +6298,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "releaseRank": 248,
     "chronologicalRank": 232,
-    "phanteressRank": 260
+    "phanteressRank": 260,
+    "parentTitle": "Hit-Monkey",
+    "seriesId": "hit-monkey",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated series, 2 Seasons, 20 episodes total. Season 1 (2021, 10 episodes); Season 2 (2024, 10 episodes).",
+    "storyRank": 232
   },
   {
     "id": "deadpool-and-wolverine-2024",
@@ -5364,8 +6324,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Deadpool & Wolverine",
     "bannerColor": "#dc2626",
     "releaseRank": 249,
-    "chronologicalRank": 261,
-    "phanteressRank": 13
+    "chronologicalRank": 87,
+    "phanteressRank": 13,
+    "parentTitle": "Deadpool & Wolverine",
+    "allTitleInfos": "MCU crossover theatrical film released in July 2024.",
+    "storyRank": 87
   },
   {
     "id": "agatha-all-along-2024",
@@ -5386,8 +6349,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Agatha & Wiccan",
     "bannerColor": "#581c87",
     "releaseRank": 250,
-    "chronologicalRank": 262,
-    "phanteressRank": 148
+    "chronologicalRank": 88,
+    "phanteressRank": 148,
+    "parentTitle": "Agatha All Along",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 9 episodes, premiered September 2024.",
+    "storyRank": 88
   },
   {
     "id": "venom-last-dance-2024",
@@ -5408,7 +6374,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#18181b",
     "releaseRank": 251,
     "chronologicalRank": 233,
-    "phanteressRank": 261
+    "phanteressRank": 261,
+    "parentTitle": "Venom: The Last Dance",
+    "storyRank": 233
   },
   {
     "id": "kraven-the-hunter-2024",
@@ -5429,7 +6397,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#78350f",
     "releaseRank": 252,
     "chronologicalRank": 234,
-    "phanteressRank": 262
+    "phanteressRank": 262,
+    "parentTitle": "Kraven the Hunter",
+    "storyRank": 234
   },
   {
     "id": "what-if-s3-2024",
@@ -5450,8 +6420,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "The Watcher",
     "bannerColor": "#4338ca",
     "releaseRank": 253,
-    "chronologicalRank": 235,
-    "phanteressRank": 152
+    "chronologicalRank": 89,
+    "phanteressRank": 152,
+    "parentTitle": "What If...?",
+    "seriesId": "what-if",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated Disney+ MCU Series, 3 Seasons, 26 episodes total. Season 1 (2021, 9 episodes); Season 2 (2023, 9 episodes); Season 3 (2024, 8 episodes).",
+    "storyRank": 89
   },
   {
     "id": "friendly-neighborhood-spider-man-2025",
@@ -5472,8 +6448,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Spider-Man",
     "bannerColor": "#b91c1c",
     "releaseRank": 254,
-    "chronologicalRank": 242,
-    "phanteressRank": 154
+    "chronologicalRank": 96,
+    "phanteressRank": 154,
+    "parentTitle": "Your Friendly Neighborhood Spider-Man",
+    "seriesId": "yfn-spiderman",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated Disney+ MCU Series, 2 Seasons (Season 1 premiered November 2024; Season 2 scheduled for January 2027).",
+    "storyRank": 96
   },
   {
     "id": "captain-america-brave-new-world-2025",
@@ -5493,8 +6475,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Captain America (Sam)",
     "bannerColor": "#1d4ed8",
     "releaseRank": 255,
-    "chronologicalRank": 263,
-    "phanteressRank": 14
+    "chronologicalRank": 90,
+    "phanteressRank": 14,
+    "parentTitle": "Captain America: Brave New World",
+    "allTitleInfos": "MCU Film starring Anthony Mackie, released in February 2025.",
+    "storyRank": 90
   },
   {
     "id": "daredevil-born-again-s1-2025",
@@ -5515,8 +6500,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Daredevil & Kingpin",
     "bannerColor": "#991b1b",
     "releaseRank": 256,
-    "chronologicalRank": 243,
-    "phanteressRank": 156
+    "chronologicalRank": 91,
+    "phanteressRank": 156,
+    "parentTitle": "Daredevil: Born Again",
+    "seriesId": "daredevil-born-again",
+    "seasonNumber": 1,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action Disney+ MCU Series, multi-season run starting with Season 1 in March 2025, Season 2 in March 2026, and Season 3 in March 2027.",
+    "storyRank": 91
   },
   {
     "id": "thunderbolts-2025",
@@ -5536,8 +6527,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Yelena & Thunderbolts",
     "bannerColor": "#1e293b",
     "releaseRank": 257,
-    "chronologicalRank": 268,
-    "phanteressRank": 15
+    "chronologicalRank": 92,
+    "phanteressRank": 15,
+    "parentTitle": "Thunderbolts*",
+    "allTitleInfos": "MCU Film released in May 2025.",
+    "storyRank": 92
   },
   {
     "id": "ironheart-2025",
@@ -5558,8 +6552,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Ironheart",
     "bannerColor": "#b91c1c",
     "releaseRank": 258,
-    "chronologicalRank": 244,
-    "phanteressRank": 159
+    "chronologicalRank": 93,
+    "phanteressRank": 159,
+    "parentTitle": "Ironheart",
+    "allTitleInfos": "Disney+ MCU Series Season 1, 6 episodes, premiered June 2025.",
+    "storyRank": 93
   },
   {
     "id": "fantastic-four-first-steps-2025",
@@ -5579,8 +6576,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Fantastic Four & Galactus",
     "bannerColor": "#0284c7",
     "releaseRank": 259,
-    "chronologicalRank": 269,
-    "phanteressRank": 16
+    "chronologicalRank": 97,
+    "phanteressRank": 16,
+    "parentTitle": "The Fantastic Four: First Steps",
+    "allTitleInfos": "MCU Period-setting theatrical feature film released in July 2025.",
+    "storyRank": 97
   },
   {
     "id": "eyes-of-wakanda-2025",
@@ -5601,8 +6601,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Warriors of Wakanda",
     "bannerColor": "#581c87",
     "releaseRank": 260,
-    "chronologicalRank": 245,
-    "phanteressRank": 263
+    "chronologicalRank": 94,
+    "phanteressRank": 263,
+    "parentTitle": "Eyes of Wakanda",
+    "allTitleInfos": "Animated Disney+ MCU Anthology Series Season 1, premiered August 2025.",
+    "storyRank": 94
   },
   {
     "id": "marvel-zombies-2025",
@@ -5623,8 +6626,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Zombie Hunters",
     "bannerColor": "#15803d",
     "releaseRank": 261,
-    "chronologicalRank": 246,
-    "phanteressRank": 264
+    "chronologicalRank": 95,
+    "phanteressRank": 264,
+    "parentTitle": "Marvel Zombies",
+    "allTitleInfos": "Animated Disney+ MCU TV-MA Series (premiering October 2025) accompanied by recurring annual Halloween holiday specials",
+    "storyRank": 95
   },
   {
     "id": "wonder-man-2025",
@@ -5645,8 +6651,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "heroCharacter": "Wonder Man",
     "bannerColor": "#ea580c",
     "releaseRank": 262,
-    "chronologicalRank": 247,
-    "phanteressRank": 163
+    "chronologicalRank": 98,
+    "phanteressRank": 163,
+    "parentTitle": "Wonder Man",
+    "storyRank": 98
   },
   {
     "id": "daredevil-born-again-s2-2026",
@@ -5669,8 +6677,14 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "isUpcoming": true,
     "upcomingDateText": "Early 2026",
     "releaseRank": 263,
-    "chronologicalRank": 254,
-    "phanteressRank": 279
+    "chronologicalRank": 99,
+    "phanteressRank": 279,
+    "parentTitle": "Daredevil: Born Again",
+    "seriesId": "daredevil-born-again",
+    "seasonNumber": 2,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action Disney+ MCU Series, multi-season run starting with Season 1 in March 2025, Season 2 in March 2026, and Season 3 in March 2027.",
+    "storyRank": 99
   },
   {
     "id": "x-men-97-s2-2026",
@@ -5694,7 +6708,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "upcomingDateText": "Spring 2026",
     "releaseRank": 264,
     "chronologicalRank": 255,
-    "phanteressRank": 280
+    "phanteressRank": 280,
+    "parentTitle": "X-Men 97 Season 2",
+    "storyRank": 255
   },
   {
     "id": "spider-man-4-2026",
@@ -5717,7 +6733,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "upcomingDateText": "July 24, 2026",
     "releaseRank": 265,
     "chronologicalRank": 256,
-    "phanteressRank": 281
+    "phanteressRank": 281,
+    "parentTitle": "Spider-Man 4",
+    "storyRank": 256
   },
   {
     "id": "spider-man-brand-new-day-2026",
@@ -5738,8 +6756,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "isUpcoming": false,
     "releaseRank": 266,
-    "chronologicalRank": 270,
-    "phanteressRank": 167
+    "chronologicalRank": 101,
+    "phanteressRank": 167,
+    "parentTitle": "Spider-Man: Brand New Day",
+    "storyRank": 101
   },
   {
     "id": "vision-quest-2026",
@@ -5762,8 +6782,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "isUpcoming": false,
     "upcomingDateText": "Late 2026",
     "releaseRank": 267,
-    "chronologicalRank": 271,
-    "phanteressRank": 169
+    "chronologicalRank": 102,
+    "phanteressRank": 169,
+    "parentTitle": "VisionQuest",
+    "storyRank": 102
   },
   {
     "id": "avengers-doomsday-2026",
@@ -5774,7 +6796,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt21361454",
     "imdbRating": 9.3,
-    "synopsis": "Directed by the Russo Brothers; starring Robert Downey Jr. as Victor von Doom facing Earth’s Mightiest Heroes.",
+    "synopsis": "Directed by the Russo Brothers; starring Robert Downey Jr. as Victor von Doom facing Earth\u2019s Mightiest Heroes.",
     "directorOrCreator": "Anthony & Joe Russo",
     "releaseDate": "2026-12-18",
     "inDoomsdayList": false,
@@ -5785,8 +6807,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "isUpcoming": true,
     "upcomingDateText": "December 18, 2026",
     "releaseRank": 268,
-    "chronologicalRank": 272,
-    "phanteressRank": 265
+    "chronologicalRank": 103,
+    "phanteressRank": 265,
+    "parentTitle": "Avengers: Doomsday",
+    "storyRank": 103
   },
   {
     "id": "friendly-neighborhood-spider-man-s2-2027",
@@ -5798,7 +6822,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt15833446-s2",
     "imdbRating": 8.1,
-    "synopsis": "Animated Disney+ series continuing Peter Parker’s early high school hero career through new villain confrontations.",
+    "synopsis": "Animated Disney+ series continuing Peter Parker\u2019s early high school hero career through new villain confrontations.",
     "directorOrCreator": "Jeff Trammell",
     "releaseDate": "2027-01-13",
     "isUpcoming": true,
@@ -5808,9 +6832,15 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Spider-Man",
     "bannerColor": "#dc2626",
-    "chronologicalRank": 274,
+    "chronologicalRank": 104,
     "releaseRank": 269,
-    "phanteressRank": 266
+    "phanteressRank": 266,
+    "parentTitle": "Your Friendly Neighborhood Spider-Man",
+    "seriesId": "yfn-spiderman",
+    "seasonNumber": 2,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated Disney+ MCU Series, 2 Seasons (Season 1 premiered November 2024; Season 2 scheduled for January 2027).",
+    "storyRank": 104
   },
   {
     "id": "daredevil-born-again-s3-2027",
@@ -5822,7 +6852,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt18923754-s3",
     "imdbRating": 8.8,
-    "synopsis": "Live-action Disney+ series continuing Matt Murdock’s pursuit of justice on the streets of New York.",
+    "synopsis": "Live-action Disney+ series continuing Matt Murdock\u2019s pursuit of justice on the streets of New York.",
     "directorOrCreator": "Dario Scardapane",
     "releaseDate": "2027-03-01",
     "isUpcoming": true,
@@ -5832,9 +6862,15 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Daredevil",
     "bannerColor": "#991b1b",
-    "chronologicalRank": 275,
+    "chronologicalRank": 105,
     "releaseRank": 270,
-    "phanteressRank": 267
+    "phanteressRank": 267,
+    "parentTitle": "Daredevil: Born Again",
+    "seriesId": "daredevil-born-again",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "allTitleInfos": "Live-action Disney+ MCU Series, multi-season run starting with Season 1 in March 2025, Season 2 in March 2026, and Season 3 in March 2027.",
+    "storyRank": 105
   },
   {
     "id": "spider-man-beyond-the-spider-verse-2027",
@@ -5857,7 +6893,9 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "bannerColor": "#dc2626",
     "chronologicalRank": 264,
     "releaseRank": 271,
-    "phanteressRank": 282
+    "phanteressRank": 282,
+    "parentTitle": "Spider-Man: Beyond the Spider-Verse",
+    "storyRank": 264
   },
   {
     "id": "x-men-97-s3-2027",
@@ -5879,9 +6917,15 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "X-Men",
     "bannerColor": "#eab308",
-    "chronologicalRank": 265,
+    "chronologicalRank": 106,
     "releaseRank": 272,
-    "phanteressRank": 283
+    "phanteressRank": 283,
+    "parentTitle": "X-Men '97",
+    "seriesId": "x-men-97",
+    "seasonNumber": 3,
+    "totalSeasons": 3,
+    "allTitleInfos": "Animated revival series, multi-season rollout starting with Season 1 in March 2024, with subsequent seasons continuing through 2027.",
+    "storyRank": 106
   },
   {
     "id": "marvel-zombies-specials-2027",
@@ -5893,19 +6937,25 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt16027150",
     "imdbRating": 7.9,
-    "synopsis": "Animated Disney+ specials premiering Halloween 2027–2029, pitting surviving heroes against a ravaging zombie plague.",
+    "synopsis": "Animated Disney+ specials premiering Halloween 2027\u20132029, pitting surviving heroes against a ravaging zombie plague.",
     "directorOrCreator": "Bryan Andrews",
     "releaseDate": "2027-10-31",
     "isUpcoming": true,
-    "upcomingDateText": "Halloween 2027–2029",
+    "upcomingDateText": "Halloween 2027\u20132029",
     "inDoomsdayList": false,
     "inFocusMcu": true,
     "inAllMarvel": true,
     "heroCharacter": "Avengers",
     "bannerColor": "#15803d",
-    "chronologicalRank": 277,
+    "chronologicalRank": 95,
     "releaseRank": 273,
-    "phanteressRank": 268
+    "phanteressRank": 268,
+    "parentTitle": "Marvel Zombies",
+    "seriesId": "marvel-zombies",
+    "seasonNumber": 1,
+    "totalSeasons": 2,
+    "allTitleInfos": "Animated Disney+ MCU TV-MA Series (premiering October 2025) accompanied by recurring annual Halloween holiday specials",
+    "storyRank": 95
   },
   {
     "id": "blade-mcu-2027",
@@ -5927,8 +6977,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "isUpcoming": true,
     "upcomingDateText": "2027",
     "releaseRank": 274,
-    "chronologicalRank": 266,
-    "phanteressRank": 284
+    "chronologicalRank": 114,
+    "phanteressRank": 284,
+    "parentTitle": "Blade",
+    "allTitleInfos": "Theatrical feature film starring Wesley Snipes, released in August 1998.",
+    "storyRank": 114
   },
   {
     "id": "armor-wars-2027",
@@ -5950,8 +7003,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "isUpcoming": true,
     "upcomingDateText": "2027",
     "releaseRank": 275,
-    "chronologicalRank": 267,
-    "phanteressRank": 285
+    "chronologicalRank": 113,
+    "phanteressRank": 285,
+    "parentTitle": "Armor Wars",
+    "storyRank": 113
   },
   {
     "id": "avengers-secret-wars-2027",
@@ -5973,8 +7028,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "isUpcoming": true,
     "upcomingDateText": "December 17, 2027",
     "releaseRank": 276,
-    "chronologicalRank": 276,
-    "phanteressRank": 269
+    "chronologicalRank": 108,
+    "phanteressRank": 269,
+    "parentTitle": "Avengers: Secret Wars",
+    "storyRank": 108
   },
   {
     "id": "untitled-x-men-movie-2028",
@@ -5995,9 +7052,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "X-Men",
     "bannerColor": "#eab308",
-    "chronologicalRank": 278,
+    "chronologicalRank": 109,
     "releaseRank": 277,
-    "phanteressRank": 270
+    "phanteressRank": 270,
+    "parentTitle": "Untitled X-Men Movie",
+    "storyRank": 109
   },
   {
     "id": "zodiac-2028",
@@ -6019,9 +7078,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "S.H.I.E.L.D.",
     "bannerColor": "#475569",
-    "chronologicalRank": 279,
+    "chronologicalRank": 112,
     "releaseRank": 278,
-    "phanteressRank": 271
+    "phanteressRank": 271,
+    "parentTitle": "Zodiac",
+    "storyRank": 112
   },
   {
     "id": "ghost-rider-2028",
@@ -6042,9 +7103,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Ghost Rider",
     "bannerColor": "#ea580c",
-    "chronologicalRank": 273,
+    "chronologicalRank": 110,
     "releaseRank": 279,
-    "phanteressRank": 286
+    "phanteressRank": 286,
+    "parentTitle": "Ghost Rider",
+    "allTitleInfos": "Live-action theatrical feature film starring Nicolas Cage, released in February 2007.",
+    "storyRank": 110
   },
   {
     "id": "black-panther-3-2028",
@@ -6065,9 +7129,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Black Panther",
     "bannerColor": "#4f46e5",
-    "chronologicalRank": 280,
+    "chronologicalRank": 31,
     "releaseRank": 280,
-    "phanteressRank": 272
+    "phanteressRank": 272,
+    "parentTitle": "Black Panther 3",
+    "storyRank": 31
   },
   {
     "id": "armor-wars-tba",
@@ -6078,7 +7144,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt13623126",
     "imdbRating": 8,
-    "synopsis": "In development as a theatrical feature film. James Rhodes must defend Tony Stark’s legacy when Stark tech is stolen and weaponized.",
+    "synopsis": "In development as a theatrical feature film. James Rhodes must defend Tony Stark\u2019s legacy when Stark tech is stolen and weaponized.",
     "directorOrCreator": "Yassir Lester",
     "releaseDate": "2028-12-30",
     "isUpcoming": true,
@@ -6088,9 +7154,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "War Machine",
     "bannerColor": "#64748b",
-    "chronologicalRank": 281,
+    "chronologicalRank": 113,
     "releaseRank": 281,
-    "phanteressRank": 273
+    "phanteressRank": 273,
+    "parentTitle": "Armor Wars",
+    "storyRank": 113
   },
   {
     "id": "blade-mcu-tba",
@@ -6111,9 +7179,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Blade",
     "bannerColor": "#dc2626",
-    "chronologicalRank": 282,
+    "chronologicalRank": 114,
     "releaseRank": 282,
-    "phanteressRank": 274
+    "phanteressRank": 274,
+    "parentTitle": "Blade",
+    "allTitleInfos": "Theatrical feature film starring Wesley Snipes, released in August 1998.",
+    "storyRank": 114
   },
   {
     "id": "nova-tba",
@@ -6134,9 +7205,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Nova",
     "bannerColor": "#3b82f6",
-    "chronologicalRank": 283,
+    "chronologicalRank": 115,
     "releaseRank": 283,
-    "phanteressRank": 275
+    "phanteressRank": 275,
+    "parentTitle": "Nova",
+    "storyRank": 115
   },
   {
     "id": "shang-chi-2-tba",
@@ -6157,9 +7230,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Shang-Chi",
     "bannerColor": "#dc2626",
-    "chronologicalRank": 284,
+    "chronologicalRank": 116,
     "releaseRank": 284,
-    "phanteressRank": 276
+    "phanteressRank": 276,
+    "parentTitle": "Shang-Chi 2",
+    "storyRank": 116
   },
   {
     "id": "star-lord-project-tba",
@@ -6181,9 +7256,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Star-Lord",
     "bannerColor": "#e11d48",
-    "chronologicalRank": 285,
+    "chronologicalRank": 117,
     "releaseRank": 285,
-    "phanteressRank": 277
+    "phanteressRank": 277,
+    "parentTitle": "Star-Lord Project",
+    "storyRank": 117
   },
   {
     "id": "untitled-wakanda-okoye-series-tba",
@@ -6205,9 +7282,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "inAllMarvel": true,
     "heroCharacter": "Okoye",
     "bannerColor": "#b45309",
-    "chronologicalRank": 286,
+    "chronologicalRank": 118,
     "releaseRank": 286,
-    "phanteressRank": 278
+    "phanteressRank": 278,
+    "parentTitle": "Untitled Wakanda / Okoye Series",
+    "storyRank": 118
   }
 ];
 
@@ -6217,7 +7296,7 @@ export const PROPERTY_DESCRIPTIONS = {
     name: 'Doomsday List',
     tagline: 'Curated 15 Essential Multiverse & MCU Masterworks',
     detail: 'From original X-Men and Captain America: The First Avenger to Avengers: Endgame, Loki, No Way Home, Deadpool & Wolverine, and The Fantastic Four: First Steps.',
-    countText: '15 Curated Road to Doomsday Titles',
+    countText: '15 Curated Road to Doomsday Milestones (16 titles)',
     highlightBadge: 'Road to Avengers: Doomsday',
   },
   mcu: {
@@ -6225,7 +7304,7 @@ export const PROPERTY_DESCRIPTIONS = {
     name: 'Focus MCU',
     tagline: 'All Marvel Cinematic Universe Canon Movies & Disney+ Series',
     detail: 'Complete mainline Sacred Timeline canon from Iron Man (2008) to Avengers: Doomsday, Secret Wars, Disney+ series, Brand New Day, and VisionQuest.',
-    countText: 'Full MCU Canon Roadmap',
+    countText: 'Full MCU Canon Roadmap (118 Titles)',
     highlightBadge: 'Sacred Timeline Canon',
   },
   'all-marvel': {
@@ -6245,16 +7324,22 @@ export const ORDER_TYPE_DESCRIPTIONS = {
     badge: 'Best For Beginners!',
     description: 'Experience every film and series in the exact order audiences did in theaters. Preserves post-credit surprises and cultural timeline.',
   },
+  story: {
+    id: 'story',
+    name: 'Story Order',
+    badge: 'In-Universe Timeline!',
+    description: 'Follow the in-universe storyline from 1940s WWII Captain America, through the Sacred Timeline, into the Quantum and Multiversal future.',
+  },
   chronological: {
-    id: 'chronological',
-    name: 'Chronological Order',
-    badge: 'Best For Rewatch!',
+    id: 'story',
+    name: 'Story Order',
+    badge: 'In-Universe Timeline!',
     description: 'Follow the in-universe storyline from 1940s WWII Captain America, through the Sacred Timeline, into the Quantum and Multiversal future.',
   },
   phanteress: {
     id: 'phanteress',
     name: 'Phanteress Order',
-    badge: 'Best for Both, Perfect Experience!',
-    description: 'The ultimate bespoke watch order crafted by Phanteress. Groups thematic arcs, balances heavy movies with fun series, and primes you for Secret Wars.',
+    badge: 'Under Curation',
+    description: 'The ultimate bespoke watch order crafted by Phanteress. Currently being curated and will unlock in an upcoming update!',
   },
 };

@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import {
   Sparkles,
   Film,
-  Layers,
   ArrowRight,
   ArrowLeft,
   SlidersHorizontal,
@@ -13,7 +12,6 @@ import {
   X,
   ListOrdered,
   FolderTree,
-  AlertCircle,
 } from 'lucide-react';
 import { useWatchlist } from '../context/WatchlistContext';
 import { OrderConfiguration, PropertyGroup, WatchOrderType, GroupingMode, MarvelTitle } from '../types';
@@ -27,7 +25,6 @@ interface WizardSetupProps {
 export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting = false }) => {
   const { orderConfig, applyOrderConfiguration, setShowWizard, setHasCompletedWizard } = useWatchlist();
 
-  // If adjusting an existing order, start at Step 2; if first run, start at Step 1
   const [step, setStep] = useState<number>(isAdjusting ? 2 : 1);
   const [selectedFranchise, setSelectedFranchise] = useState<'marvel' | 'dc'>('marvel');
   const [selectedProperties, setSelectedProperties] = useState<PropertyGroup>(orderConfig.properties);
@@ -39,10 +36,9 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
   const [generationProgress, setGenerationProgress] = useState<number>(0);
   const [isGenerationComplete, setIsGenerationComplete] = useState<boolean>(false);
 
-  // Enforce rule: Only Focus MCU can pick Chronological Order.
-  // Also enforce: Phanteress Order is temporarily unavailable (under curation).
+  // Enforce rule: Only Focus MCU can pick Story Order.
   useEffect(() => {
-    if (selectedProperties !== 'mcu' && selectedOrderType === 'chronological') {
+    if (selectedProperties !== 'mcu' && (selectedOrderType === 'story' || selectedOrderType === 'chronological')) {
       setSelectedOrderType('release');
     }
     if (selectedOrderType === 'phanteress') {
@@ -50,19 +46,41 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
     }
   }, [selectedProperties, selectedOrderType]);
 
-  // Titles for current configuration
+  // Target titles for selected configuration
   const targetTitles = React.useMemo(() => {
+    if (selectedProperties === 'doomsday') {
+      const ddIds = [
+        'x-men-2000',
+        'x2-x-men-united-2003',
+        'captain-america-first-avenger-2011',
+        'the-avengers-2012',
+        'avengers-infinity-war-2018',
+        'avengers-endgame-2019',
+        'loki-season-1-2021',
+        'loki-season-2-2023',
+        'shang-chi-2021',
+        'spiderman-no-way-home-2021',
+        'black-panther-wakanda-forever-2022',
+        'doctor-strange-multiverse-2022',
+        'deadpool-and-wolverine-2024',
+        'captain-america-brave-new-world-2025',
+        'thunderbolts-2025',
+        'fantastic-four-first-steps-2025',
+      ];
+      return ddIds.map((id) => MARVEL_CATALOG.find((t) => t.id === id)).filter((t): t is MarvelTitle => Boolean(t));
+    }
+
     const filtered = MARVEL_CATALOG.filter((t) => {
-      if (selectedProperties === 'doomsday') return t.inDoomsdayList;
       if (selectedProperties === 'mcu') return t.inFocusMcu;
       if (selectedProperties === 'all-marvel') return t.inAllMarvel;
       return true;
     });
 
     return [...filtered].sort((a, b) => {
-      if (selectedOrderType === 'release') return a.releaseRank - b.releaseRank;
-      if (selectedOrderType === 'chronological') return a.chronologicalRank - b.chronologicalRank;
-      return a.phanteressRank - b.phanteressRank;
+      if (selectedOrderType === 'story' || selectedOrderType === 'chronological') {
+        return (a.storyRank ?? a.chronologicalRank ?? a.releaseRank) - (b.storyRank ?? b.chronologicalRank ?? b.releaseRank);
+      }
+      return a.releaseRank - b.releaseRank;
     });
   }, [selectedProperties, selectedOrderType]);
 
@@ -94,16 +112,24 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
           franchise: selectedFranchise,
           properties: selectedProperties,
           orderType: selectedOrderType,
-          groupingMode: selectedGroupingMode,
+          groupingMode: selectedProperties === 'doomsday' ? 'list' : selectedGroupingMode,
         };
         applyOrderConfiguration(finalConfig);
       }
-    }, 50);
+    }, 45);
 
     return () => clearInterval(interval);
   }, [step, targetTitles, selectedFranchise, selectedProperties, selectedOrderType, selectedGroupingMode]);
 
-  // Handle dismissal: Never overwrite or default the user's order if they decline or cancel!
+  // USER RULE: When user selects Doomsday List in Step 3, they have no choice to pick for the next, so it automatically creates the list!
+  const handleSelectDoomsday = () => {
+    setSelectedProperties('doomsday');
+    setSelectedOrderType('release');
+    setSelectedGroupingMode('list');
+    // Auto-advance straight to generation step!
+    setStep(6);
+  };
+
   const handleKeepCurrentOrder = () => {
     setHasCompletedWizard(true);
     setShowWizard(false);
@@ -132,7 +158,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Step Indicators */}
             <div className="flex items-center gap-1.5">
               {[1, 2, 3, 4, 5, 6].map((s) => (
                 <div
@@ -148,7 +173,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
               ))}
             </div>
 
-            {/* Dismiss without altering order */}
             <button
               onClick={handleKeepCurrentOrder}
               className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
@@ -163,7 +187,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
         {/* Dynamic Step Content */}
         <div className="p-6 sm:p-8 overflow-y-auto flex-1">
           <AnimatePresence mode="wait">
-            {/* --- STEP 1: FIRST SCREEN (DO YOU WANT TO SETUP?) --- */}
+            {/* --- STEP 1: FIRST SCREEN --- */}
             {step === 1 && (
               <motion.div
                 key="step-1"
@@ -223,7 +247,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                 </div>
 
                 <div className="grid grid-cols-1 gap-4">
-                  {/* Option: Marvel */}
                   <div
                     onClick={() => setSelectedFranchise('marvel')}
                     className={`p-5 rounded-2xl border transition-all cursor-pointer text-left relative ${
@@ -252,7 +275,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                     </div>
                   </div>
 
-                  {/* Option: DC */}
                   <div className="p-5 rounded-2xl border border-slate-800 bg-slate-900/40 opacity-70 cursor-not-allowed text-left relative">
                     <div className="flex items-start justify-between">
                       <div className="space-y-1.5 pr-4">
@@ -263,7 +285,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                           </span>
                         </div>
                         <p className="text-xs text-slate-500 leading-relaxed">
-                          From Gotham's shadows to Metropolis and the upcoming DCU Gods &amp; Monsters slate. Expanding to DC in future updates!
+                          From Gotham's shadows to Metropolis and the upcoming DCU slate. Expanding in future updates!
                         </p>
                       </div>
                     </div>
@@ -308,37 +330,33 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                 </div>
 
                 <div className="space-y-3">
-                  {/* [Doomsday List] */}
+                  {/* [Doomsday List] - USER RULE: Auto creates list immediately! */}
                   <div
-                    onClick={() => setSelectedProperties('doomsday')}
-                    className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer text-left ${
-                      selectedProperties === 'doomsday'
-                        ? 'bg-pink-950/20 border-pink-500 shadow-md shadow-pink-950/40'
-                        : 'bg-slate-800/40 border-slate-700/80 hover:border-slate-600'
-                    }`}
+                    onClick={handleSelectDoomsday}
+                    className="p-4 sm:p-5 rounded-2xl border border-pink-500/80 bg-gradient-to-r from-pink-950/40 to-slate-900 hover:border-pink-400 transition-all cursor-pointer text-left group shadow-lg shadow-pink-950/30"
                   >
                     <div className="flex items-start justify-between">
                       <div className="space-y-1.5 pr-3">
                         <div className="flex items-center gap-2">
-                          <span className="text-base font-bold text-white">Doomsday List</span>
-                          <span className="text-[10px] font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-800/80 px-2 py-0.5 rounded">
-                            Official Road to Doomsday
+                          <span className="text-base font-bold text-white group-hover:text-pink-300 transition-colors">
+                            Doomsday List
+                          </span>
+                          <span className="text-[10px] font-extrabold bg-pink-600 text-white px-2 py-0.5 rounded shadow">
+                            Instant Auto-Create ✨
                           </span>
                         </div>
-                        <p className="text-xs font-medium text-slate-300">
-                          {PROPERTY_DESCRIPTIONS.doomsday.tagline}
+                        <p className="text-xs font-medium text-slate-200">
+                          Curated 15 Essential Multiverse &amp; MCU Masterworks
                         </p>
                         <p className="text-[11px] text-slate-400">
-                          <strong className="text-slate-300">Detail:</strong> 15 Essential Multiverse &amp; MCU Road to Doomsday Milestones (X-Men, X2, The Avengers, Infinity War, Endgame, Loki S1–S2, No Way Home, Deadpool &amp; Wolverine, Fantastic Four, etc.).
+                          X-Men, X2, The First Avenger, The Avengers, Infinity War, Endgame, Loki S1–S2, Shang-Chi, No Way Home, Wakanda Forever, Multiverse of Madness, Deadpool &amp; Wolverine, Brave New World, Thunderbolts*, and First Steps.
                         </p>
-                        <p className="text-[11px] font-semibold text-pink-400">
-                          Total: 15 Curated Road to Doomsday Milestones (16 titles)
+                        <p className="text-[11px] font-bold text-emerald-400 flex items-center gap-1">
+                          <CheckCircle2 className="w-3.5 h-3.5" /> Tap here to immediately auto-generate this curated list!
                         </p>
                       </div>
-                      <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 ${
-                        selectedProperties === 'doomsday' ? 'border-pink-500 bg-pink-500 text-white' : 'border-slate-600'
-                      }`}>
-                        {selectedProperties === 'doomsday' && <CheckCircle2 className="w-4 h-4" />}
+                      <div className="w-8 h-8 rounded-xl bg-pink-600 text-white flex items-center justify-center shrink-0 mt-1 shadow-md group-hover:scale-105 transition-transform">
+                        <ArrowRight className="w-4 h-4" />
                       </div>
                     </div>
                   </div>
@@ -348,7 +366,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                     onClick={() => setSelectedProperties('mcu')}
                     className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer text-left ${
                       selectedProperties === 'mcu'
-                        ? 'bg-pink-950/20 border-pink-500 shadow-md shadow-pink-950/40'
+                        ? 'bg-blue-950/20 border-blue-500 shadow-md shadow-blue-950/40'
                         : 'bg-slate-800/40 border-slate-700/80 hover:border-slate-600'
                     }`}
                   >
@@ -364,14 +382,14 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                           {PROPERTY_DESCRIPTIONS.mcu.tagline}
                         </p>
                         <p className="text-[11px] text-slate-400">
-                          <strong className="text-slate-300">Detail:</strong> Complete mainline Marvel Cinematic Universe canon movies, Disney+ series &amp; specials, Brand New Day, VisionQuest, and upcoming Phase 6 releases.
+                          Complete mainline Marvel Cinematic Universe canon movies, Disney+ series &amp; specials, Brand New Day, VisionQuest, and Phase 6 releases.
                         </p>
-                        <p className="text-[11px] font-semibold text-pink-400">
-                          Total: 71 MCU Canon Titles &amp; Upcoming
+                        <p className="text-[11px] font-semibold text-blue-400">
+                          Total: 118 MCU Canon Titles (Enables Story Order!)
                         </p>
                       </div>
                       <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 ${
-                        selectedProperties === 'mcu' ? 'border-pink-500 bg-pink-500 text-white' : 'border-slate-600'
+                        selectedProperties === 'mcu' ? 'border-blue-500 bg-blue-500 text-white' : 'border-slate-600'
                       }`}>
                         {selectedProperties === 'mcu' && <CheckCircle2 className="w-4 h-4" />}
                       </div>
@@ -383,7 +401,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                     onClick={() => setSelectedProperties('all-marvel')}
                     className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer text-left ${
                       selectedProperties === 'all-marvel'
-                        ? 'bg-pink-950/20 border-pink-500 shadow-md shadow-pink-950/40'
+                        ? 'bg-purple-950/20 border-purple-500 shadow-md shadow-purple-950/40'
                         : 'bg-slate-800/40 border-slate-700/80 hover:border-slate-600'
                     }`}
                   >
@@ -399,14 +417,14 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                           {PROPERTY_DESCRIPTIONS['all-marvel'].tagline}
                         </p>
                         <p className="text-[11px] text-slate-400">
-                          <strong className="text-slate-300">Detail:</strong> Every Marvel screen production from 1944 Captain America serial, 60s–90s animation, live-action classics, Fox/Sony multiverses, to modern MCU.
+                          Every Marvel screen production from 1944 Captain America serial, 60s–90s animation, live-action classics, Fox/Sony multiverses, to modern MCU.
                         </p>
-                        <p className="text-[11px] font-semibold text-pink-400">
+                        <p className="text-[11px] font-semibold text-purple-400">
                           Total: 286 Master Properties
                         </p>
                       </div>
                       <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 ${
-                        selectedProperties === 'all-marvel' ? 'border-pink-500 bg-pink-500 text-white' : 'border-slate-600'
+                        selectedProperties === 'all-marvel' ? 'border-purple-500 bg-purple-500 text-white' : 'border-slate-600'
                       }`}>
                         {selectedProperties === 'all-marvel' && <CheckCircle2 className="w-4 h-4" />}
                       </div>
@@ -431,7 +449,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
               </motion.div>
             )}
 
-            {/* --- STEP 4: CHOOSE YOUR WATCH ORDER --- */}
+            {/* --- STEP 4: CHOOSE YOUR WATCH ORDER (STORY ORDER RENAMED) --- */}
             {step === 4 && (
               <motion.div
                 key="step-4"
@@ -481,12 +499,12 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                     </div>
                   </div>
 
-                  {/* [Chronological Order] - ONLY SELECTABLE FOR FOCUS MCU */}
+                  {/* [Story Order] - ONLY SELECTABLE FOR FOCUS MCU */}
                   {selectedProperties === 'mcu' ? (
                     <div
-                      onClick={() => setSelectedOrderType('chronological')}
+                      onClick={() => setSelectedOrderType('story')}
                       className={`p-4 sm:p-5 rounded-2xl border transition-all cursor-pointer text-left ${
-                        selectedOrderType === 'chronological'
+                        selectedOrderType === 'story' || selectedOrderType === 'chronological'
                           ? 'bg-pink-950/20 border-pink-500 shadow-md shadow-pink-950/40'
                           : 'bg-slate-800/40 border-slate-700/80 hover:border-slate-600'
                       }`}
@@ -494,35 +512,34 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                       <div className="flex items-start justify-between">
                         <div className="space-y-1.5 pr-3">
                           <div className="flex items-center gap-2">
-                            <span className="text-base font-bold text-white">Chronological Order</span>
+                            <span className="text-base font-bold text-white">Story Order</span>
                             <span className="text-[10px] font-semibold bg-cyan-950/80 text-cyan-400 border border-cyan-800/80 px-2 py-0.5 rounded">
-                              {ORDER_TYPE_DESCRIPTIONS.chronological.badge}
+                              In-Universe Timeline!
                             </span>
                           </div>
                           <p className="text-xs text-slate-300 leading-relaxed">
-                            {ORDER_TYPE_DESCRIPTIONS.chronological.description}
+                            Follow the narrative in-universe timeline from 1940s WWII Captain America, through the Sacred Timeline, into the Quantum and Multiversal future.
                           </p>
                         </div>
                         <div className={`w-5 h-5 rounded-full border flex items-center justify-center shrink-0 mt-1 ${
-                          selectedOrderType === 'chronological' ? 'border-pink-500 bg-pink-500 text-white' : 'border-slate-600'
+                          selectedOrderType === 'story' || selectedOrderType === 'chronological' ? 'border-pink-500 bg-pink-500 text-white' : 'border-slate-600'
                         }`}>
-                          {selectedOrderType === 'chronological' && <CheckCircle2 className="w-4 h-4" />}
+                          {(selectedOrderType === 'story' || selectedOrderType === 'chronological') && <CheckCircle2 className="w-4 h-4" />}
                         </div>
                       </div>
                     </div>
                   ) : (
-                    /* Disabled state when All Marvel Properties or Doomsday List is selected */
                     <div className="p-4 sm:p-5 rounded-2xl border border-slate-800/60 bg-slate-950/50 opacity-60 cursor-not-allowed text-left">
                       <div className="flex items-start justify-between">
                         <div className="space-y-1.5 pr-3">
                           <div className="flex items-center gap-2">
-                            <span className="text-base font-bold text-slate-400">Chronological Order</span>
+                            <span className="text-base font-bold text-slate-400">Story Order</span>
                             <span className="text-[10px] font-semibold bg-slate-800 text-slate-400 px-2 py-0.5 rounded flex items-center gap-1">
                               <Lock className="w-2.5 h-2.5 text-pink-400" /> Focus MCU Exclusive
                             </span>
                           </div>
                           <p className="text-xs text-slate-500 leading-relaxed">
-                            Chronological in-universe ordering is exclusively available for Focus MCU (the Sacred Timeline canon). For All Marvel Properties or Doomsday List, please select Release Order.
+                            Story Order (in-universe narrative timeline) is exclusively available for Focus MCU. For All Marvel Properties, please select Release Order.
                           </p>
                         </div>
                       </div>
@@ -542,12 +559,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                         <p className="text-xs text-purple-300/80 leading-relaxed">
                           Phanteress's custom narrative watch sequence is currently being curated and assembled. It will unlock automatically once the curated order is submitted!
                         </p>
-                        <p className="text-[11px] text-slate-400 italic">
-                          Temporarily unavailable — please select Release Order or Chronological Order above.
-                        </p>
-                      </div>
-                      <div className="w-5 h-5 rounded-full border border-purple-800/60 bg-purple-950/80 flex items-center justify-center shrink-0 mt-1">
-                        <Lock className="w-3 h-3 text-purple-400" />
                       </div>
                     </div>
                   </div>
@@ -570,7 +581,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
               </motion.div>
             )}
 
-            {/* --- STEP 5: NEW QUESTION: [BY PHASE] VS [ONE LONG LIST] --- */}
+            {/* --- STEP 5: [BY PHASE] VS [ONE LONG LIST] --- */}
             {step === 5 && (
               <motion.div
                 key="step-5"
@@ -591,7 +602,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                 </div>
 
                 <div className="space-y-3.5">
-                  {/* [BY PHASE] */}
                   <div
                     onClick={() => setSelectedGroupingMode('phase')}
                     className={`p-5 rounded-2xl border transition-all cursor-pointer text-left ${
@@ -624,7 +634,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                     </div>
                   </div>
 
-                  {/* [ONE LONG LIST] */}
                   <div
                     onClick={() => setSelectedGroupingMode('list')}
                     className={`p-5 rounded-2xl border transition-all cursor-pointer text-left ${
@@ -685,13 +694,12 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                 transition={{ duration: 0.2 }}
                 className="space-y-5"
               >
-                {/* Top Action Bar when complete: Adjust Your Order button */}
                 {isGenerationComplete && (
                   <div className="p-3.5 bg-pink-950/40 border border-pink-800/60 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3 animate-fade-in">
                     <div className="flex items-center gap-2">
                       <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
                       <span className="text-xs font-semibold text-slate-200">
-                        All {targetTitles.length} titles generated in your order ({selectedGroupingMode === 'phase' ? 'Grouped by Phase' : 'One Long List'})!
+                        All {targetTitles.length} titles generated in your order ({selectedProperties === 'doomsday' ? 'Road to Doomsday' : selectedGroupingMode === 'phase' ? 'Grouped by Phase' : 'One Long List'})!
                       </span>
                     </div>
 
@@ -720,7 +728,6 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                     </span>
                   </div>
 
-                  {/* Progress Bar */}
                   <div className="w-full h-2 bg-slate-800 rounded-full mt-3 overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-pink-600 via-purple-600 to-amber-500"
@@ -765,7 +772,7 @@ export const WizardSetup: React.FC<WizardSetupProps> = ({ onClose, isAdjusting =
                   {!isGenerationComplete && (
                     <div className="py-2 text-center text-xs text-slate-500 animate-pulse flex items-center justify-center gap-2">
                       <Sparkles className="w-3.5 h-3.5 text-pink-400" />
-                      <span>Syncing IMDb metadata &amp; chronological indices...</span>
+                      <span>Syncing metadata &amp; sequence order...</span>
                     </div>
                   )}
                 </div>

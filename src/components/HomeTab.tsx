@@ -34,6 +34,9 @@ export const HomeTab: React.FC = () => {
     updateEpisodesWatched,
     rescheduleDate,
     orderConfig,
+    profile,
+    updateProfile,
+    applyOrderConfiguration,
   } = useWatchlist();
 
   // Find next up to watch
@@ -369,6 +372,42 @@ export const HomeTab: React.FC = () => {
               </p>
             </div>
           )}
+
+          {/* Watch Schedule Pace Selector (Moved from profile as requested) */}
+          <div className="p-4 rounded-2xl bg-zinc-950/90 border border-pink-900/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+            <div>
+              <span className="text-[11px] font-bold text-pink-400 uppercase tracking-wider flex items-center gap-1.5">
+                <Flame className="w-3.5 h-3.5 text-amber-400" /> Watch Schedule Pace
+              </span>
+              <p className="text-xs text-slate-300">
+                Current: <strong className="text-white">1 title / {profile.paceDaysPerItem === 1 ? 'day' : `${profile.paceDaysPerItem} days`}</strong>
+              </p>
+            </div>
+
+            <div className="flex items-center gap-1.5 flex-wrap">
+              {[
+                { val: 1, label: 'Daily (1/d)' },
+                { val: 2, label: 'Every 2d' },
+                { val: 3, label: 'Every 3d' },
+                { val: 7, label: 'Weekly (1/wk)' },
+              ].map((p) => (
+                <button
+                  key={p.val}
+                  onClick={() => {
+                    updateProfile({ paceDaysPerItem: p.val });
+                    applyOrderConfiguration(orderConfig, p.val);
+                  }}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                    profile.paceDaysPerItem === p.val
+                      ? 'bg-pink-600 text-white shadow-md shadow-pink-950 font-bold'
+                      : 'bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-slate-300'
+                  }`}
+                >
+                  {p.label}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div>

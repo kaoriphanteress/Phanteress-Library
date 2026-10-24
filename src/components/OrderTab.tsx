@@ -8,15 +8,12 @@ import {
   GripVertical,
   Film,
   Tv,
-  Layers,
   ListOrdered,
   FolderTree,
-  ChevronRight,
-  CheckCircle2,
+  Heart,
 } from 'lucide-react';
 import { useWatchlist } from '../context/WatchlistContext';
-import { MarvelTitle, WatchlistItem, WatchStatus, GroupingMode } from '../types';
-import { PROPERTY_DESCRIPTIONS, ORDER_TYPE_DESCRIPTIONS } from '../data/marvelCatalog';
+import { MarvelTitle, WatchStatus, GroupingMode } from '../types';
 import { TitleDetailModal } from './TitleDetailModal';
 
 interface OrderTabProps {
@@ -78,40 +75,40 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
     reorderItems,
     updateItemStatus,
     applyOrderConfiguration,
+    getWatchlistItem,
+    toggleFavorite,
+    isFavorite,
   } = useWatchlist();
 
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'movie' | 'series' | 'unwatched' | 'watched' | 'skipped'>('all');
-  const [selectedTitle, setSelectedTitle] = useState<{ item: MarvelTitle; watchData: WatchlistItem } | null>(null);
+  const [selectedTitle, setSelectedTitle] = useState<{ item: MarvelTitle; season?: number } | null>(null);
 
-  // Grouping mode state, syncing with orderConfig
   const effectiveGrouping: GroupingMode = orderConfig.groupingMode || 'phase';
-
-  // Drag state for manual drag & drop
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
 
   // Filtered titles
   const displayedTitles = activeOrderTitles.filter((entry) => {
-    // Search query
+    const liveWatch = getWatchlistItem(entry.item.id);
+
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
-      const matchTitle = entry.item.title.toLowerCase().includes(q);
+      const matchTitle = entry.item.title.toLowerCase().includes(q) || (entry.item.parentTitle && entry.item.parentTitle.toLowerCase().includes(q));
       const matchHero = entry.item.heroCharacter.toLowerCase().includes(q);
       const matchPhase = entry.item.phase.toLowerCase().includes(q);
       if (!matchTitle && !matchHero && !matchPhase) return false;
     }
 
-    // Filter type
     if (filterType === 'movie') return entry.item.type === 'movie';
     if (filterType === 'series') return entry.item.type === 'series';
-    if (filterType === 'unwatched') return entry.watchData.status === 'unwatched';
-    if (filterType === 'watched') return entry.watchData.status === 'watched';
-    if (filterType === 'skipped') return entry.watchData.status === 'skipped';
+    if (filterType === 'unwatched') return liveWatch.status === 'unwatched';
+    if (filterType === 'watched') return liveWatch.status === 'watched';
+    if (filterType === 'skipped') return liveWatch.status === 'skipped';
 
     return true;
   });
 
-  // Group items by Phase when in 'phase' mode
+  // Group by Phase when in 'phase' mode
   const phaseGroupedList = useMemo(() => {
     if (effectiveGrouping !== 'phase') return [];
 
@@ -131,35 +128,28 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
   }, [displayedTitles, effectiveGrouping]);
 
   const handleMoveUp = (index: number) => {
-    if (index > 0) {
-      reorderItems(index, index - 1);
-    }
+    if (index > 0) reorderItems(index, index - 1);
   };
 
   const handleMoveDown = (index: number) => {
-    if (index < activeOrderTitles.length - 1) {
-      reorderItems(index, index + 1);
-    }
+    if (index < activeOrderTitles.length - 1) reorderItems(index, index + 1);
   };
 
-  // Toggle Watched [✓]
   const handleToggleWatched = (itemId: string, currentStatus: WatchStatus) => {
     const nextStatus: WatchStatus = currentStatus === 'watched' ? 'unwatched' : 'watched';
     updateItemStatus(itemId, nextStatus);
   };
 
-  // Toggle Skipped [X]
   const handleToggleSkipped = (itemId: string, currentStatus: WatchStatus) => {
     const nextStatus: WatchStatus = currentStatus === 'skipped' ? 'unwatched' : 'skipped';
     updateItemStatus(itemId, nextStatus);
   };
 
-  // Drag & drop handlers
   const handleDragStart = (index: number) => {
     setDraggedIndex(index);
   };
 
-  const handleDragOver = (e: React.DragEvent, index: number) => {
+  const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
   };
 
@@ -177,18 +167,19 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
     });
   };
 
-  // Render a single title card
+  // Render an individual title card (preserves specific season titles like Spider-Man Season 2 in order)
   const renderTitleCard = (entry: (typeof displayedTitles)[0], index: number) => {
+    const liveWatch = getWatchlistItem(entry.item.id);
     const isSeries = entry.item.type === 'series';
-    const isWatched = entry.watchData.status === 'watched';
-    const isSkipped = entry.watchData.status === 'skipped';
+    const isWatched = liveWatch.status === 'watched';
+    const isSkipped = liveWatch.status === 'skipped';
 
     return (
       <div
         key={entry.item.id}
         draggable
         onDragStart={() => handleDragStart(index)}
-        onDragOver={(e) => handleDragOver(e, index)}
+        onDragOver={handleDragOver}
         onDrop={() => handleDrop(index)}
         className={`p-3.5 sm:p-4 rounded-2xl border transition-all flex items-center justify-between gap-3 ${
           draggedIndex === index
@@ -200,7 +191,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
             : 'bg-zinc-900/90 border-zinc-800/90 hover:border-pink-950/60'
         }`}
       >
-        {/* Left: Drag Handle, Number, Title & Sub-metadata (NO watch date at bottom as requested) */}
+        {/* Left: Drag Handle, Number, Title & Sub-metadata */}
         <div className="flex items-center gap-3 min-w-0">
           <div className="hidden sm:flex flex-col items-center justify-center text-slate-600 cursor-grab active:cursor-grabbing hover:text-slate-400">
             <GripVertical className="w-4 h-4" />
@@ -211,10 +202,9 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
           </span>
 
           <div className="min-w-0">
-            {/* Clean title without parenthetical date */}
             <div className="flex flex-wrap items-center gap-2">
               <h4
-                onClick={() => setSelectedTitle(entry)}
+                onClick={() => setSelectedTitle({ item: entry.item, season: entry.item.seasonNumber })}
                 className={`text-sm font-bold truncate cursor-pointer transition-colors ${
                   isWatched
                     ? 'text-emerald-300 line-through'
@@ -233,7 +223,6 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
               )}
             </div>
 
-            {/* Clean metadata: year · type · phase · hero (NO watch date) */}
             <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-slate-400 mt-0.5">
               <span>{entry.item.year}</span>
               <span aria-hidden="true">·</span>
@@ -249,9 +238,21 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
           </div>
         </div>
 
-        {/* Right: Quick [✓] (Watched) & [✕] (Skipped) Controls + IMDb + Reorder */}
-        <div className="flex items-center gap-2 shrink-0">
-          {/* Quick IMDb link */}
+        {/* Right: Favorite + Quick [✓] (Watched) & [✕] (Skipped) Controls + IMDb + Reorder */}
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          {/* Favorite Toggle Button */}
+          <button
+            onClick={() => toggleFavorite(entry.item.id)}
+            className={`p-2 rounded-xl border transition-all cursor-pointer ${
+              isFavorite(entry.item.id)
+                ? 'bg-pink-950/80 border-pink-500 text-pink-400 shadow-sm shadow-pink-950/40'
+                : 'bg-slate-950 border-slate-800 text-slate-500 hover:text-pink-400 hover:border-pink-900/60'
+            }`}
+            title={isFavorite(entry.item.id) ? 'Remove from Favorites' : 'Add to Favorites'}
+          >
+            <Heart className={`w-3.5 h-3.5 ${isFavorite(entry.item.id) ? 'fill-pink-400 text-pink-400' : ''}`} />
+          </button>
+
           <a
             href={`https://www.imdb.com/title/${entry.item.imdbId}/`}
             target="_blank"
@@ -265,7 +266,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
 
           {/* [✓] BUTTON FOR WATCHED */}
           <button
-            onClick={() => handleToggleWatched(entry.item.id, entry.watchData.status)}
+            onClick={() => handleToggleWatched(entry.item.id, liveWatch.status)}
             className={`min-h-[38px] px-2.5 sm:px-3 rounded-xl text-xs font-bold border flex items-center justify-center gap-1 transition-all cursor-pointer ${
               isWatched
                 ? 'bg-emerald-600 border-emerald-500 text-white shadow-md shadow-emerald-950/50'
@@ -279,7 +280,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
 
           {/* [X] BUTTON FOR SKIPPED */}
           <button
-            onClick={() => handleToggleSkipped(entry.item.id, entry.watchData.status)}
+            onClick={() => handleToggleSkipped(entry.item.id, liveWatch.status)}
             className={`min-h-[38px] px-2.5 sm:px-3 rounded-xl text-xs font-bold border flex items-center justify-center gap-1 transition-all cursor-pointer ${
               isSkipped
                 ? 'bg-rose-950/90 border-rose-600 text-rose-300 shadow-sm'
@@ -291,7 +292,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
             <span className="text-[11px] hidden sm:inline">{isSkipped ? 'Skipped' : 'Skip'}</span>
           </button>
 
-          {/* Up / Down Reorder buttons */}
+          {/* Up / Down Reorder */}
           <div className="flex flex-col gap-0.5">
             <button
               onClick={() => handleMoveUp(index)}
@@ -389,11 +390,11 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
         </div>
       </div>
 
-      {/* Reorder and Tracker Explanation Info */}
+      {/* Info indicator */}
       <div className="flex items-center justify-between text-xs text-slate-400 px-1">
         <span className="flex items-center gap-1.5">
           <GripVertical className="w-4 h-4 text-slate-500" />
-          <span>Tracker active: Tap [✓] for Watched, [✕] for Skipped, or drag to reorder.</span>
+          <span>Active Timeline: Tap [✓] for Watched, [✕] for Skipped, or click for all seasons.</span>
         </span>
         <span className="font-mono text-slate-500">
           {displayedTitles.length} of {activeOrderTitles.length} Titles
@@ -408,9 +409,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
           <p className="text-xs text-slate-400">Try clearing the search query or selecting a different filter.</p>
         </div>
       ) : effectiveGrouping === 'phase' ? (
-        /* ======================================================== */
-        /* --- VIEW 1: [BY PHASE] (Grouped by phase chapters) --- */
-        /* ======================================================== */
+        /* --- VIEW 1: [BY PHASE] --- */
         <div className="space-y-6">
           {phaseGroupedList.map((group) => {
             const meta = PHASE_METADATA[group.phase] || {
@@ -419,13 +418,12 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
               color: 'from-pink-900/30 to-slate-900/40 border-pink-900/40 text-pink-300',
             };
 
-            const phaseWatchedCount = group.items.filter((i) => i.entry.watchData.status === 'watched').length;
+            const phaseWatchedCount = group.items.filter((i) => getWatchlistItem(i.entry.item.id).status === 'watched').length;
             const phaseTotal = group.items.length;
             const phasePct = Math.round((phaseWatchedCount / phaseTotal) * 100);
 
             return (
               <div key={group.phase} className="space-y-3">
-                {/* Phase Header Banner */}
                 <div className={`p-4 rounded-2xl bg-gradient-to-r ${meta.color} border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-md`}>
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
@@ -441,7 +439,6 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
                     </h3>
                   </div>
 
-                  {/* Micro Progress Bar */}
                   <div className="w-full sm:w-36 h-2 bg-slate-950/80 rounded-full overflow-hidden border border-white/5">
                     <div
                       className="h-full bg-pink-500 rounded-full transition-all duration-300"
@@ -450,7 +447,6 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
                   </div>
                 </div>
 
-                {/* Items in this Phase */}
                 <div className="space-y-2.5">
                   {group.items.map(({ entry, originalIndex }) =>
                     renderTitleCard(entry, originalIndex)
@@ -461,9 +457,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
           })}
         </div>
       ) : (
-        /* ======================================================== */
-        /* --- VIEW 2: [ONE LONG LIST] (Continuous marathon) --- */
-        /* ======================================================== */
+        /* --- VIEW 2: [ONE LONG LIST] --- */
         <div className="space-y-2.5">
           {displayedTitles.map((entry, index) =>
             renderTitleCard(entry, index)
@@ -475,7 +469,7 @@ export const OrderTab: React.FC<OrderTabProps> = ({ onOpenWizard }) => {
       {selectedTitle && (
         <TitleDetailModal
           title={selectedTitle.item}
-          watchData={selectedTitle.watchData}
+          initialSeason={selectedTitle.season}
           onClose={() => setSelectedTitle(null)}
         />
       )}
