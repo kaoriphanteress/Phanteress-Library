@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-  X,
   MessageSquare,
   Sparkles,
   Search,
@@ -446,20 +445,3 @@ export const FeedbackInboxModal: React.FC<FeedbackInboxModalProps> = ({ isOpen, 
           )}
         </div>
       </main>
-
-      {/* Footer Bar */}
-      <footer className="sticky bottom-0 z-20 bg-[#07070a]/95 backdrop-blur-xl border-t border-zinc-800/80 px-4 sm:px-8 py-3.5 flex items-center justify-between shrink-0">
-        <span className="text-xs text-zinc-400">
-          Showing <strong>{filtered.length}</strong> public community suggestions
-        </span>
-
-        <button
-          onClick={onClose}
-          className="py-1.5 px-5 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-semibold cursor-pointer transition-colors"
-        >
-          Close
-        </button>
-      </footer>
-    </div>
-  );
-};
