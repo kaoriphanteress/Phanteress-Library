@@ -15,16 +15,21 @@ import {
   Minus,
   Star,
   Flame,
+  RotateCcw,
+  AlertCircle,
+  CalendarCheck,
+  CalendarDays,
 } from 'lucide-react';
 import { useWatchlist } from '../context/WatchlistContext';
 import { MarvelTitle, WatchlistItem } from '../types';
 import { TitleDetailModal } from './TitleDetailModal';
 
-type HomeSubTab = 'progress' | 'calendar' | 'history';
+type HomeSubTab = 'progress' | 'daily' | 'calendar' | 'history';
 
 export const HomeTab: React.FC = () => {
   const [activeSubTab, setActiveSubTab] = useState<HomeSubTab>('progress');
   const [selectedTitle, setSelectedTitle] = useState<{ item: MarvelTitle; watchData: WatchlistItem } | null>(null);
+  const [recalibrateToast, setRecalibrateToast] = useState('');
 
   const {
     activeOrderTitles,
@@ -100,14 +105,35 @@ export const HomeTab: React.FC = () => {
     setCurrentCalendarMonth(new Date(year, month + 1, 1));
   };
 
+  const handleRedoCalendar = () => {
+    const today = new Date();
+    const pace = profile.paceDaysPerItem || 2;
+    let offset = 0;
+
+    activeOrderTitles.forEach((entry) => {
+      if (entry.watchData.status !== 'watched') {
+        const nextDate = new Date(today);
+        nextDate.setDate(today.getDate() + offset);
+        const yyyy = nextDate.getFullYear();
+        const mm = String(nextDate.getMonth() + 1).padStart(2, '0');
+        const dd = String(nextDate.getDate()).padStart(2, '0');
+        rescheduleDate(entry.item.id, `${yyyy}-${mm}-${dd}`);
+        offset += pace;
+      }
+    });
+
+    setRecalibrateToast('Calendar successfully rescheduled! All remaining unwatched titles are now recalibrated starting from today.');
+    setTimeout(() => setRecalibrateToast(''), 4500);
+  };
+
   return (
     <div className="space-y-6 pb-24">
       {/* Home Sub-Navigation Segmented Tabs */}
       <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3">
-        <div className="flex items-center gap-1 p-1 bg-zinc-950 border border-pink-950/40 rounded-xl">
+        <div className="flex items-center gap-1 p-1 bg-zinc-950 border border-pink-950/40 rounded-xl overflow-x-auto no-scrollbar">
           <button
             onClick={() => setActiveSubTab('progress')}
-            className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+            className={`px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
               activeSubTab === 'progress'
                 ? 'bg-pink-600 text-white shadow-sm shadow-pink-950/50'
                 : 'text-slate-400 hover:text-slate-200'
@@ -117,8 +143,19 @@ export const HomeTab: React.FC = () => {
           </button>
 
           <button
+            onClick={() => setActiveSubTab('daily')}
+            className={`px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
+              activeSubTab === 'daily'
+                ? 'bg-pink-600 text-white shadow-sm shadow-pink-950/50'
+                : 'text-slate-400 hover:text-slate-200'
+            }`}
+          >
+            Daily
+          </button>
+
+          <button
             onClick={() => setActiveSubTab('calendar')}
-            className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+            className={`px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
               activeSubTab === 'calendar'
                 ? 'bg-pink-600 text-white shadow-sm shadow-pink-950/50'
                 : 'text-slate-400 hover:text-slate-200'
@@ -129,7 +166,7 @@ export const HomeTab: React.FC = () => {
 
           <button
             onClick={() => setActiveSubTab('history')}
-            className={`px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+            className={`px-2.5 sm:px-3.5 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer whitespace-nowrap ${
               activeSubTab === 'history'
                 ? 'bg-pink-600 text-white shadow-sm shadow-pink-950/50'
                 : 'text-slate-400 hover:text-slate-200'
@@ -320,29 +357,54 @@ export const HomeTab: React.FC = () => {
       )}
 
       {/* ======================================================== */}
-      {/* --- SUBTAB 2: CALENDAR --- */}
+      {/* --- SUBTAB 2: DAILY SCHEDULED WATCH & BREAKDOWN --- */}
       {/* ======================================================== */}
-      {activeSubTab === 'calendar' && (
+      {activeSubTab === 'daily' && (
         <div className="space-y-6">
-          {/* Daily Scheduled Watch Card in Calendar */}
+          {/* Today Date Header */}
+          <div className="flex items-center justify-between pb-1">
+            <div className="space-y-0.5">
+              <span className="text-[11px] font-bold text-pink-400 uppercase tracking-wider flex items-center gap-1.5">
+                <CalendarDays className="w-4 h-4" /> Today's Watch Plan
+              </span>
+              <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                {new Date().toLocaleDateString('en-US', {
+                  weekday: 'long',
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </h3>
+            </div>
+
+            <div className="flex items-center gap-2 bg-zinc-950 border border-zinc-800 px-3 py-1.5 rounded-xl text-xs font-mono text-zinc-300">
+              <Clock className="w-3.5 h-3.5 text-pink-400" />
+              <span>Pace: 1 title / {profile.paceDaysPerItem === 1 ? 'day' : `${profile.paceDaysPerItem}d`}</span>
+            </div>
+          </div>
+
+          {/* Daily Scheduled Watch Card */}
           {nextUp ? (
             <div className="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-pink-950/40 via-zinc-900 to-[#0c0c12] border border-pink-900/50 shadow-xl shadow-pink-950/20 relative overflow-hidden">
               <div className="relative z-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="space-y-1.5">
+                <div className="space-y-1.5 min-w-0">
                   <div className="flex items-center gap-2 text-[11px] font-semibold text-pink-400 uppercase tracking-wider">
-                    <Sparkles className="w-3.5 h-3.5" /> Daily Scheduled Watch
+                    <Sparkles className="w-3.5 h-3.5" /> Daily Scheduled Watch Target
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                  <h3
+                    className="text-xl sm:text-2xl font-extrabold text-white tracking-tight hover:text-pink-300 cursor-pointer transition-colors"
+                    onClick={() => setSelectedTitle(nextUp)}
+                  >
                     {nextUp.item.title}
                   </h3>
-                  <div className="flex items-center gap-2 text-xs text-slate-400">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-slate-400">
                     <span>{nextUp.item.year}</span>
                     <span aria-hidden="true">·</span>
                     <span>{nextUp.item.phase}</span>
                     <span aria-hidden="true">·</span>
-                    <span className="text-amber-400 font-mono">IMDb {nextUp.item.imdbRating}</span>
+                    <span className="text-amber-400 font-mono">★ {nextUp.item.imdbRating}</span>
                     <span aria-hidden="true">·</span>
-                    <span className="text-pink-300 font-medium">Scheduled {nextUp.watchData.scheduledDate}</span>
+                    <span className="text-pink-300 font-medium">Scheduled for {nextUp.watchData.scheduledDate}</span>
                   </div>
                 </div>
 
@@ -364,16 +426,16 @@ export const HomeTab: React.FC = () => {
               </div>
             </div>
           ) : (
-            <div className="p-5 rounded-2xl bg-slate-900/60 border border-slate-800 text-center space-y-1.5">
-              <CheckCircle2 className="w-6 h-6 text-emerald-400 mx-auto" />
+            <div className="p-6 rounded-3xl bg-slate-900/60 border border-slate-800 text-center space-y-2">
+              <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto" />
               <h4 className="text-sm font-bold text-white">All Scheduled Titles Caught Up!</h4>
-              <p className="text-xs text-slate-400">
-                You’ve finished every released title currently scheduled in your {orderConfig.orderType} order.
+              <p className="text-xs text-slate-400 max-w-md mx-auto">
+                You’ve finished every released title currently scheduled in your {orderConfig.orderType} order sequence. Great job!
               </p>
             </div>
           )}
 
-          {/* Watch Schedule Pace Selector (Moved from profile as requested) */}
+          {/* Watch Schedule Pace Selector */}
           <div className="p-4 rounded-2xl bg-zinc-950/90 border border-pink-900/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
             <div>
               <span className="text-[11px] font-bold text-pink-400 uppercase tracking-wider flex items-center gap-1.5">
@@ -409,6 +471,93 @@ export const HomeTab: React.FC = () => {
             </div>
           </div>
 
+          {/* Scheduled Breakdown from Calendar */}
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <CalendarCheck className="w-3.5 h-3.5 text-pink-400" />
+                Scheduled Watch Breakdown
+              </h4>
+              <span className="text-[11px] text-slate-500 font-mono">Sequential Calendar Flow</span>
+            </div>
+
+            <div className="space-y-2">
+              {activeOrderTitles.slice(0, 10).map((entry, idx) => (
+                <div
+                  key={entry.item.id}
+                  className="p-3.5 rounded-2xl bg-zinc-900/80 border border-zinc-800/80 hover:border-zinc-700 flex items-center justify-between gap-3 text-xs transition-colors"
+                >
+                  <div className="flex items-center gap-3 min-w-0">
+                    <span className="w-6 h-6 rounded-lg bg-zinc-950 border border-zinc-800 text-pink-400 font-mono text-[11px] font-bold flex items-center justify-center shrink-0">
+                      {idx + 1}
+                    </span>
+                    <span className="font-mono text-zinc-400 text-[11px] shrink-0 bg-zinc-950 px-2 py-0.5 rounded border border-zinc-800">
+                      {entry.watchData.scheduledDate}
+                    </span>
+                    <span
+                      className="font-bold text-white truncate cursor-pointer hover:text-pink-400 transition-colors"
+                      onClick={() => setSelectedTitle(entry)}
+                    >
+                      {entry.item.title}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center gap-2 shrink-0">
+                    {entry.watchData.status === 'watched' ? (
+                      <span className="text-[10px] text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-800/50 px-2 py-0.5 rounded-full">
+                        Watched ✓
+                      </span>
+                    ) : (
+                      <button
+                        onClick={() => updateItemStatus(entry.item.id, 'watched')}
+                        className="py-1 px-3 rounded-xl bg-pink-600/20 text-pink-300 border border-pink-600/40 hover:bg-pink-600 hover:text-white text-[11px] font-bold cursor-pointer transition-all"
+                      >
+                        Mark Done
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ======================================================== */}
+      {/* --- SUBTAB 3: CALENDAR MATRIX & RESCHEDULE --- */}
+      {/* ======================================================== */}
+      {activeSubTab === 'calendar' && (
+        <div className="space-y-6">
+          {/* Missed a Day or Behind Schedule Banner */}
+          <div className="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-pink-950/40 via-purple-950/30 to-zinc-950 border border-pink-800/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2 text-xs font-bold text-pink-400 uppercase tracking-wider">
+                <RotateCcw className="w-3.5 h-3.5" />
+                <span>Missed a Day or Behind Schedule?</span>
+              </div>
+              <p className="text-xs text-zinc-300 leading-relaxed">
+                Missed some scheduled watch days? Redo your calendar starting from today to automatically reschedule all remaining unwatched titles forward so you can stay on track!
+              </p>
+            </div>
+
+            <button
+              onClick={handleRedoCalendar}
+              className="py-2.5 px-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md shadow-pink-950/50 cursor-pointer shrink-0"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              <span>Redo Calendar</span>
+            </button>
+          </div>
+
+          {/* Toast Notification */}
+          {recalibrateToast && (
+            <div className="p-3.5 rounded-2xl bg-emerald-950/70 border border-emerald-800/70 text-emerald-300 text-xs flex items-center gap-2 shadow-lg animate-fade-in">
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>{recalibrateToast}</span>
+            </div>
+          )}
+
+          {/* Month Header */}
           <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div>
               <h3 className="text-base font-bold text-white tracking-tight flex items-center gap-2">
@@ -416,7 +565,7 @@ export const HomeTab: React.FC = () => {
                 Personalized Watching Calendar
               </h3>
               <p className="text-xs text-slate-400">
-                Automatically calculated from your {orderConfig.orderType} order sequence.
+                Interactive schedule sequence based on your watch order.
               </p>
             </div>
 
@@ -519,43 +668,6 @@ export const HomeTab: React.FC = () => {
                   </div>
                 );
               })}
-            </div>
-          </div>
-
-          {/* List of upcoming schedule items */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
-              Upcoming Schedule Breakdown
-            </h4>
-            <div className="space-y-2">
-              {activeOrderTitles.slice(0, 8).map((entry) => (
-                <div
-                  key={entry.item.id}
-                  className="p-3 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between gap-3 text-xs"
-                >
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <span className="font-mono text-slate-400 text-[11px] shrink-0">
-                      {entry.watchData.scheduledDate}
-                    </span>
-                    <span className="font-semibold text-slate-200 truncate cursor-pointer hover:text-pink-400 transition-colors" onClick={() => setSelectedTitle(entry)}>
-                      {entry.item.title}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2 shrink-0">
-                    {entry.watchData.status === 'watched' ? (
-                      <span className="text-[10px] text-emerald-400 font-medium">Watched</span>
-                    ) : (
-                      <button
-                        onClick={() => updateItemStatus(entry.item.id, 'watched')}
-                        className="py-1 px-2.5 rounded-lg bg-emerald-600/20 text-emerald-300 border border-emerald-600/40 hover:bg-emerald-600/30 text-[10px] font-medium cursor-pointer"
-                      >
-                        Mark Done
-                      </button>
-                    )}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>

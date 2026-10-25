@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  X,
   Sliders,
   RotateCcw,
   CheckCircle2,
@@ -62,38 +61,25 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose })
     <>
       <div className="fixed inset-0 z-50 bg-[#07070a] text-slate-100 flex flex-col overflow-y-auto animate-fade-in">
         {/* Sticky Top Navigation Bar */}
-        <header className="sticky top-0 z-30 bg-[#07070a]/95 backdrop-blur-xl border-b border-zinc-800/80 px-4 sm:px-8 py-3.5 flex items-center justify-between shrink-0">
-          <div className="flex items-center gap-3">
+        <header className="sticky top-0 z-30 bg-[#07070a]/95 backdrop-blur-xl border-b border-zinc-800/80 px-3 sm:px-6 py-2.5 sm:py-3.5 flex items-center justify-between gap-2 shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
             <button
               onClick={onClose}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-semibold border border-zinc-800 transition-all cursor-pointer shadow-sm"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-semibold border border-zinc-800 transition-all cursor-pointer shadow-sm shrink-0"
+              title="Go back"
             >
               <ArrowLeft className="w-4 h-4" />
               <span>Back</span>
             </button>
 
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-pink-950/80 border border-pink-700/60 flex items-center justify-center text-pink-400 shrink-0">
-                <Sliders className="w-4 h-4" />
+            <div className="flex items-center gap-2 min-w-0">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-pink-950/80 border border-pink-700/60 flex items-center justify-center text-pink-400 shrink-0">
+                <Sliders className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
-              <div>
-                <h1 className="text-sm sm:text-base font-bold text-white tracking-tight">
-                  Settings &amp; Options
-                </h1>
-                <p className="text-[11px] text-zinc-400 hidden sm:block">
-                  Preferences, sync, order customization, and reset options
-                </p>
-              </div>
+              <h1 className="text-xs sm:text-base font-bold text-white tracking-tight truncate">
+                Settings &amp; Options
+              </h1>
             </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              onClick={onClose}
-              className="py-1.5 px-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-xs shadow-md shadow-pink-950/50 cursor-pointer transition-all"
-            >
-              Done
-            </button>
           </div>
         </header>
 

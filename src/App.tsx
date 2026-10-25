@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { WatchlistProvider, useWatchlist } from './context/WatchlistContext';
 import { TopHeader } from './components/TopHeader';
 import { BottomNav, MainTab } from './components/BottomNav';
@@ -18,11 +18,31 @@ function MainAppContent() {
   const [isAuthOpen, setIsAuthOpen] = useState(false);
   const { showWizard, setShowWizard, hasCompletedWizard } = useWatchlist();
 
+  // Remember scroll position for each tab independently
+  const tabScrollPositions = useRef<Record<string, number>>({});
+
   const handleTabChange = (tab: MainTab) => {
+    // If tapping the already active tab, scroll back to top
+    if (tab === activeTab) {
+      tabScrollPositions.current[tab] = 0;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
+    // Save previous tab scroll position
+    tabScrollPositions.current[activeTab] = window.scrollY;
+
     setActiveTab(tab);
+
     if (tab === 'order' && !hasCompletedWizard) {
       setShowWizard(true);
     }
+
+    // Restore target tab's scroll position (or 0 if first visit)
+    const targetY = tabScrollPositions.current[tab] ?? 0;
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: targetY, behavior: 'instant' });
+    });
   };
 
   return (

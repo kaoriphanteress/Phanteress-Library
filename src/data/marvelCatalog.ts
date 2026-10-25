@@ -47,7 +47,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 2,
     "chronologicalRank": 3,
     "phanteressRank": 28,
-    "parentTitle": "The Marvel Super Heroes Season 1",
+    "parentTitle": "The Marvel Super Heroes",
     "allTitleInfos": "1 Season, 65 episodes (195 segments), originally aired from September 1 to December 1, 1966, featuring daily rotating spotlight segments on Captain America, Hulk, Iron Man, Thor, and Sub-Mariner.",
     "storyRank": 3
   },
@@ -75,7 +75,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Spider-Man",
     "seriesId": "spider-man-1967",
     "seasonNumber": 1,
-    "totalSeasons": 3,
+    "totalSeasons": 6,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 96
   },
@@ -103,7 +103,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Fantastic Four",
     "seriesId": "fantastic-four-1994",
     "seasonNumber": 1,
-    "totalSeasons": 2,
+    "totalSeasons": 4,
     "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
     "storyRank": 5
   },
@@ -131,7 +131,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Spider-Man",
     "seriesId": "spider-man-1967",
     "seasonNumber": 2,
-    "totalSeasons": 3,
+    "totalSeasons": 6,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 104
   },
@@ -159,7 +159,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Spider-Man",
     "seriesId": "spider-man-1967",
     "seasonNumber": 3,
-    "totalSeasons": 3,
+    "totalSeasons": 6,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 7
   },
@@ -311,7 +311,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Spider-Man",
     "seriesId": "spider-man-1967",
     "seasonNumber": 1,
-    "totalSeasons": 3,
+    "totalSeasons": 6,
     "allTitleInfos": "Live-action theatrical feature film starring Andrew Garfield, released in July 2012.",
     "storyRank": 13
   },
@@ -388,7 +388,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Fantastic Four",
     "seriesId": "fantastic-four-1994",
     "seasonNumber": 1,
-    "totalSeasons": 2,
+    "totalSeasons": 4,
     "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
     "storyRank": 16
   },
@@ -468,7 +468,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Spider-Man",
     "seriesId": "spider-man-1967",
     "seasonNumber": 2,
-    "totalSeasons": 3,
+    "totalSeasons": 6,
     "allTitleInfos": "Live-action theatrical feature film starring Andrew Garfield, released in July 2012.",
     "storyRank": 19
   },
@@ -493,7 +493,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 19,
     "chronologicalRank": 20,
     "phanteressRank": 47,
-    "parentTitle": "Fred and Barney Meet the Thing Season 1",
+    "parentTitle": "Fred and Barney Meet the Thing",
     "allTitleInfos": "Animated Series Season 1, featuring 26 episodes of *The Thing* segments starting September 1979.",
     "storyRank": 20
   },
@@ -527,7 +527,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "spider-woman-1979",
-    "title": "Spider-Woman Season 1",
+    "title": "Spider-Woman",
     "year": 1979,
     "type": "series",
     "episodesCount": 16,
@@ -546,9 +546,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 21,
     "chronologicalRank": 22,
     "phanteressRank": 49,
-    "parentTitle": "Spider-Woman Season 1",
+    "parentTitle": "Spider-Woman",
     "allTitleInfos": "Animated Series Season 1, 16 episodes, premiered September 1979.",
-    "storyRank": 22
+    "storyRank": 22,
+    "seriesId": "spider-woman-1979",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "captain-america-ii-1979",
@@ -626,7 +629,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Spider-Man",
     "seriesId": "spider-man-1967",
     "seasonNumber": 1,
-    "totalSeasons": 3,
+    "totalSeasons": 6,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 96
   },
@@ -651,7 +654,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 25,
     "chronologicalRank": 26,
     "phanteressRank": 55,
-    "parentTitle": "Spider-Man and His Amazing Friends Season 1",
+    "parentTitle": "Spider-Man and His Amazing Friends",
     "allTitleInfos": "3 Seasons, total of 24 episodes. Season 1 aired in 1981 (12 episodes); Season 2 aired in 1982 (3 episodes); Season 3 aired in 1983 (9 episodes).",
     "storyRank": 26
   },
@@ -704,10 +707,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 27,
     "chronologicalRank": 4,
     "phanteressRank": 57,
-    "parentTitle": "The Incredible Hulk",
-    "seriesId": "the-incredible-hulk-tv",
+    "parentTitle": "The Incredible Hulk (1996)",
+    "seriesId": "incredible-hulk-animated-1996",
     "seasonNumber": 1,
-    "totalSeasons": 5,
+    "totalSeasons": 3,
     "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
     "storyRank": 4
   },
@@ -732,7 +735,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 28,
     "chronologicalRank": 29,
     "phanteressRank": 58,
-    "parentTitle": "Spider-Man and His Amazing Friends Season 2",
+    "parentTitle": "Spider-Man and His Amazing Friends",
     "allTitleInfos": "3 Seasons, total of 24 episodes. Season 1 aired in 1981 (12 episodes); Season 2 aired in 1982 (3 episodes); Season 3 aired in 1983 (9 episodes).",
     "storyRank": 29
   },
@@ -757,7 +760,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 29,
     "chronologicalRank": 30,
     "phanteressRank": 60,
-    "parentTitle": "Spider-Man and His Amazing Friends Season 3",
+    "parentTitle": "Spider-Man and His Amazing Friends",
     "allTitleInfos": "3 Seasons, total of 24 episodes. Season 1 aired in 1981 (12 episodes); Season 2 aired in 1982 (3 episodes); Season 3 aired in 1983 (9 episodes).",
     "storyRank": 30
   },
@@ -954,7 +957,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-1992",
     "seasonNumber": 1,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993–1994, 13 episodes); Season 3 (1994–1995, 19 episodes); Season 4 (1995–1996, 17 episodes); Season 5 (1996–1997, 14 episodes).",
     "storyRank": 38
   },
   {
@@ -982,7 +985,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-1992",
     "seasonNumber": 2,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993–1994, 13 episodes); Season 3 (1994–1995, 19 episodes); Season 4 (1995–1996, 17 episodes); Season 5 (1996–1997, 14 episodes).",
     "storyRank": 39
   },
   {
@@ -1033,7 +1036,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-1992",
     "seasonNumber": 3,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993–1994, 13 episodes); Season 3 (1994–1995, 19 episodes); Season 4 (1995–1996, 17 episodes); Season 5 (1996–1997, 14 episodes).",
     "storyRank": 41
   },
   {
@@ -1088,7 +1091,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Fantastic Four",
     "seriesId": "fantastic-four-1994",
     "seasonNumber": 1,
-    "totalSeasons": 2,
+    "totalSeasons": 4,
     "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
     "storyRank": 43
   },
@@ -1117,7 +1120,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "spider-man-1994",
     "seasonNumber": 1,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994–1995, 13 episodes); Season 2 (1995–1996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997–1998, 13 episodes).",
     "storyRank": 44
   },
   {
@@ -1145,7 +1148,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-1992",
     "seasonNumber": 4,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993–1994, 13 episodes); Season 3 (1994–1995, 19 episodes); Season 4 (1995–1996, 17 episodes); Season 5 (1996–1997, 14 episodes).",
     "storyRank": 45
   },
   {
@@ -1173,7 +1176,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "spider-man-1994",
     "seasonNumber": 2,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994–1995, 13 episodes); Season 2 (1995–1996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997–1998, 13 episodes).",
     "storyRank": 46
   },
   {
@@ -1228,13 +1231,13 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Fantastic Four",
     "seriesId": "fantastic-four-1994",
     "seasonNumber": 2,
-    "totalSeasons": 2,
+    "totalSeasons": 4,
     "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
     "storyRank": 48
   },
   {
     "id": "ultraforce-s1-1995",
-    "title": "Ultraforce Season 1",
+    "title": "Ultraforce",
     "year": 1995,
     "type": "series",
     "episodesCount": 13,
@@ -1253,8 +1256,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 48,
     "chronologicalRank": 49,
     "phanteressRank": 81,
-    "parentTitle": "Ultraforce Season 1",
-    "storyRank": 49
+    "parentTitle": "Ultraforce",
+    "storyRank": 49,
+    "seriesId": "ultraforce-1995",
+    "totalSeasons": 1,
+    "seasonNumber": 1
   },
   {
     "id": "generation-x-1996",
@@ -1305,7 +1311,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "spider-man-1994",
     "seasonNumber": 3,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994–1995, 13 episodes); Season 2 (1995–1996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997–1998, 13 episodes).",
     "storyRank": 52
   },
   {
@@ -1329,10 +1335,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 51,
     "chronologicalRank": 4,
     "phanteressRank": 84,
-    "parentTitle": "The Incredible Hulk",
-    "seriesId": "the-incredible-hulk-tv",
+    "parentTitle": "The Incredible Hulk (1996)",
+    "seriesId": "incredible-hulk-animated-1996",
     "seasonNumber": 1,
-    "totalSeasons": 5,
+    "totalSeasons": 3,
     "allTitleInfos": "MCU Film starring Edward Norton, released in June 2008.",
     "storyRank": 4
   },
@@ -1361,7 +1367,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "spider-man-1994",
     "seasonNumber": 4,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994–1995, 13 episodes); Season 2 (1995–1996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997–1998, 13 episodes).",
     "storyRank": 54
   },
   {
@@ -1389,7 +1395,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "spider-man-1994",
     "seasonNumber": 5,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994\u20131995, 13 episodes); Season 2 (1995\u20131996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997\u20131998, 13 episodes).",
+    "allTitleInfos": "5 Seasons, 65 episodes. Season 1 (1994–1995, 13 episodes); Season 2 (1995–1996, 14 episodes); Season 3 (1996, 14 episodes); Season 4 (1997, 11 episodes); Season 5 (1997–1998, 13 episodes).",
     "storyRank": 55
   },
   {
@@ -1417,7 +1423,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-1992",
     "seasonNumber": 5,
     "totalSeasons": 5,
-    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993\u20131994, 13 episodes); Season 3 (1994\u20131995, 19 episodes); Season 4 (1995\u20131996, 17 episodes); Season 5 (1996\u20131997, 14 episodes).",
+    "allTitleInfos": "5 Seasons, 76 episodes. Season 1 (1992, 13 episodes); Season 2 (1993–1994, 13 episodes); Season 3 (1994–1995, 19 episodes); Season 4 (1995–1996, 17 episodes); Season 5 (1996–1997, 14 episodes).",
     "storyRank": 56
   },
   {
@@ -1441,8 +1447,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 55,
     "chronologicalRank": 57,
     "phanteressRank": 89,
-    "parentTitle": "Night Man Season 1",
-    "storyRank": 57
+    "parentTitle": "Night Man",
+    "storyRank": 57,
+    "seriesId": "night-man-1997",
+    "seasonNumber": 1,
+    "totalSeasons": 2
   },
   {
     "id": "incredible-hulk-animated-s2-1997",
@@ -1465,12 +1474,15 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 56,
     "chronologicalRank": 4,
     "phanteressRank": 90,
-    "parentTitle": "The Incredible Hulk and She-Hulk Season 2",
-    "storyRank": 4
+    "parentTitle": "The Incredible Hulk (1996)",
+    "storyRank": 4,
+    "seriesId": "incredible-hulk-animated-1996",
+    "seasonNumber": 2,
+    "totalSeasons": 3
   },
   {
     "id": "silver-surfer-1998",
-    "title": "Silver Surfer Season 1",
+    "title": "Silver Surfer",
     "year": 1998,
     "type": "series",
     "episodesCount": 13,
@@ -1489,9 +1501,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 57,
     "chronologicalRank": 59,
     "phanteressRank": 91,
-    "parentTitle": "Silver Surfer Season 1",
+    "parentTitle": "Silver Surfer",
     "allTitleInfos": "Animated Series Season 1, 13 episodes, premiered February 1998.",
-    "storyRank": 59
+    "storyRank": 59,
+    "seriesId": "silver-surfer-1998",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "nick-fury-agent-of-shield-1998",
@@ -1562,8 +1577,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 60,
     "chronologicalRank": 62,
     "phanteressRank": 94,
-    "parentTitle": "Night Man Season 2",
-    "storyRank": 62
+    "parentTitle": "Night Man",
+    "storyRank": 62,
+    "seriesId": "night-man-1997",
+    "seasonNumber": 2,
+    "totalSeasons": 2
   },
   {
     "id": "spider-man-unlimited-1999",
@@ -1586,7 +1604,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 61,
     "chronologicalRank": 63,
     "phanteressRank": 96,
-    "parentTitle": "Spider-Man Unlimited Season 1",
+    "parentTitle": "Spider-Man Unlimited",
     "allTitleInfos": "Animated Series Season 1, 13 episodes, premiered September 1999.",
     "storyRank": 63
   },
@@ -1611,7 +1629,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 62,
     "chronologicalRank": 8,
     "phanteressRank": 97,
-    "parentTitle": "The Avengers: United They Stand Season 1",
+    "parentTitle": "The Avengers: United They Stand",
     "allTitleInfos": "Animated Series Season 1, 13 episodes, premiered October 1999.",
     "storyRank": 8
   },
@@ -1664,7 +1682,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-evolution",
     "seasonNumber": 1,
     "totalSeasons": 4,
-    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000–2001, 13 episodes); Season 2 (2001–2002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
     "storyRank": 66
   },
   {
@@ -1692,7 +1710,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-evolution",
     "seasonNumber": 2,
     "totalSeasons": 4,
-    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000–2001, 13 episodes); Season 2 (2001–2002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
     "storyRank": 67
   },
   {
@@ -1716,9 +1734,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 66,
     "chronologicalRank": 68,
     "phanteressRank": 101,
-    "parentTitle": "Mutant X Season 1",
-    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001\u20132002, 22 episodes); Season 2 (2002\u20132003, 22 episodes); Season 3 (2003\u20132004, 22 episodes).",
-    "storyRank": 68
+    "parentTitle": "Mutant X",
+    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001–2002, 22 episodes); Season 2 (2002–2003, 22 episodes); Season 3 (2003–2004, 22 episodes).",
+    "storyRank": 68,
+    "seriesId": "mutant-x",
+    "seasonNumber": 1,
+    "totalSeasons": 3
   },
   {
     "id": "blade-ii-2002",
@@ -1793,7 +1814,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-evolution",
     "seasonNumber": 3,
     "totalSeasons": 4,
-    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000–2001, 13 episodes); Season 2 (2001–2002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
     "storyRank": 71
   },
   {
@@ -1817,9 +1838,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 70,
     "chronologicalRank": 72,
     "phanteressRank": 107,
-    "parentTitle": "Mutant X Season 2",
-    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001\u20132002, 22 episodes); Season 2 (2002\u20132003, 22 episodes); Season 3 (2003\u20132004, 22 episodes).",
-    "storyRank": 72
+    "parentTitle": "Mutant X",
+    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001–2002, 22 episodes); Season 2 (2002–2003, 22 episodes); Season 3 (2003–2004, 22 episodes).",
+    "storyRank": 72,
+    "seriesId": "mutant-x",
+    "seasonNumber": 2,
+    "totalSeasons": 3
   },
   {
     "id": "daredevil-2003",
@@ -1914,7 +1938,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 74,
     "chronologicalRank": 76,
     "phanteressRank": 112,
-    "parentTitle": "Spider-Man: The New Animated Series Season 1",
+    "parentTitle": "Spider-Man: The New Animated Series",
     "allTitleInfos": "CGI Animated Series Season 1, 13 episodes, premiered July 2003.",
     "storyRank": 76
   },
@@ -1943,7 +1967,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "seriesId": "x-men-evolution",
     "seasonNumber": 4,
     "totalSeasons": 4,
-    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000\u20132001, 13 episodes); Season 2 (2001\u20132002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
+    "allTitleInfos": "4 Seasons, 52 episodes total. Season 1 (2000–2001, 13 episodes); Season 2 (2001–2002, 15 episodes); Season 3 (2002, 13 episodes); Season 4 (2003, 9 episodes).",
     "storyRank": 77
   },
   {
@@ -1967,9 +1991,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 76,
     "chronologicalRank": 78,
     "phanteressRank": 115,
-    "parentTitle": "Mutant X Season 3",
-    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001\u20132002, 22 episodes); Season 2 (2002\u20132003, 22 episodes); Season 3 (2003\u20132004, 22 episodes).",
-    "storyRank": 78
+    "parentTitle": "Mutant X",
+    "allTitleInfos": "Live-action TV series, 3 Seasons, 66 episodes total. Season 1 (2001–2002, 22 episodes); Season 2 (2002–2003, 22 episodes); Season 3 (2003–2004, 22 episodes).",
+    "storyRank": 78,
+    "seriesId": "mutant-x",
+    "seasonNumber": 3,
+    "totalSeasons": 3
   },
   {
     "id": "the-punisher-2004",
@@ -2164,7 +2191,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "blade-the-series-2006",
-    "title": "Blade: The Series Season 1",
+    "title": "Blade: The Series",
     "year": 2006,
     "type": "series",
     "episodesCount": 12,
@@ -2183,9 +2210,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 85,
     "chronologicalRank": 114,
     "phanteressRank": 128,
-    "parentTitle": "Blade: The Series Season 1",
+    "parentTitle": "Blade: The Series",
     "allTitleInfos": "Live-action TV series Season 1, 12 episodes, premiered June 2006.",
-    "storyRank": 114
+    "storyRank": 114,
+    "seriesId": "blade-the-series-2006",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "ultimate-avengers-2-2006",
@@ -2213,7 +2243,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "fantastic-four-wgh-2006",
-    "title": "Fantastic Four: World Greatest Heroes Season 1",
+    "title": "Fantastic Four: World Greatest Heroes",
     "year": 2006,
     "type": "series",
     "episodesCount": 26,
@@ -2232,10 +2262,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 87,
     "chronologicalRank": 89,
     "phanteressRank": 130,
-    "parentTitle": "Fantastic Four",
-    "seriesId": "fantastic-four-1994",
+    "parentTitle": "Fantastic Four: World's Greatest Heroes",
+    "seriesId": "fantastic-four-wgh-2006",
     "seasonNumber": 1,
-    "totalSeasons": 2,
+    "totalSeasons": 1,
     "allTitleInfos": "Live-action theatrical reboot film (\"Fan4stic\") released in August 2015.",
     "storyRank": 89
   },
@@ -2380,10 +2410,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 93,
     "chronologicalRank": 95,
     "phanteressRank": 139,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "The Spectacular Spider-Man",
+    "seriesId": "spectacular-spider-man",
     "seasonNumber": 1,
-    "totalSeasons": 3,
+    "totalSeasons": 2,
     "allTitleInfos": "Animated Series, 2 Seasons, 26 episodes total. Season 1 (2008, 13 episodes); Season 2 (2009, 13 episodes).",
     "storyRank": 95
   },
@@ -2461,7 +2491,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "wolverine-and-x-men-2008",
-    "title": "Wolverine and the X-Men Season 1",
+    "title": "Wolverine and the X-Men",
     "year": 2008,
     "type": "series",
     "episodesCount": 26,
@@ -2480,9 +2510,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 97,
     "chronologicalRank": 98,
     "phanteressRank": 144,
-    "parentTitle": "Wolverine and the X-Men Season 1",
+    "parentTitle": "Wolverine and the X-Men",
     "allTitleInfos": "Animated Series Season 1, 26 episodes, premiered January 2009.",
-    "storyRank": 98
+    "storyRank": 98,
+    "seriesId": "wolverine-and-the-xmen",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "punisher-war-zone-2008",
@@ -2552,10 +2585,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 100,
     "chronologicalRank": 101,
     "phanteressRank": 147,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "The Spectacular Spider-Man",
+    "seriesId": "spectacular-spider-man",
     "seasonNumber": 2,
-    "totalSeasons": 3,
+    "totalSeasons": 2,
     "allTitleInfos": "Animated Series, 2 Seasons, 26 episodes total. Season 1 (2008, 13 episodes); Season 2 (2009, 13 episodes).",
     "storyRank": 101
   },
@@ -2580,9 +2613,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 101,
     "chronologicalRank": 2,
     "phanteressRank": 149,
-    "parentTitle": "Iron Man: Armored Adventures Season 1",
-    "allTitleInfos": "CGI Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009, 26 episodes); Season 2 (2011\u20132012, 26 episodes).",
-    "storyRank": 2
+    "parentTitle": "Iron Man: Armored Adventures",
+    "allTitleInfos": "CGI Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009, 26 episodes); Season 2 (2011–2012, 26 episodes).",
+    "storyRank": 2,
+    "seriesId": "iron-man-armored-adventures",
+    "seasonNumber": 1,
+    "totalSeasons": 2
   },
   {
     "id": "x-men-origins-wolverine-2009",
@@ -2629,9 +2665,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 103,
     "chronologicalRank": 104,
     "phanteressRank": 151,
-    "parentTitle": "The Super Hero Squad Show Season 1",
-    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009\u20132010, 26 episodes); Season 2 (2010\u20132011, 26 episodes).",
-    "storyRank": 104
+    "parentTitle": "The Super Hero Squad Show",
+    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009–2010, 26 episodes); Season 2 (2010–2011, 26 episodes).",
+    "storyRank": 104,
+    "seriesId": "super-hero-squad",
+    "seasonNumber": 1,
+    "totalSeasons": 2
   },
   {
     "id": "planet-hulk-2010",
@@ -2683,7 +2722,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "marvel-anime-iron-man-2010",
-    "title": "Marvel Anime: Iron Man Season 1",
+    "title": "Marvel Anime: Iron Man",
     "year": 2010,
     "type": "series",
     "episodesCount": 12,
@@ -2702,10 +2741,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 106,
     "chronologicalRank": 2,
     "phanteressRank": 155,
-    "parentTitle": "Iron Man",
-    "seriesId": "iron-man-1994",
+    "parentTitle": "Marvel Anime: Iron Man",
+    "seriesId": "marvel-anime-iron-man",
     "seasonNumber": 1,
-    "totalSeasons": 2,
+    "totalSeasons": 1,
     "allTitleInfos": "MCU Film, kicks off the Marvel Cinematic Universe, released in May 2008.",
     "storyRank": 2
   },
@@ -2730,8 +2769,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 107,
     "chronologicalRank": 8,
     "phanteressRank": 157,
-    "parentTitle": "The Avengers: Earth Mightiest Heroes Season 1",
-    "storyRank": 8
+    "parentTitle": "The Avengers: Earth's Mightiest Heroes",
+    "storyRank": 8,
+    "seriesId": "avengers-emh",
+    "seasonNumber": 1,
+    "totalSeasons": 2
   },
   {
     "id": "super-hero-squad-s2-2010",
@@ -2754,13 +2796,16 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 108,
     "chronologicalRank": 109,
     "phanteressRank": 158,
-    "parentTitle": "The Super Hero Squad Show Season 2",
-    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009\u20132010, 26 episodes); Season 2 (2010\u20132011, 26 episodes).",
-    "storyRank": 109
+    "parentTitle": "The Super Hero Squad Show",
+    "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009–2010, 26 episodes); Season 2 (2010–2011, 26 episodes).",
+    "storyRank": 109,
+    "seriesId": "super-hero-squad",
+    "seasonNumber": 2,
+    "totalSeasons": 2
   },
   {
     "id": "marvel-anime-wolverine-2011",
-    "title": "Marvel Anime: Wolverine Season 1",
+    "title": "Marvel Anime: Wolverine",
     "year": 2011,
     "type": "series",
     "episodesCount": 12,
@@ -2779,12 +2824,15 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 109,
     "chronologicalRank": 111,
     "phanteressRank": 160,
-    "parentTitle": "Marvel Anime: Wolverine Season 1",
-    "storyRank": 111
+    "parentTitle": "Marvel Anime: Wolverine",
+    "storyRank": 111,
+    "seriesId": "marvel-anime-wolverine",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "marvel-anime-x-men-2011",
-    "title": "Marvel Anime: X-Men Season 1",
+    "title": "Marvel Anime: X-Men",
     "year": 2011,
     "type": "series",
     "episodesCount": 12,
@@ -2803,8 +2851,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 110,
     "chronologicalRank": 112,
     "phanteressRank": 161,
-    "parentTitle": "Marvel Anime: X-Men Season 1",
-    "storyRank": 112
+    "parentTitle": "Marvel Anime: X-Men",
+    "storyRank": 112,
+    "seriesId": "marvel-anime-x-men",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "thor-2011",
@@ -2856,7 +2907,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "marvel-anime-blade-2011",
-    "title": "Marvel Anime: Blade Season 1",
+    "title": "Marvel Anime: Blade",
     "year": 2011,
     "type": "series",
     "episodesCount": 12,
@@ -2875,8 +2926,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 113,
     "chronologicalRank": 114,
     "phanteressRank": 164,
-    "parentTitle": "Marvel Anime: Blade Season 1",
-    "storyRank": 114
+    "parentTitle": "Marvel Anime: Blade",
+    "storyRank": 114,
+    "seriesId": "marvel-anime-blade",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "iron-man-armored-adventures-s2-2011",
@@ -2899,9 +2953,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 114,
     "chronologicalRank": 2,
     "phanteressRank": 165,
-    "parentTitle": "Iron Man: Armored Adventures Season 2",
-    "allTitleInfos": "CGI Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009, 26 episodes); Season 2 (2011\u20132012, 26 episodes).",
-    "storyRank": 2
+    "parentTitle": "Iron Man: Armored Adventures",
+    "allTitleInfos": "CGI Animated Series, 2 Seasons, 52 episodes total. Season 1 (2009, 26 episodes); Season 2 (2011–2012, 26 episodes).",
+    "storyRank": 2,
+    "seriesId": "iron-man-armored-adventures",
+    "seasonNumber": 2,
+    "totalSeasons": 2
   },
   {
     "id": "captain-america-first-avenger-2011",
@@ -3018,8 +3075,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 119,
     "chronologicalRank": 8,
     "phanteressRank": 171,
-    "parentTitle": "The Avengers: Earth Mightiest Heroes Season 2",
-    "storyRank": 8
+    "parentTitle": "The Avengers: Earth's Mightiest Heroes",
+    "storyRank": 8,
+    "seriesId": "avengers-emh",
+    "seasonNumber": 2,
+    "totalSeasons": 2
   },
   {
     "id": "ultimate-spider-man-s1-2012",
@@ -3042,11 +3102,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 120,
     "chronologicalRank": 121,
     "phanteressRank": 172,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "Ultimate Spider-Man",
+    "seriesId": "ultimate-spider-man",
     "seasonNumber": 1,
-    "totalSeasons": 3,
-    "allTitleInfos": "Animated Series, 4 Seasons, 104 episodes total. Season 1 (2012, 26 episodes); Season 2 (2013, 26 episodes); Season 3 (Web-Warriors, 2014\u20132015, 26 episodes); Season 4 (Vs. the Sinister 6, 2016, 26 episodes).",
+    "totalSeasons": 4,
+    "allTitleInfos": "Animated Series, 4 Seasons, 104 episodes total. Season 1 (2012, 26 episodes); Season 2 (2013, 26 episodes); Season 3 (Web-Warriors, 2014–2015, 26 episodes); Season 4 (Vs. the Sinister 6, 2016, 26 episodes).",
     "storyRank": 121
   },
   {
@@ -3141,11 +3201,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 124,
     "chronologicalRank": 125,
     "phanteressRank": 175,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "Ultimate Spider-Man",
+    "seriesId": "ultimate-spider-man",
     "seasonNumber": 2,
-    "totalSeasons": 3,
-    "allTitleInfos": "Animated Series, 4 Seasons, 104 episodes total. Season 1 (2012, 26 episodes); Season 2 (2013, 26 episodes); Season 3 (Web-Warriors, 2014\u20132015, 26 episodes); Season 4 (Vs. the Sinister 6, 2016, 26 episodes).",
+    "totalSeasons": 4,
+    "allTitleInfos": "Animated Series, 4 Seasons, 104 episodes total. Season 1 (2012, 26 episodes); Season 2 (2013, 26 episodes); Season 3 (Web-Warriors, 2014–2015, 26 episodes); Season 4 (Vs. the Sinister 6, 2016, 26 episodes).",
     "storyRank": 125
   },
   {
@@ -3269,9 +3329,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 129,
     "chronologicalRank": 130,
     "phanteressRank": 179,
-    "parentTitle": "Hulk and the Agents of S.M.A.S.H. Season 1",
+    "parentTitle": "Hulk and the Agents of S.M.A.S.H.",
     "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total, running from August 2013 to June 2015.",
-    "storyRank": 130
+    "storyRank": 130,
+    "seriesId": "hulk-agents-of-smash",
+    "seasonNumber": 1,
+    "totalSeasons": 2
   },
   {
     "id": "one-shot-agent-carter-2013",
@@ -3560,10 +3623,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 141,
     "chronologicalRank": 141,
     "phanteressRank": 188,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "Ultimate Spider-Man",
+    "seriesId": "ultimate-spider-man",
     "seasonNumber": 3,
-    "totalSeasons": 3,
+    "totalSeasons": 4,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 141
   },
@@ -3644,9 +3707,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 144,
     "chronologicalRank": 144,
     "phanteressRank": 191,
-    "parentTitle": "Hulk and the Agents of S.M.A.S.H. Season 2",
+    "parentTitle": "Hulk and the Agents of S.M.A.S.H.",
     "allTitleInfos": "Animated Series, 2 Seasons, 52 episodes total, running from August 2013 to June 2015.",
-    "storyRank": 144
+    "storyRank": 144,
+    "seriesId": "hulk-agents-of-smash",
+    "seasonNumber": 2,
+    "totalSeasons": 2
   },
   {
     "id": "big-hero-6-2014",
@@ -3820,8 +3886,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 151,
     "chronologicalRank": 16,
     "phanteressRank": 196,
-    "parentTitle": "Marvel Guardians of the Galaxy Season 1",
-    "storyRank": 16
+    "parentTitle": "Guardians of the Galaxy (Animated)",
+    "storyRank": 16,
+    "seriesId": "guardians-galaxy-animated",
+    "seasonNumber": 1,
+    "totalSeasons": 2
   },
   {
     "id": "agents-of-shield-s3-2015",
@@ -3951,10 +4020,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 156,
     "chronologicalRank": 158,
     "phanteressRank": 201,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "Ultimate Spider-Man",
+    "seriesId": "ultimate-spider-man",
     "seasonNumber": 4,
-    "totalSeasons": 3,
+    "totalSeasons": 4,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 158
   },
@@ -4283,8 +4352,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 169,
     "chronologicalRank": 16,
     "phanteressRank": 212,
-    "parentTitle": "Marvel Guardians of the Galaxy Season 2",
-    "storyRank": 16
+    "parentTitle": "Guardians of the Galaxy (Animated)",
+    "storyRank": 16,
+    "seriesId": "guardians-galaxy-animated",
+    "seasonNumber": 2,
+    "totalSeasons": 2
   },
   {
     "id": "iron-fist-s1-2017",
@@ -4434,16 +4506,16 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 175,
     "chronologicalRank": 178,
     "phanteressRank": 216,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "Marvel's Spider-Man",
+    "seriesId": "marvel-spider-man-2017",
     "seasonNumber": 1,
-    "totalSeasons": 3,
+    "totalSeasons": 2,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 178
   },
   {
     "id": "inhumans-s1-2017",
-    "title": "Marvel Inhumans Season 1",
+    "title": "Inhumans",
     "year": 2017,
     "type": "series",
     "episodesCount": 8,
@@ -4462,8 +4534,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 176,
     "chronologicalRank": 39,
     "phanteressRank": 217,
-    "parentTitle": "Marvel Inhumans Season 1",
-    "storyRank": 39
+    "parentTitle": "Inhumans",
+    "storyRank": 39,
+    "seriesId": "inhumans-2017",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "the-gifted-s1-2017",
@@ -4568,7 +4643,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Big Hero 6: The Series",
     "seriesId": "big-hero-6",
     "seasonNumber": 1,
-    "totalSeasons": 3,
+    "totalSeasons": 2,
     "storyRank": 182
   },
   {
@@ -4823,10 +4898,10 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 190,
     "chronologicalRank": 191,
     "phanteressRank": 228,
-    "parentTitle": "Spider-Man",
-    "seriesId": "spider-man-1967",
+    "parentTitle": "Marvel's Spider-Man",
+    "seriesId": "marvel-spider-man-2017",
     "seasonNumber": 2,
-    "totalSeasons": 3,
+    "totalSeasons": 2,
     "allTitleInfos": "Theatrical feature film directed by Sam Raimi, released in May 2002.",
     "storyRank": 191
   },
@@ -5193,7 +5268,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Big Hero 6: The Series",
     "seriesId": "big-hero-6",
     "seasonNumber": 2,
-    "totalSeasons": 3,
+    "totalSeasons": 2,
     "storyRank": 204
   },
   {
@@ -5430,7 +5505,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "helstrom-s1-2020",
-    "title": "Marvel Helstrom Season 1",
+    "title": "Helstrom",
     "year": 2020,
     "type": "series",
     "episodesCount": 10,
@@ -5449,8 +5524,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 214,
     "chronologicalRank": 52,
     "phanteressRank": 248,
-    "parentTitle": "Marvel Helstrom Season 1",
-    "storyRank": 52
+    "parentTitle": "Helstrom",
+    "storyRank": 52,
+    "seriesId": "helstrom-2020",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "wandavision-2021",
@@ -5504,7 +5582,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
   },
   {
     "id": "modok-s1-2021",
-    "title": "M.O.D.O.K. Season 1",
+    "title": "M.O.D.O.K.",
     "year": 2021,
     "type": "series",
     "episodesCount": 10,
@@ -5523,9 +5601,12 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 217,
     "chronologicalRank": 214,
     "phanteressRank": 249,
-    "parentTitle": "M.O.D.O.K. Season 1",
+    "parentTitle": "M.O.D.O.K.",
     "allTitleInfos": "Stop-motion animated series Season 1, 10 episodes, premiered May 2021.",
-    "storyRank": 214
+    "storyRank": 214,
+    "seriesId": "modok-2021",
+    "seasonNumber": 1,
+    "totalSeasons": 1
   },
   {
     "id": "loki-s1-2021",
@@ -5676,7 +5757,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "chronologicalRank": 68,
     "phanteressRank": 111,
     "parentTitle": "Eternals",
-    "allTitleInfos": "MCU Film directed by Chlo\u00e9 Zhao, released in November 2021.",
+    "allTitleInfos": "MCU Film directed by Chloé Zhao, released in November 2021.",
     "storyRank": 68
   },
   {
@@ -6275,8 +6356,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 247,
     "chronologicalRank": 231,
     "phanteressRank": 259,
-    "parentTitle": "X-Men 97 Season 1",
-    "storyRank": 231
+    "parentTitle": "X-Men '97",
+    "storyRank": 231,
+    "seriesId": "x-men-97",
+    "seasonNumber": 1,
+    "totalSeasons": 3
   },
   {
     "id": "hit-monkey-s2-2024",
@@ -6709,8 +6793,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "releaseRank": 264,
     "chronologicalRank": 255,
     "phanteressRank": 280,
-    "parentTitle": "X-Men 97 Season 2",
-    "storyRank": 255
+    "parentTitle": "X-Men '97",
+    "storyRank": 255,
+    "seriesId": "x-men-97",
+    "seasonNumber": 2,
+    "totalSeasons": 3
   },
   {
     "id": "spider-man-4-2026",
@@ -6796,7 +6883,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt21361454",
     "imdbRating": 9.3,
-    "synopsis": "Directed by the Russo Brothers; starring Robert Downey Jr. as Victor von Doom facing Earth\u2019s Mightiest Heroes.",
+    "synopsis": "Directed by the Russo Brothers; starring Robert Downey Jr. as Victor von Doom facing Earth’s Mightiest Heroes.",
     "directorOrCreator": "Anthony & Joe Russo",
     "releaseDate": "2026-12-18",
     "inDoomsdayList": false,
@@ -6822,7 +6909,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt15833446-s2",
     "imdbRating": 8.1,
-    "synopsis": "Animated Disney+ series continuing Peter Parker\u2019s early high school hero career through new villain confrontations.",
+    "synopsis": "Animated Disney+ series continuing Peter Parker’s early high school hero career through new villain confrontations.",
     "directorOrCreator": "Jeff Trammell",
     "releaseDate": "2027-01-13",
     "isUpcoming": true,
@@ -6852,7 +6939,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt18923754-s3",
     "imdbRating": 8.8,
-    "synopsis": "Live-action Disney+ series continuing Matt Murdock\u2019s pursuit of justice on the streets of New York.",
+    "synopsis": "Live-action Disney+ series continuing Matt Murdock’s pursuit of justice on the streets of New York.",
     "directorOrCreator": "Dario Scardapane",
     "releaseDate": "2027-03-01",
     "isUpcoming": true,
@@ -6937,11 +7024,11 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt16027150",
     "imdbRating": 7.9,
-    "synopsis": "Animated Disney+ specials premiering Halloween 2027\u20132029, pitting surviving heroes against a ravaging zombie plague.",
+    "synopsis": "Animated Disney+ specials premiering Halloween 2027–2029, pitting surviving heroes against a ravaging zombie plague.",
     "directorOrCreator": "Bryan Andrews",
     "releaseDate": "2027-10-31",
     "isUpcoming": true,
-    "upcomingDateText": "Halloween 2027\u20132029",
+    "upcomingDateText": "Halloween 2027–2029",
     "inDoomsdayList": false,
     "inFocusMcu": true,
     "inAllMarvel": true,
@@ -6953,7 +7040,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "parentTitle": "Marvel Zombies",
     "seriesId": "marvel-zombies",
     "seasonNumber": 1,
-    "totalSeasons": 2,
+    "totalSeasons": 1,
     "allTitleInfos": "Animated Disney+ MCU TV-MA Series (premiering October 2025) accompanied by recurring annual Halloween holiday specials",
     "storyRank": 95
   },
@@ -7144,7 +7231,7 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
     "phase": "Phase 6",
     "imdbId": "tt13623126",
     "imdbRating": 8,
-    "synopsis": "In development as a theatrical feature film. James Rhodes must defend Tony Stark\u2019s legacy when Stark tech is stolen and weaponized.",
+    "synopsis": "In development as a theatrical feature film. James Rhodes must defend Tony Stark’s legacy when Stark tech is stolen and weaponized.",
     "directorOrCreator": "Yassir Lester",
     "releaseDate": "2028-12-30",
     "isUpcoming": true,
@@ -7291,55 +7378,42 @@ export const MARVEL_CATALOG: MarvelTitle[] = [
 ];
 
 export const PROPERTY_DESCRIPTIONS = {
-  doomsday: {
-    id: 'doomsday',
-    name: 'Doomsday List',
-    tagline: 'Curated 15 Essential Multiverse & MCU Masterworks',
-    detail: 'From original X-Men and Captain America: The First Avenger to Avengers: Endgame, Loki, No Way Home, Deadpool & Wolverine, and The Fantastic Four: First Steps.',
-    countText: '15 Curated Road to Doomsday Milestones (16 titles)',
-    highlightBadge: 'Road to Avengers: Doomsday',
-  },
   mcu: {
-    id: 'mcu',
-    name: 'Focus MCU',
-    tagline: 'All Marvel Cinematic Universe Canon Movies & Disney+ Series',
-    detail: 'Complete mainline Sacred Timeline canon from Iron Man (2008) to Avengers: Doomsday, Secret Wars, Disney+ series, Brand New Day, and VisionQuest.',
-    countText: 'Full MCU Canon Roadmap (118 Titles)',
-    highlightBadge: 'Sacred Timeline Canon',
+    title: 'Focus MCU',
+    tagline: 'The official Marvel Cinematic Universe canon timeline',
+    description: 'Mainline MCU Sacred Timeline films, Disney+ series, and specials.',
   },
   'all-marvel': {
-    id: 'all-marvel',
-    name: 'All Marvel Properties',
-    tagline: 'Master Checklist of All Marvel Screen History',
-    detail: 'From the 1944 Captain America serial, 60s/70s animated shows, Bill Bixby Hulk, 90s animated classics, Fox X-Men, Raimi Spider-Man, to modern MCU.',
-    countText: '286 Master Properties',
-    highlightBadge: 'Complete Marvel Legacy',
+    title: 'All Marvel Properties',
+    tagline: 'Complete cinematic history including Fox, Sony, classic TV & animation',
+    description: 'Every Marvel screen production from 1944 serials through today.',
+  },
+  doomsday: {
+    title: 'Doomsday List',
+    tagline: 'Essential curated road to Avengers: Doomsday',
+    description: 'Curated 15 essential Multiverse and MCU masterworks.',
   },
 };
 
 export const ORDER_TYPE_DESCRIPTIONS = {
   release: {
-    id: 'release',
-    name: 'Release Order',
-    badge: 'Best For Beginners!',
-    description: 'Experience every film and series in the exact order audiences did in theaters. Preserves post-credit surprises and cultural timeline.',
+    title: 'Release Order',
+    badge: 'The Theatrical Experience',
+    description: 'Watch every production in the order audiences originally experienced them, with naturally paced post-credit surprises.',
   },
   story: {
-    id: 'story',
-    name: 'Story Order',
-    badge: 'In-Universe Timeline!',
-    description: 'Follow the in-universe storyline from 1940s WWII Captain America, through the Sacred Timeline, into the Quantum and Multiversal future.',
+    title: 'Story Order',
+    badge: 'In-Universe Timeline',
+    description: 'Follow the narrative chronological timeline of events within the Marvel universe.',
   },
   chronological: {
-    id: 'story',
-    name: 'Story Order',
-    badge: 'In-Universe Timeline!',
-    description: 'Follow the in-universe storyline from 1940s WWII Captain America, through the Sacred Timeline, into the Quantum and Multiversal future.',
+    title: 'Story Order',
+    badge: 'In-Universe Timeline',
+    description: 'Follow the narrative chronological timeline of events within the Marvel universe.',
   },
   phanteress: {
-    id: 'phanteress',
-    name: 'Phanteress Order',
-    badge: 'Under Curation',
-    description: 'The ultimate bespoke watch order crafted by Phanteress. Currently being curated and will unlock in an upcoming update!',
+    title: 'Phanteress Order',
+    badge: 'Curated Flow',
+    description: 'Curated emotional pacing order for the ultimate marathon experience.',
   },
 };

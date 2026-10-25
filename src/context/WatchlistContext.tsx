@@ -243,6 +243,26 @@ export const WatchlistProvider: React.FC<{ children: ReactNode }> = ({ children 
     }
   }, [account]);
 
+  // Auto-sync active user data to CLOUD_ACCOUNTS database whenever state changes
+  useEffect(() => {
+    if (!account) return;
+    try {
+      const rawAccounts = localStorage.getItem(STORAGE_KEYS.CLOUD_ACCOUNTS);
+      const accountsDb = rawAccounts ? JSON.parse(rawAccounts) : {};
+      const key = account.email.trim().toLowerCase();
+      if (accountsDb[key]) {
+        accountsDb[key].watchlist = watchlist;
+        accountsDb[key].profile = profile;
+        accountsDb[key].orderConfig = orderConfig;
+        accountsDb[key].favorites = favorites;
+        accountsDb[key].account.lastSyncedAt = new Date().toISOString();
+        localStorage.setItem(STORAGE_KEYS.CLOUD_ACCOUNTS, JSON.stringify(accountsDb));
+      }
+    } catch {
+      // storage unavailable
+    }
+  }, [watchlist, profile, orderConfig, favorites, account]);
+
   const setHasCompletedWizard = (done: boolean) => {
     setHasCompletedWizardState(done);
     localStorage.setItem(STORAGE_KEYS.WIZARD_DONE, done ? 'true' : 'false');
@@ -548,10 +568,22 @@ export const WatchlistProvider: React.FC<{ children: ReactNode }> = ({ children 
         return { success: false, error: 'Incorrect password for this account.' };
       }
 
-      if (record.watchlist) setWatchlist(record.watchlist);
-      if (record.profile) setProfile(record.profile);
-      if (record.orderConfig) setOrderConfig(record.orderConfig);
-      if (record.favorites) setFavorites(record.favorites);
+      if (record.watchlist && Array.isArray(record.watchlist)) {
+        setWatchlist(record.watchlist);
+        localStorage.setItem(STORAGE_KEYS.WATCHLIST, JSON.stringify(record.watchlist));
+      }
+      if (record.profile) {
+        setProfile(record.profile);
+        localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(record.profile));
+      }
+      if (record.orderConfig) {
+        setOrderConfig(record.orderConfig);
+        localStorage.setItem(STORAGE_KEYS.CONFIG, JSON.stringify(record.orderConfig));
+      }
+      if (record.favorites && Array.isArray(record.favorites)) {
+        setFavorites(record.favorites);
+        localStorage.setItem(STORAGE_KEYS.FAVORITES, JSON.stringify(record.favorites));
+      }
 
       const updatedAcc = {
         ...record.account,
@@ -566,6 +598,23 @@ export const WatchlistProvider: React.FC<{ children: ReactNode }> = ({ children 
   };
 
   const signOut = () => {
+    if (account) {
+      try {
+        const rawAccounts = localStorage.getItem(STORAGE_KEYS.CLOUD_ACCOUNTS);
+        const accountsDb = rawAccounts ? JSON.parse(rawAccounts) : {};
+        const key = account.email.trim().toLowerCase();
+        if (accountsDb[key]) {
+          accountsDb[key].watchlist = watchlist;
+          accountsDb[key].profile = profile;
+          accountsDb[key].orderConfig = orderConfig;
+          accountsDb[key].favorites = favorites;
+          accountsDb[key].account.lastSyncedAt = new Date().toISOString();
+          localStorage.setItem(STORAGE_KEYS.CLOUD_ACCOUNTS, JSON.stringify(accountsDb));
+        }
+      } catch {
+        // ignore
+      }
+    }
     setAccount(null);
   };
 
@@ -574,12 +623,13 @@ export const WatchlistProvider: React.FC<{ children: ReactNode }> = ({ children 
     try {
       const rawAccounts = localStorage.getItem(STORAGE_KEYS.CLOUD_ACCOUNTS);
       const accountsDb = rawAccounts ? JSON.parse(rawAccounts) : {};
-      if (accountsDb[account.email]) {
-        accountsDb[account.email].watchlist = watchlist;
-        accountsDb[account.email].profile = profile;
-        accountsDb[account.email].orderConfig = orderConfig;
-        accountsDb[account.email].favorites = favorites;
-        accountsDb[account.email].account.lastSyncedAt = new Date().toISOString();
+      const key = account.email.trim().toLowerCase();
+      if (accountsDb[key]) {
+        accountsDb[key].watchlist = watchlist;
+        accountsDb[key].profile = profile;
+        accountsDb[key].orderConfig = orderConfig;
+        accountsDb[key].favorites = favorites;
+        accountsDb[key].account.lastSyncedAt = new Date().toISOString();
         localStorage.setItem(STORAGE_KEYS.CLOUD_ACCOUNTS, JSON.stringify(accountsDb));
       }
       setAccount((prev) => (prev ? { ...prev, lastSyncedAt: new Date().toISOString() } : null));

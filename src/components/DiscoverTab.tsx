@@ -42,15 +42,16 @@ export const DiscoverTab: React.FC = () => {
   }, [watchlist]);
 
   // UNIFIED SERIES CATALOG FOR DISCOVER:
-  // Deduplicate multi-season titles so e.g. "Spider-Man Season 1", "Spider-Man Season 2" become single "Spider-Man"
+  // Deduplicate multi-season titles so all seasons of the same show become a single title
   const unifiedCatalog = useMemo(() => {
     const seenSeries = new Set<string>();
     const unified: MarvelTitle[] = [];
 
     MARVEL_CATALOG.forEach((item) => {
-      if (item.seriesId) {
-        if (!seenSeries.has(item.seriesId)) {
-          seenSeries.add(item.seriesId);
+      const key = item.seriesId || (item.type === 'series' ? (item.parentTitle || item.title).replace(/\s+Season\s+\d+.*$/i, '').trim() : null);
+      if (key) {
+        if (!seenSeries.has(key)) {
+          seenSeries.add(key);
           // Represent with season 1 or parent entry
           unified.push(item);
         }
@@ -412,8 +413,8 @@ export const DiscoverTab: React.FC = () => {
             const posterInfo = getPosterInfo(item.id, item.heroCharacter, item.title, item.phase);
             const hasImage = Boolean(posterInfo.posterUrl) && !imgErrors[item.id];
 
-            // Parent display title (e.g. "Spider-Man", "Loki", "Daredevil")
-            const displayTitle = item.parentTitle || item.title.replace(/ Season \d+/i, '');
+            // Parent display title (e.g. "Spider-Man", "Loki", "Daredevil", "Silver Surfer")
+            const displayTitle = (item.parentTitle || item.title).replace(/\s+Season\s+\d+.*$/i, '').trim();
             const totalSeasons = item.totalSeasons || (item.type === 'series' ? 1 : 0);
 
             return (
